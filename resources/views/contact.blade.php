@@ -63,7 +63,7 @@
     <style>
         /* --- Formulário de Contato --- */
         .contact-form-section {
-            background-color: #f1d8b7;
+            background-color: #f0dfc4;
             padding: 110px 20px;
         }
 

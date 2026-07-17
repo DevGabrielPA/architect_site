@@ -1,0 +1,148 @@
+/* ==========================================================================
+   HEADER STYLE (BARRA SÓLIDA BRANCA COM LINKS ESCUROS)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-header {
+    width: 100%;
+    background-color: #ffffff; /* Fundo Branco Sólido */
+    border-bottom: 1px solid #eaeaea; /* Linha sutil divisória */
+    position: fixed; /* Fica fixo no topo ao rolar a página */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+body {
+    padding-top: 90px; /* Compensa a altura do header fixo para o conteúdo não ficar escondido atrás dele */
+}
+
+.header-wrapper {
+    width: 100%;
+    height: 90px; /* Altura limpa e elegante */
+    display: flex;
+    align-items: center;
+}
+
+.header-main {
+    width: 100%;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Tamanho do Logo */
+.logo-col img {
+    max-height: 32px;
+    width: auto;
+    display: block;
+    filter: none !important; /* Garante que a logo original escura apareça perfeitamente */
+}
+
+/* Links de Navegação Escuros */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #333333; /* Cinza Escuro/Preto */
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+.nav-links a:hover {
+    color: #834333;
+}
+
+.nav-links a.active {
+    color: #834333;
+    font-weight: 500;
+}
+
+/* Dropdown */
+.has-dropdown {
+    position: relative;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    list-style: none;
+    display: none;
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border: 1px solid #eaeaea;
+}
+
+.sub-menu li {
+    margin: 8px 0;
+}
+
+.sub-menu a {
+    color: #555555;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.sub-menu a:hover {
+    color: #834333;
+}
+
+.sub-menu a.active {
+    color: #834333;
+    font-weight: 500;
+}
+
+.has-dropdown:hover .sub-menu {
+    display: block;
+}
+
+/* Separador e Telefone */
+.header-divider {
+    width: 1px;
+    height: 16px;
+    background-color: #dddddd;
+}
+
+.header-phone a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #222222;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.header-phone a:hover {
+    color: #834333;
+}
+
+.mobile-menu-col {
+    display: none;
+}

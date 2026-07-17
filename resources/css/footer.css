@@ -1,0 +1,106 @@
+/* ==========================================================================
+   FOOTER STYLE (ESTRUTURA COMPLETA EM FUNDO BRANCO)
+   ========================================================================== */
+
+.site-footer {
+    background-color: #ffffff; /* Fundo branco limpo */
+    color: #555555; /* Texto cinza escuro sofisticado */
+    padding: 80px 0 30px 0;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #eaeaea; /* Linha sutil separando o rodapé do site */
+}
+
+.footer-container {
+    max-width: 1400px; /* Alinhado com a largura máxima do Header */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Monta a estrutura de colunas que sumiu no print */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+}
+
+/* Telas médias (Tablets) */
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Telas grandes (Desktops) */
+@media (min-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr; /* Primeira coluna ligeiramente maior */
+    }
+}
+
+/* Títulos das Colunas */
+.footer-title {
+    color: #111111; /* Texto escuro */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.footer-col p {
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: #666666; /* Links cinza escuro */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 300;
+}
+
+.footer-col a:hover {
+    color: #000000; /* Destaque preto ao passar o mouse */
+}
+
+/* Ícones de Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #444444;
+    font-size: 16px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Créditos Finais (Copyright) */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center; 
+    font-size: 12px;
+    color: #888888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase; 
+}

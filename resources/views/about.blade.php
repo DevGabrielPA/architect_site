@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- SECTION WHO WE ARE (IMAGEM À ESQUERDA, TEXTO CENTRALIZADO VERTICALMENTE À DIREITA) -->
-    <section style="padding: 160px 0 70px; background-color: #ffffff;">
+    <section style="padding: 80px 0 70px; background-color: #ffffff;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
 
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 70px;">

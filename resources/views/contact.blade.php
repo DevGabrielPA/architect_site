@@ -17,14 +17,16 @@
         .contact-hero {
             position: relative;
             width: 100%;
+            height: clamp(480px, 68vh, 680px);
             overflow: hidden;
-            line-height: 0;
         }
 
         .contact-hero-img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
+            object-fit: cover;
+            object-position: center;
         }
 
         .contact-hero-overlay {
@@ -35,29 +37,29 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 24px;
+            padding: 0 24px 3%;
         }
 
         .contact-hero-content {
-            max-width: 780px;
+            max-width: 1040px;
         }
 
         .contact-hero-text {
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            font-weight: 400;
             color: #ffffff;
-            font-size: clamp(16px, 2.1vw, 22px);
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-            margin-bottom: 22px;
-            min-height: 1.7em;
+            font-size: clamp(20px, 2.6vw, 32px);
+            line-height: 1.5;
+            letter-spacing: 0.005em;
+            margin-bottom: 10px;
+            min-height: 1.5em;
         }
 
         .contact-hero-phone {
             display: inline-block;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 700;
+            font-size: clamp(34px, 6vw, 58px);
             letter-spacing: 0.04em;
             color: #ffffff;
             text-decoration: none;

@@ -211,6 +211,7 @@
         }
 
         .contact-hero-content {
+            width: 100%;
             max-width: 1040px;
         }
 
@@ -223,6 +224,7 @@
             letter-spacing: 0.005em;
             margin-bottom: 10px;
             min-height: 1.5em;
+            text-align: left;
         }
 
         .contact-hero-phone {
@@ -268,10 +270,10 @@
                 if (i <= fullText.length) {
                     textEl.innerHTML = fullText.slice(0, i) + cursor;
                     i++;
-                    setTimeout(typeText, 28);
+                    setTimeout(typeText, 12);
                 } else {
                     textEl.innerHTML = fullText;
-                    setTimeout(typePhone, 450);
+                    setTimeout(typePhone, 250);
                 }
             }
 
@@ -279,7 +281,7 @@
                 if (j <= fullPhone.length) {
                     phoneEl.innerHTML = fullPhone.slice(0, j) + cursor;
                     j++;
-                    setTimeout(typePhone, 75);
+                    setTimeout(typePhone, 35);
                 } else {
                     phoneEl.innerHTML = fullPhone + cursor;
                 }

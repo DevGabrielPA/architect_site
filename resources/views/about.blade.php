@@ -16,7 +16,7 @@
 
                 <!-- Coluna da Direita: Texto -->
                 <div style="flex: 1 1 480px; min-width: 320px;">
-                    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; color: #834333; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0;">
+                    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 400; color: #111111; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0;">
                         Who We Are
                     </h1>
 

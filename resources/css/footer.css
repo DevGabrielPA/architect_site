@@ -72,7 +72,7 @@
 }
 
 .footer-col a:hover {
-    color: #000000; /* Destaque preto ao passar o mouse */
+    color: #834333; /* Destaque marrom (cor da marca) ao passar o mouse */
 }
 
 /* Ícones de Redes Sociais */
@@ -89,7 +89,7 @@
 }
 
 .social-icons a:hover {
-    color: #000000;
+    color: #834333;
     transform: translateY(-2px);
 }
 

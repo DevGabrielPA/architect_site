@@ -101,9 +101,11 @@
                 <div style="flex: 1; min-width: 320px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <!-- margin-top: 0 garante que o texto comece exatamente alinhado com o topo da imagem -->
-                        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; color: #111111; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0;">
-                            Who We Are
-                        </h2>
+                        <a href="{{ url('/who-we-are') }}" class="who-we-are-title-link" style="display: inline-block; text-decoration: none;">
+                            <h2 class="who-we-are-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0; transition: color 0.3s ease;">
+                                Who We Are
+                            </h2>
+                        </a>
                         
                         <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.8; font-weight: 300; margin-bottom: 20px; letter-spacing: 0.01em;">
                             Discover refined elegance with Larissa Vasconcellos, founder of the firm — Miami's premier luxury architecture and interior design studio. With an architectural background and rich aesthetic vision, Larissa blends structural precision with sophisticated layouts to create stunning, functional spaces.
@@ -133,6 +135,15 @@
 
             </div>
         </div>
+
+        <style>
+            .who-we-are-heading {
+                color: #111111;
+            }
+            .who-we-are-title-link:hover .who-we-are-heading {
+                color: #834333;
+            }
+        </style>
     </section>
 
     <!-- SECTION IMAGEM CENTRAL COM FRASE CONVIDATIVA -->
@@ -228,11 +239,13 @@
     <section style="padding: 100px 0; background-color: #ffffff;">
         <div style="max-width: 1300px; margin: 0 auto; padding: 0 30px;">
 
-            <a href="{{ url('/portfolio/completed-projects') }}" class="portfolio-title-link" style="display: block; text-decoration: none;">
-                <h2 class="portfolio-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 60px; transition: color 0.3s ease;">
-                    Portfolio
-                </h2>
-            </a>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <a href="{{ url('/portfolio/completed-projects') }}" class="portfolio-title-link" style="display: inline-block; text-decoration: none;">
+                    <h2 class="portfolio-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; transition: color 0.3s ease;">
+                        Portfolio
+                    </h2>
+                </a>
+            </div>
 
             @include('partials.portfolio-masonry', [
                 'items' => config('portfolio.completed_projects'),

@@ -153,76 +153,92 @@
     </section>
 
     <!-- FAIXA DE ESTATÍSTICAS (COLADA NA IMAGEM ACIMA) -->
-    <section style="background-color: #834333; padding: 50px 20px;">
+    <section id="stats-section" style="background-color: #834333; padding: 50px 20px;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; text-align: center;">
 
             <div>
-                <div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">400+</div>
+                <div class="stat-number" data-target="400" data-suffix="+" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Completed Projects</div>
             </div>
 
             <div>
-                <div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">20</div>
+                <div class="stat-number" data-target="20" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Team Members</div>
             </div>
 
             <div>
-                <div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">15</div>
+                <div class="stat-number" data-target="15" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Projects In Progress</div>
             </div>
 
             <div>
-                <div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">20</div>
+                <div class="stat-number" data-target="20" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Years of Experience</div>
             </div>
 
         </div>
     </section>
 
-    <!-- SECTION PORTFOLIO (GRID ESTILO MASONRY COM WIREFRAMES ATÉ AS IMAGENS SEREM ADICIONADAS) -->
-    @php
-        // Imagens devem ser adicionadas em public/images/portfolio/ com o nome de arquivo indicado abaixo.
-        // Enquanto o arquivo não existir, um wireframe é exibido automaticamente no lugar.
-        $portfolioProjects = [
-            ['title' => 'Bayfront Venetian Islands', 'slug' => 'bayfront-venetian-islands', 'image' => 'bayfront-venetian-islands.jpg', 'ratio' => '4 / 3'],
-            ['title' => 'New Build Ponce Davis, Miami', 'slug' => 'new-build-ponce-davis', 'image' => 'new-build-ponce-davis.jpg', 'ratio' => '3 / 4'],
-            ['title' => 'Oceanfront Armani Casa', 'slug' => 'oceanfront-armani-casa', 'image' => 'oceanfront-armani-casa.jpg', 'ratio' => '4 / 3'],
-            ['title' => 'Prive Penthouse Aventura', 'slug' => 'prive-penthouse-aventura', 'image' => 'prive-penthouse-aventura.jpg', 'ratio' => '3 / 4'],
-            ['title' => 'Full Remodeling Fisher Island Oceanfront', 'slug' => 'full-remodeling-fisher-island-oceanfront', 'image' => 'full-remodeling-fisher-island-oceanfront.jpg', 'ratio' => '4 / 3'],
-            ['title' => 'Waterfront Fort Lauderdale', 'slug' => 'waterfront-fort-lauderdale', 'image' => 'waterfront-fort-lauderdale.jpg', 'ratio' => '4 / 3'],
-        ];
-    @endphp
+    <!-- SCRIPT DA CONTAGEM ANIMADA DAS ESTATÍSTICAS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var statsSection = document.getElementById('stats-section');
+            if (!statsSection) return;
 
+            var statNumbers = statsSection.querySelectorAll('.stat-number');
+            var duration = 1200;
+
+            function animateCount(el) {
+                var target = parseInt(el.getAttribute('data-target'), 10);
+                var suffix = el.getAttribute('data-suffix') || '';
+                var start = null;
+
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    var progress = Math.min((timestamp - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    var current = Math.floor(eased * target);
+                    el.textContent = current + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                }
+
+                requestAnimationFrame(step);
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        statNumbers.forEach(animateCount);
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            observer.observe(statsSection);
+        });
+    </script>
+
+    <!-- SECTION PORTFOLIO (GRID ESTILO MASONRY COM WIREFRAMES ATÉ AS IMAGENS SEREM ADICIONADAS) -->
+    <!-- Dados completos em config/portfolio.php; grid compartilhado com as páginas /portfolio/* via partials.portfolio-masonry -->
     <section style="padding: 100px 0; background-color: #ffffff;">
         <div style="max-width: 1300px; margin: 0 auto; padding: 0 30px;">
 
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; color: #111111; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 60px;">
-                Portfolio
-            </h2>
+            <a href="{{ url('/portfolio/completed-projects') }}" class="portfolio-title-link" style="display: block; text-decoration: none;">
+                <h2 class="portfolio-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; text-align: center; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 60px; transition: color 0.3s ease;">
+                    Portfolio
+                </h2>
+            </a>
 
-            <div class="portfolio-masonry">
-                @foreach ($portfolioProjects as $project)
-                    @php
-                        $imagePath = "images/portfolio/{$project['image']}";
-                        $imageExists = file_exists(public_path($imagePath));
-                    @endphp
-                    <a href="{{ url('/portfolio/completed-projects/' . $project['slug']) }}" class="portfolio-item" style="display: block; text-decoration: none; margin-bottom: 24px;">
-                        <div style="width: 100%; aspect-ratio: {{ $project['ratio'] }}; overflow: hidden; background-color: #f2f2f2;">
-                            @if ($imageExists)
-                                <img src="{{ asset($imagePath) }}" alt="{{ $project['title'] }}" style="width: 100%; height: 100%; display: block; object-fit: cover;">
-                            @else
-                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #aaaaaa; background-image: repeating-linear-gradient(45deg, #f4f4f4, #f4f4f4 12px, #ececec 12px, #ececec 24px); border: 1px solid #e2e2e2;">
-                                    <i class="fa-regular fa-image" style="font-size: 26px;"></i>
-                                    <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;">Image Coming Soon</span>
-                                </div>
-                            @endif
-                        </div>
-                        <h3 class="portfolio-item-title" style="font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 400; color: #222222; margin-top: 14px; letter-spacing: 0.02em; transition: color 0.3s ease;">
-                            {{ $project['title'] }}
-                        </h3>
-                    </a>
-                @endforeach
-            </div>
+            @include('partials.portfolio-masonry', [
+                'items' => config('portfolio.completed_projects'),
+                'urlPrefix' => '/portfolio/completed-projects',
+                'imageFolder' => 'portfolio',
+            ])
 
             <div style="text-align: center; margin-top: 40px;">
                 <a href="{{ url('/portfolio/completed-projects') }}" class="btn-brand" style="padding: 14px 40px;">
@@ -233,21 +249,11 @@
         </div>
 
         <style>
-            .portfolio-masonry {
-                column-count: 3;
-                column-gap: 24px;
+            .portfolio-heading {
+                color: #111111;
             }
-            .portfolio-item {
-                break-inside: avoid;
-            }
-            .portfolio-item:hover .portfolio-item-title {
+            .portfolio-title-link:hover .portfolio-heading {
                 color: #834333;
-            }
-            @media (max-width: 900px) {
-                .portfolio-masonry { column-count: 2; }
-            }
-            @media (max-width: 600px) {
-                .portfolio-masonry { column-count: 1; }
             }
         </style>
     </section>
@@ -272,7 +278,7 @@
                     Creativity is unlocked by the spaces we live in and interact with — our memories, inspirations, and the references we draw from others. Find your own reference with me, and discover my furniture and object design projects.
                 </p>
 
-                <a href="{{ url('/portfolio/design-pieces') }}" class="btn-brand" style="padding: 14px 40px;">
+                <a href="{{ url('/portfolio/design-insights') }}" class="btn-brand" style="padding: 14px 40px;">
                     Access now <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                 </a>
             </div>

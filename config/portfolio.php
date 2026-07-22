@@ -24,6 +24,9 @@ return [
 
     // TODO: títulos e imagens abaixo são placeholders — substituir pelas peças reais do portfólio de design.
     'design_insights' => [
+        ['title' => 'Lustre Saturnos', 'slug' => 'lustre-saturnos', 'image' => 'saturnos.png', 'ratio' => '1 / 1'],
+        ['title' => 'Vínculo Lamp', 'slug' => 'vinculo-lamp', 'image' => 'vinculo.png', 'ratio' => '4 / 5'],
+        ['title' => 'Brisa Side Table', 'slug' => 'brisa-side-table', 'image' => 'brisa.png', 'ratio' => '3 / 2'],
         ['title' => 'Custom Lounge Chair Concept', 'slug' => 'custom-lounge-chair-concept', 'image' => 'custom-lounge-chair-concept.jpg', 'ratio' => '3 / 4'],
         ['title' => 'Sculptural Coffee Table', 'slug' => 'sculptural-coffee-table', 'image' => 'sculptural-coffee-table.jpg', 'ratio' => '4 / 3'],
         ['title' => 'Handcrafted Lighting Fixture', 'slug' => 'handcrafted-lighting-fixture', 'image' => 'handcrafted-lighting-fixture.jpg', 'ratio' => '3 / 4'],

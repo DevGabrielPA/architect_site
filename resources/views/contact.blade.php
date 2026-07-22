@@ -216,7 +216,7 @@
         }
 
         .contact-hero-text {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 400;
             color: #ffffff;
             font-size: clamp(20px, 2.6vw, 32px);
@@ -230,7 +230,7 @@
         .contact-hero-phone {
             display: inline-block;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: clamp(34px, 6vw, 58px);
             letter-spacing: 0.04em;
             color: #ffffff;
@@ -265,6 +265,11 @@
             var cursor = '<span class="contact-hero-cursor">|</span>';
             var i = 0;
             var j = 0;
+
+            // Reserva a altura final do parágrafo antes de digitar, para o texto não "subir" ao ganhar linhas.
+            textEl.textContent = fullText;
+            textEl.style.minHeight = textEl.offsetHeight + 'px';
+            textEl.textContent = '';
 
             function typeText() {
                 if (i <= fullText.length) {

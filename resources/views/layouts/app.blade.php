@@ -13,7 +13,7 @@
     <!-- Font Awesome (Ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 
@@ -134,6 +134,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- OVERLAY DO LIGHTBOX DE GALERIA (usado por qualquer elemento com data-lightbox-group) -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <button type="button" class="lightbox-close" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button type="button" class="lightbox-prev" aria-label="Previous image">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <div class="lightbox-stage">
+            <img class="lightbox-image" src="" alt="">
+            <div class="lightbox-caption">
+                <span class="lightbox-title"></span>
+                <span class="lightbox-counter"></span>
+            </div>
+        </div>
+        <button type="button" class="lightbox-next" aria-label="Next image">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </div>
 
 </body>
 </html>

@@ -24,7 +24,28 @@ return [
 
     // TODO: títulos e imagens abaixo são placeholders — substituir pelas peças reais do portfólio de design.
     'design_insights' => [
-        ['title' => 'Lustre Saturnos', 'slug' => 'lustre-saturnos', 'image' => 'saturnos.png', 'ratio' => '1 / 1'],
+        [
+            'title' => 'Saturnos Chandelier',
+            'slug' => 'lustre-saturnos',
+            'image' => 'saturnos.png',
+            'ratio' => '1 / 1',
+            'video' => 'yReftZmOR2k',
+            'quote' => 'Known as a "gas giant" — it stands out for the beauty of its ring system.',
+            'description' => [
+                'The Saturnos Chandelier is another original creation by the architect, composed of a sculptural metal plate that lifts three softly frosted glass globes into the air.',
+                'A sophisticated fixture designed to fit seamlessly into the modern atmosphere our clients had long envisioned for their home.',
+            ],
+            'images' => [
+                'saturnos/saturnos1.jpg',
+                'saturnos/saturnos2.jpg',
+                'saturnos/saturnos3.jpg',
+                'saturnos/saturnos4.jpg',
+                'saturnos/saturnos5.jpg',
+                'saturnos/saturnos6.jpg',
+                'saturnos/saturnos7.jpg',
+                'saturnos/saturnos8.jpg',
+            ],
+        ],
         ['title' => 'Vínculo Lamp', 'slug' => 'vinculo-lamp', 'image' => 'vinculo.png', 'ratio' => '4 / 5'],
         ['title' => 'Brisa Side Table', 'slug' => 'brisa-side-table', 'image' => 'brisa.png', 'ratio' => '3 / 2'],
         ['title' => 'Custom Lounge Chair Concept', 'slug' => 'custom-lounge-chair-concept', 'image' => 'custom-lounge-chair-concept.jpg', 'ratio' => '3 / 4'],

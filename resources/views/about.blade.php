@@ -17,23 +17,23 @@
                 <!-- Coluna da Direita: Texto -->
                 <div style="flex: 1 1 480px; min-width: 320px;">
                     <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 400; color: #111111; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0;">
-                        Who We Are
+                        {{ __('site.about.heading') }}
                     </h1>
 
                     <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.85; font-weight: 300; margin-bottom: 22px; letter-spacing: 0.01em;">
-                        At LV Arquitetura, we believe every extraordinary space starts out blurred — a feeling, a mood, an image you can almost see but can't quite put into words. Our craft is taking that hazy idea living in your head and giving it form: light, material, proportion and detail, arranged until the space finally feels like you.
+                        {{ __('site.about.p1') }}
                     </p>
 
                     <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.85; font-weight: 300; margin-bottom: 22px; letter-spacing: 0.01em;">
-                        We design with a young, restless point of view — curious rather than conventional, drawn to bold materials and honest detail, and always questioning the obvious answer. It's an approach shaped by how people actually want to live today: fluid, personal and quietly confident, never borrowed from a formula.
+                        {{ __('site.about.p2') }}
                     </p>
 
                     <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.85; font-weight: 300; margin-bottom: 40px; letter-spacing: 0.01em;">
-                        We listen before we ever draw a line. Every sketch, every material, every spatial decision is tested against one question: does this feel like the life you imagined? Once the answer is yes, the plan stops being a drawing on paper and becomes the first real step into your space.
+                        {{ __('site.about.p3') }}
                     </p>
 
-                    <a href="{{ url('/contact') }}" class="btn-brand" style="padding: 14px 36px;">
-                        Get in Touch <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
+                    <a href="{{ locale_url('/contact') }}" class="btn-brand" style="padding: 14px 36px;">
+                        {{ __('site.about.get_in_touch') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                     </a>
                 </div>
 
@@ -50,15 +50,15 @@
                 <!-- Coluna da Esquerda: Our Team -->
                 <div style="flex: 1 1 480px; min-width: 320px;">
                     <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500; color: #834333; margin-bottom: 26px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0;">
-                        Our Team
+                        {{ __('site.about.team_heading') }}
                     </h2>
 
                     <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.85; font-weight: 300; letter-spacing: 0.01em; margin: 0 0 20px;">
-                        Every project is shaped by a close circle of trusted collaborators working alongside Larissa. From the first sketch to the final detail, they bring the same rigor, care and creative eye that define every space we design — ensuring a seamless journey from concept to reality.
+                        {{ __('site.about.team_paragraph') }}
                     </p>
 
                     <p style="font-family: 'Inter', sans-serif; font-style: italic; font-size: 13px; color: #834333; letter-spacing: 0.02em; margin: 0;">
-                        Hover or tap each hexagon to meet the partners behind every project.
+                        {{ __('site.about.team_hover_hint') }}
                     </p>
                 </div>
 
@@ -66,14 +66,14 @@
                 <div style="flex: 1 1 480px; min-width: 320px;">
                     @php
                         $hive = [
-                            ['icon' => 'fa-drafting-compass', 'label' => 'Technical Drawings', 'desc' => 'Translate every concept into precise technical drawings and construction-ready documentation.', 'slot' => 'top', 'align' => 'center', 'card' => 'bottom'],
-                            ['icon' => 'fa-sack-dollar', 'label' => 'Finance', 'desc' => 'Manage budgets and investments so every project stays on track, transparently and responsibly.', 'slot' => 'right-upper', 'align' => 'right', 'card' => 'bottom'],
-                            ['icon' => 'fa-couch', 'label' => 'Final Staging', 'desc' => "Bring the finished space to life with styling, decor and the final layer of detail.", 'slot' => 'right-lower', 'align' => 'right', 'card' => 'top'],
-                            ['icon' => 'fa-clipboard-list', 'label' => 'Specifications', 'desc' => 'Define materials, finishes and technical specifications with precision and consistency.', 'slot' => 'bottom', 'align' => 'center', 'card' => 'top'],
-                            ['icon' => 'fa-hard-hat', 'label' => 'Construction Supervision', 'desc' => "Oversee every phase on-site, ensuring the build matches the design intent down to the last detail.", 'slot' => 'left-lower', 'align' => 'left', 'card' => 'top'],
-                            ['icon' => 'fa-dolly', 'label' => 'Purchasing & Logistics', 'desc' => "Source, manage and deliver every material and furnishing exactly where and when it's needed.", 'slot' => 'left-upper', 'align' => 'left', 'card' => 'bottom'],
+                            ['icon' => 'fa-drafting-compass', 'key' => 'technical_drawings', 'slot' => 'top', 'align' => 'center', 'card' => 'bottom'],
+                            ['icon' => 'fa-sack-dollar', 'key' => 'finance', 'slot' => 'right-upper', 'align' => 'right', 'card' => 'bottom'],
+                            ['icon' => 'fa-couch', 'key' => 'final_staging', 'slot' => 'right-lower', 'align' => 'right', 'card' => 'top'],
+                            ['icon' => 'fa-clipboard-list', 'key' => 'specifications', 'slot' => 'bottom', 'align' => 'center', 'card' => 'top'],
+                            ['icon' => 'fa-hard-hat', 'key' => 'construction_supervision', 'slot' => 'left-lower', 'align' => 'left', 'card' => 'top'],
+                            ['icon' => 'fa-dolly', 'key' => 'purchasing_logistics', 'slot' => 'left-upper', 'align' => 'left', 'card' => 'bottom'],
                         ];
-                        $center = ['icon' => 'fa-pen-ruler', 'label' => 'Creative Direction', 'desc' => "Larissa leads the creative process herself — shaping the concept, reading the client's vision and guiding every partner toward one cohesive design."];
+                        $center = ['icon' => 'fa-pen-ruler', 'key' => 'creative_direction'];
 
                         $slotPos = [
                             'top'         => ['left' => 92,  'top' => 0],
@@ -94,8 +94,8 @@
                                 <i class="fa-solid {{ $center['icon'] }}"></i>
                             </div>
                             <div class="hex-card">
-                                <span class="hex-card-title">{{ $center['label'] }}</span>
-                                <span class="hex-card-desc">{{ $center['desc'] }}</span>
+                                <span class="hex-card-title">{{ __("site.about.hive.{$center['key']}.label") }}</span>
+                                <span class="hex-card-desc">{{ __("site.about.hive.{$center['key']}.desc") }}</span>
                             </div>
                         </div>
 
@@ -105,8 +105,8 @@
                                     <i class="fa-solid {{ $partner['icon'] }}"></i>
                                 </div>
                                 <div class="hex-card">
-                                    <span class="hex-card-title">{{ $partner['label'] }}</span>
-                                    <span class="hex-card-desc">{{ $partner['desc'] }}</span>
+                                    <span class="hex-card-title">{{ __("site.about.hive.{$partner['key']}.label") }}</span>
+                                    <span class="hex-card-desc">{{ __("site.about.hive.{$partner['key']}.desc") }}</span>
                                 </div>
                             </div>
                         @endforeach
@@ -243,15 +243,15 @@
         <div style="max-width: 640px; margin: 0 auto; padding: 0 30px;">
 
             <h2 style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 30px; font-weight: 500; color: #834333; margin-bottom: 18px; margin-top: 0;">
-                Want to explore a little further?
+                {{ __('site.about.cta_heading') }}
             </h2>
 
             <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.8; font-weight: 300; margin-bottom: 32px;">
-                Schedule a consultation with our design experts and discover a world of opportunities.
+                {{ __('site.about.cta_paragraph') }}
             </p>
 
-            <a href="{{ url('/contact') }}" class="btn-brand" style="padding: 14px 40px;">
-                Request Consultation
+            <a href="{{ locale_url('/contact') }}" class="btn-brand" style="padding: 14px 40px;">
+                {{ __('site.about.cta_button') }}
             </a>
 
         </div>

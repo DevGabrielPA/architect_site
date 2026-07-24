@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
@@ -8,16 +8,16 @@
         <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-1.jpg');"></div>
         <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-2.jpg');"></div>
 
-        <!-- CONTEÚDO CENTRAL FIXO -->
+        <!-- CONTEÃšDO CENTRAL FIXO -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; z-index: 10; padding: 0 20px;">
             <div style="max-width: 900px;">
                 <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.12em; line-height: 1.2;">
-                    Larissa Vasconcellos <br>
-                    <span style="font-size: 24px; letter-spacing: 0.2em; display: block; margin-top: 10px; font-family: 'Inter', sans-serif; font-weight: 300; color: #f3f3f3;">Architecture & Design</span>
+                    {{ __('site.home.hero_title') }} <br>
+                    <span style="font-size: 24px; letter-spacing: 0.2em; display: block; margin-top: 10px; font-family: 'Inter', sans-serif; font-weight: 300; color: #f3f3f3;">{{ __('site.home.hero_tagline') }}</span>
                 </h1>
-                
+
                 <p style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: #e5e5e5; max-width: 650px; margin: 0 auto; letter-spacing: 0.05em; line-height: 1.8;">
-                    Transforming high-end residential and commercial spaces into functional works of art.
+                    {{ __('site.home.hero_subtitle') }}
                 </p>
             </div>
         </div>
@@ -87,7 +87,7 @@
         </script>
     </section>
 
-    <!-- LINHA DE SEPARAÇÃO HORIZONTAL -->
+    <!-- LINHA DE SEPARAÃ‡ÃƒO HORIZONTAL -->
     <hr style="border: 0; height: 1px; background-color: #eaeaea; margin: 0; width: 100%;">
 
     <!-- SECTION WHO WE ARE (COM IMAGEM E TEXTO SINCRONIZADOS EM ALTURA) -->
@@ -97,38 +97,38 @@
             <!-- align-items: stretch obriga as colunas da esquerda e direita a compartilharem a mesma altura -->
             <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 60px;">
                 
-                <!-- Coluna da Esquerda: Conteúdo de Texto -->
+                <!-- Coluna da Esquerda: ConteÃºdo de Texto -->
                 <div style="flex: 1; min-width: 320px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <!-- margin-top: 0 garante que o texto comece exatamente alinhado com o topo da imagem -->
-                        <a href="{{ url('/who-we-are') }}" class="who-we-are-title-link" style="display: inline-block; text-decoration: none;">
+                        <a href="{{ locale_url('/who-we-are') }}" class="who-we-are-title-link" style="display: inline-block; text-decoration: none;">
                             <h2 class="who-we-are-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0; transition: color 0.3s ease;">
-                                Who We Are
+                                {{ __('site.home.who_we_are_heading') }}
                             </h2>
                         </a>
-                        
+
                         <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.8; font-weight: 300; margin-bottom: 20px; letter-spacing: 0.01em;">
-                            Discover refined elegance with Larissa Vasconcellos, founder of the firm — Miami's premier luxury architecture and interior design studio. With an architectural background and rich aesthetic vision, Larissa blends structural precision with sophisticated layouts to create stunning, functional spaces.
+                            {{ __('site.home.who_we_are_p1') }}
                         </p>
-                        
+
                         <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #444444; line-height: 1.8; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.01em;">
-                            At our studio, we specialize in luxury interior and exterior architecture, guiding high-end clients from spatial concept to technical precision with unmatched attention to detail. Whether it's your first luxury property or a continuous development portfolio, our commitment to excellence never wavers.
+                            {{ __('site.home.who_we_are_p2') }}
                         </p>
                     </div>
 
                     <!-- Alinhamento na base do bloco de texto -->
                     <div style="margin-top: auto;">
-                        <a href="{{ url('/who-we-are') }}" class="btn-brand" style="padding: 14px 32px;">
-                            Learn More <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
+                        <a href="{{ locale_url('/who-we-are') }}" class="btn-brand" style="padding: 14px 32px;">
+                            {{ __('site.home.learn_more') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Coluna da Direita: Container da Imagem Sincronizado -->
                 <div style="flex: 1; min-width: 320px;">
-                    <!-- height: 100% preenche o espaço vertical exato determinado pelo texto ao lado -->
+                    <!-- height: 100% preenche o espaÃ§o vertical exato determinado pelo texto ao lado -->
                     <div style="width: 100%; height: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.04); overflow: hidden;">
-                        <!-- object-fit: cover faz a foto preencher o retângulo sem distorcer e object-position mantém o enquadramento focado de cima para baixo -->
+                        <!-- object-fit: cover faz a foto preencher o retÃ¢ngulo sem distorcer e object-position mantÃ©m o enquadramento focado de cima para baixo -->
                         <img src="{{ asset('images/larissa.jpg') }}" alt="Larissa Vasconcellos" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
                     </div>
                 </div>
@@ -154,43 +154,43 @@
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.4)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;">
             <div style="max-width: 800px;">
                 <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 400; color: #ffffff; font-style: italic; letter-spacing: 0.02em; margin-bottom: 30px; line-height: 1.3;">
-                    Where Every Space Tells Your Story
+                    {{ __('site.home.story_heading') }}
                 </h2>
-                <a href="{{ url('/contact') }}" class="btn-brand" style="padding: 14px 32px;">
-                    Contact us <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
+                <a href="{{ locale_url('/contact') }}" class="btn-brand" style="padding: 14px 32px;">
+                    {{ __('site.home.contact_us') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- FAIXA DE ESTATÍSTICAS (COLADA NA IMAGEM ACIMA) -->
+    <!-- FAIXA DE ESTATÃSTICAS (COLADA NA IMAGEM ACIMA) -->
     <section id="stats-section" style="background-color: #834333; padding: 50px 20px;">
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; text-align: center;">
 
             <div>
-                <div class="stat-number" data-target="400" data-suffix="+" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Completed Projects</div>
+                <div class="stat-number" data-target="400" data-suffix="+" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_completed_projects') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="20" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Team Members</div>
+                <div class="stat-number" data-target="20" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_team_members') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="15" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Projects In Progress</div>
+                <div class="stat-number" data-target="15" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_projects_in_progress') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="20" style="font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
-                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">Years of Experience</div>
+                <div class="stat-number" data-target="20" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_years_experience') }}</div>
             </div>
 
         </div>
     </section>
 
-    <!-- SCRIPT DA CONTAGEM ANIMADA DAS ESTATÍSTICAS -->
+    <!-- SCRIPT DA CONTAGEM ANIMADA DAS ESTATÃSTICAS -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var statsSection = document.getElementById('stats-section');
@@ -234,28 +234,28 @@
         });
     </script>
 
-    <!-- SECTION PORTFOLIO (GRID ESTILO MASONRY COM WIREFRAMES ATÉ AS IMAGENS SEREM ADICIONADAS) -->
-    <!-- Dados completos em config/portfolio.php; grid compartilhado com as páginas /portfolio/* via partials.portfolio-masonry -->
+    <!-- SECTION PORTFOLIO (GRID ESTILO MASONRY COM WIREFRAMES ATÃ‰ AS IMAGENS SEREM ADICIONADAS) -->
+    <!-- Dados completos em config/portfolio.php; grid compartilhado com as pÃ¡ginas /portfolio/* via partials.portfolio-masonry -->
     <section style="padding: 100px 0; background-color: #ffffff;">
         <div style="max-width: 1300px; margin: 0 auto; padding: 0 30px;">
 
             <div style="text-align: center; margin-bottom: 60px;">
-                <a href="{{ url('/portfolio/completed-projects') }}" class="portfolio-title-link" style="display: inline-block; text-decoration: none;">
+                <a href="{{ locale_url('/portfolio/completed-projects') }}" class="portfolio-title-link" style="display: inline-block; text-decoration: none;">
                     <h2 class="portfolio-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; transition: color 0.3s ease;">
-                        Portfolio
+                        {{ __('site.home.portfolio_heading') }}
                     </h2>
                 </a>
             </div>
 
             @include('partials.portfolio-masonry', [
-                'items' => config('portfolio.completed_projects'),
+                'items' => portfolio_translate_all(config('portfolio.completed_projects'), 'completed_projects'),
                 'urlPrefix' => '/portfolio/completed-projects',
                 'imageFolder' => 'portfolio',
             ])
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="{{ url('/portfolio/completed-projects') }}" class="btn-brand" style="padding: 14px 40px;">
-                    View more
+                <a href="{{ locale_url('/portfolio/completed-projects') }}" class="btn-brand" style="padding: 14px 40px;">
+                    {{ __('site.home.view_more') }}
                 </a>
             </div>
 
@@ -271,37 +271,37 @@
         </style>
     </section>
 
-    <!-- SECTION DESIGN DE PEÇAS (IMAGEM "FLUTUANDO" NO FUNDO DA SEÇÃO) -->
-    <!-- O fundo da seção usa um gradiente que imita o tom da parede branca/acinzentada da própria foto, para que ela pareça fazer parte do background em vez de estar dentro de um retângulo. -->
+    <!-- SECTION DESIGN DE PEÃ‡AS (IMAGEM "FLUTUANDO" NO FUNDO DA SEÃ‡ÃƒO) -->
+    <!-- O fundo da seÃ§Ã£o usa um gradiente que imita o tom da parede branca/acinzentada da prÃ³pria foto, para que ela pareÃ§a fazer parte do background em vez de estar dentro de um retÃ¢ngulo. -->
     <section style="background: linear-gradient(180deg, #f4f6f9 0%, #e0e7eb 100%); padding: 100px 0; overflow: hidden;">
         <div style="max-width: 1300px; margin: 0 auto; padding: 0 30px; display: flex; align-items: center; justify-content: center; gap: 70px; flex-wrap: wrap;">
 
             <!-- Coluna da Esquerda: Imagem sem moldura, caixa ou sombra, para se fundir ao fundo -->
             <div style="flex: 1 1 360px; min-width: 280px; display: flex; justify-content: center;">
-                <img src="{{ asset('images/novos-talentos.png') }}" alt="Larissa Vasconcellos - Design de Peças" style="width: 100%; max-width: 400px; height: auto; display: block;">
+                <img src="{{ asset('images/novos-talentos.png') }}" alt="Larissa Vasconcellos - Design de PeÃ§as" style="width: 100%; max-width: 400px; height: auto; display: block;">
             </div>
 
-            <!-- Coluna da Direita: Texto convidando o cliente a conhecer o design de peças -->
+            <!-- Coluna da Direita: Texto convidando o cliente a conhecer o design de peÃ§as -->
             <div style="flex: 1 1 420px; min-width: 320px;"> 
                 <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 500; color: #111111; margin-bottom: 24px; letter-spacing: 0.03em; line-height: 1.25;">
-                    Discover the Pieces Behind My Vision
+                    {{ __('site.home.pieces_heading') }}
                 </h2>
 
                 <p style="font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300; color: #444444; line-height: 1.8; margin-bottom: 35px; letter-spacing: 0.01em;">
-                    Creativity is unlocked by the spaces we live in and interact with — our memories, inspirations, and the references we draw from others. Find your own reference with me, and discover my furniture and object design projects.
+                    {{ __('site.home.pieces_paragraph') }}
                 </p>
 
-                <a href="{{ url('/portfolio/design-insights') }}" class="btn-brand" style="padding: 14px 40px;">
-                    Access now <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
+                <a href="{{ locale_url('/portfolio/design-insights') }}" class="btn-brand" style="padding: 14px 40px;">
+                    {{ __('site.home.access_now') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                 </a>
             </div>
 
         </div>
     </section>
 
-    <!-- SECTION INSTAGRAM FEED (ESTÁTICO) -->
-    <!-- Cada card é uma imagem salva manualmente em public/images/instagram/ (a capa do post),
-         que ao ser clicada leva até a publicação real no Instagram. Não há busca dinâmica via API. -->
+    <!-- SECTION INSTAGRAM FEED (ESTÃTICO) -->
+    <!-- Cada card Ã© uma imagem salva manualmente em public/images/instagram/ (a capa do post),
+         que ao ser clicada leva atÃ© a publicaÃ§Ã£o real no Instagram. NÃ£o hÃ¡ busca dinÃ¢mica via API. -->
     @php
         $instagramPosts = [
             ['file' => 'insta-video1', 'url' => 'https://www.instagram.com/p/DW62eGLAPjf/', 'type' => 'video'],
@@ -318,7 +318,7 @@
             <div style="text-align: center; margin-bottom: 40px;">
                 <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px; color: #111111;">
                     <i class="fa-brands fa-instagram" style="font-size: 22px;"></i>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400;">Follow us <span style="color: #834333;">@larissavasconcellos_studio</span></span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400;">{{ __('site.home.follow_us') }} <span style="color: #834333;">@larissavasconcellos_studio</span></span>
                 </a>
             </div>
 

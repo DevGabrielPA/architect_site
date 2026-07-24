@@ -16,21 +16,21 @@
     <!-- SECTION FORMULÁRIO DE CONTATO (MESMA ESTRUTURA DE CAMPOS USADA NOS FORMULÁRIOS DE REFERÊNCIA DO SITE, EM TOM PASTEL QUENTE) -->
     <section class="contact-form-section">
         <div class="contact-form-card">
-            <h2 class="contact-form-title">For Prospective Clients</h2>
+            <h2 class="contact-form-title">{{ __('site.contact.form_title') }}</h2>
 
             <form class="contact-form" onsubmit="return false;">
                 <div class="cf-field">
-                    <label for="cf-first-name">First Name <span class="cf-req">*</span></label>
+                    <label for="cf-first-name">{{ __('site.contact.first_name') }} <span class="cf-req">*</span></label>
                     <input type="text" id="cf-first-name" name="first_name" required>
                 </div>
 
                 <div class="cf-field">
-                    <label for="cf-last-name">Last Name</label>
+                    <label for="cf-last-name">{{ __('site.contact.last_name') }}</label>
                     <input type="text" id="cf-last-name" name="last_name">
                 </div>
 
                 <div class="cf-field">
-                    <label for="cf-email">Email <span class="cf-req">*</span></label>
+                    <label for="cf-email">{{ __('site.contact.email') }} <span class="cf-req">*</span></label>
                     <div class="cf-input-icon">
                         <i class="fa-regular fa-envelope"></i>
                         <input type="email" id="cf-email" name="email" required>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="cf-field">
-                    <label for="cf-phone">Phone <span class="cf-req">*</span></label>
+                    <label for="cf-phone">{{ __('site.contact.phone') }} <span class="cf-req">*</span></label>
                     <div class="cf-phone">
                         <select class="cf-phone-code" aria-label="Country code">
                             <option value="+1" selected>&#127482;&#127480; +1</option>
@@ -51,11 +51,11 @@
                 </div>
 
                 <div class="cf-field">
-                    <label for="cf-budget">Estimated Project Budget <span class="cf-req">*</span></label>
-                    <input type="text" id="cf-budget" name="budget" placeholder="Estimated Project Budget" required>
+                    <label for="cf-budget">{{ __('site.contact.budget') }} <span class="cf-req">*</span></label>
+                    <input type="text" id="cf-budget" name="budget" placeholder="{{ __('site.contact.budget') }}" required>
                 </div>
 
-                <button type="submit" class="cf-submit">Submit</button>
+                <button type="submit" class="cf-submit">{{ __('site.contact.submit') }}</button>
             </form>
         </div>
     </section>
@@ -160,7 +160,7 @@
 
         .cf-submit {
             margin-top: 10px;
-            background-color: #6b3527;
+            background-color: #834333;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             font-size: 13px;
@@ -175,7 +175,7 @@
         }
 
         .cf-submit:hover {
-            background-color: #4f2419;
+            background-color: #6b3527;
         }
 
         @media (max-width: 600px) {
@@ -229,10 +229,10 @@
 
         .contact-hero-phone {
             display: inline-block;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: clamp(34px, 6vw, 58px);
-            letter-spacing: 0.04em;
+            font-size: clamp(26px, 4vw, 40px);
+            letter-spacing: 0.06em;
             color: #ffffff;
             text-decoration: none;
             min-height: 1.2em;
@@ -259,7 +259,7 @@
             var phoneEl = document.getElementById('contact-hero-phone');
 
             // Número de exemplo — substitua pelo telefone real assim que estiver disponível.
-            var fullText = 'Every project starts with a conversation. Fill out the form below, or call our client care line directly to ask a question or book your consultation at';
+            var fullText = {!! json_encode(__('site.contact.hero_intro')) !!};
             var fullPhone = '+1 786-224-4923';
 
             var cursor = '<span class="contact-hero-cursor">|</span>';

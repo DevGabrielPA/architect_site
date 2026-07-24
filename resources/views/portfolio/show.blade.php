@@ -15,7 +15,7 @@
         @else
             <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #aaaaaa; background-image: repeating-linear-gradient(45deg, #f4f4f4, #f4f4f4 12px, #ececec 12px, #ececec 24px);">
                 <i class="fa-regular fa-image" style="font-size: 32px;"></i>
-                <span style="font-family: 'Inter', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Image Coming Soon</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">{{ __('site.portfolio.image_coming_soon') }}</span>
             </div>
         @endif
 
@@ -24,8 +24,8 @@
 
             <!-- Area retangular transparente (teste: marrom translucido) -->
             <div style="position: absolute; top: 0; left: 40px; width: 36%; min-width: 300px; max-width: 440px; height: 100%; background-color: rgba(74, 38, 28, 0.68);">
-                <a href="{{ url($backUrl) }}" style="position: absolute; top: 40px; left: 40px; right: 40px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #f3ddce; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase;">
-                    <i class="fa-solid fa-angle-left" style="font-size: 11px;"></i> Back to {{ $backLabel }}
+                <a href="{{ locale_url($backUrl) }}" style="position: absolute; top: 40px; left: 40px; right: 40px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #f3ddce; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase;">
+                    <i class="fa-solid fa-angle-left" style="font-size: 11px;"></i> {{ __('site.portfolio.show.back_to', ['label' => $backLabel]) }}
                 </a>
 
                 <h1 style="position: absolute; top: 40%; left: 40px; right: 40px; margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; color: #ffffff; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3;">
@@ -63,8 +63,8 @@
                             </p>
                         @endforeach
 
-                        <a href="{{ url('/contact') }}" class="btn-brand" style="align-self: flex-start; padding: 14px 36px; margin-top: 8px;">
-                            Order This Piece
+                        <a href="{{ locale_url('/contact') }}" class="btn-brand" style="align-self: flex-start; padding: 14px 36px; margin-top: 8px;">
+                            {{ __('site.portfolio.show.order_piece') }}
                         </a>
                     </div>
 
@@ -77,7 +77,7 @@
         <!-- TITULO DA GALERIA -->
         <section style="padding: 90px 0 90px; background-color: #ffffff; text-align: center;">
             <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500; color: #111111; text-transform: uppercase; letter-spacing: 0.08em; margin: 0;">
-                Gallery
+                {{ __('site.portfolio.show.gallery') }}
             </h2>
         </section>
 

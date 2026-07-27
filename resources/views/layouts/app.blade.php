@@ -76,7 +76,6 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ locale_url('/portfolio/completed-projects') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/completed-projects') ? 'active' : '' }}">{{ __('site.nav.completed_projects') }}</a></li>
-                                    <li><a href="{{ locale_url('/portfolio/technical-concepts') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/technical-concepts') ? 'active' : '' }}">{{ __('site.nav.technical_concepts') }}</a></li>
                                     <li><a href="{{ locale_url('/portfolio/design-insights') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/design-insights') ? 'active' : '' }}">{{ __('site.nav.design_insights') }}</a></li>
                                 </ul>
                             </li>
@@ -88,8 +87,8 @@
 
                             <!-- Direct Phone Conversion -->
                             <li class="header-phone">
-                                <a href="tel:+17862244923">
-                                    <i class="fa-solid fa-phone"></i> <span>+1 786-224-4923</span>
+                                <a href="tel:+5531999137008">
+                                    <i class="fa-solid fa-phone"></i> <span>+55 (31) 9 9913-7008</span>
                                 </a>
                             </li>
 
@@ -138,7 +137,6 @@
                     <h3 class="footer-title">{{ __('site.footer.explore') }}</h3>
                     <ul>
                         <li><a href="{{ locale_url('/portfolio/completed-projects') }}">{{ __('site.nav.completed_projects') }}</a></li>
-                        <li><a href="{{ locale_url('/portfolio/technical-concepts') }}">{{ __('site.footer.technical_plans') }}</a></li>
                         <li><a href="{{ locale_url('/portfolio/design-insights') }}">{{ __('site.nav.design_insights') }}</a></li>
                         <li><a href="{{ locale_url('/who-we-are') }}">{{ __('site.nav.who_we_are') }}</a></li>
                         <li><a href="{{ locale_url('/contact') }}">{{ __('site.footer.contact_us') }}</a></li>
@@ -149,7 +147,7 @@
                 <div class="footer-col">
                     <h3 class="footer-title">{{ __('site.footer.connect') }}</h3>
                     <p style="margin-bottom: 20px; color: #666666; font-weight: 300;">
-                        <i class="fa-solid fa-phone" style="margin-right: 8px; color: #111111; font-size: 13px;"></i> +1 786-224-4923
+                        <i class="fa-solid fa-phone" style="margin-right: 8px; color: #111111; font-size: 13px;"></i> +55 (31) 9 9913-7008
                     </p>
                     <div class="social-icons">
                         <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 // Define todas as rotas uma única vez; o mesmo conjunto é registrado sem
@@ -17,6 +18,8 @@ $routes = function () {
     Route::get('/contact', function () {
         return view('contact');
     });
+
+    Route::post('/contact', [ContactController::class, 'send']);
 
     // O item de menu "Portfolio" leva direto para Completed Projects
     Route::get('/portfolio', function () {
@@ -38,24 +41,6 @@ $routes = function () {
             'imageFolder' => 'portfolio',
             'backUrl' => '/portfolio/completed-projects',
             'backLabel' => __('site.nav.completed_projects'),
-        ]);
-    });
-
-    Route::get('/portfolio/technical-concepts', function () {
-        return view('portfolio.technical-concepts', [
-            'projects' => portfolio_translate_all(config('portfolio.technical_concepts'), 'technical_concepts'),
-        ]);
-    });
-
-    Route::get('/portfolio/technical-concepts/{slug}', function (string $slug) {
-        $project = collect(config('portfolio.technical_concepts'))->firstWhere('slug', $slug);
-        abort_if(!$project, 404);
-
-        return view('portfolio.show', [
-            'item' => portfolio_translate($project, 'technical_concepts'),
-            'imageFolder' => 'technical-concepts',
-            'backUrl' => '/portfolio/technical-concepts',
-            'backLabel' => __('site.nav.technical_concepts'),
         ]);
     });
 

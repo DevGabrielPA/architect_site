@@ -9,7 +9,6 @@ return [
     'nav' => [
         'portfolio' => 'Portafolio',
         'completed_projects' => 'Proyectos Realizados',
-        'technical_concepts' => 'Conceptos Técnicos y AutoCAD',
         'design_insights' => 'Diseño de Piezas',
         'who_we_are' => 'Quiénes Somos',
         'contact' => 'Contacto',
@@ -20,7 +19,6 @@ return [
         'manifesto' => 'Servicios de diseño de interiores residenciales y comerciales de alta gama, transformando espacios arquitectónicos en verdaderas obras de arte funcionales.',
         'explore' => 'Explorar',
         'connect' => 'Conéctate',
-        'technical_plans' => 'Planos Técnicos y AutoCAD',
         'contact_us' => 'Contáctanos',
         'rights' => 'Todos los derechos reservados.',
     ],
@@ -100,6 +98,12 @@ return [
         'phone' => 'Teléfono',
         'budget' => 'Presupuesto Estimado del Proyecto',
         'submit' => 'Enviar',
+        'success' => '¡Gracias! Tu mensaje ha sido enviado — nos pondremos en contacto pronto.',
+        'error' => 'Algo salió mal al enviar tu mensaje. Revisa los campos a continuación e inténtalo de nuevo.',
+        'validation' => [
+            'required' => 'Este campo es obligatorio.',
+            'email' => 'Introduce una dirección de correo válida.',
+        ],
     ],
 
     'portfolio' => [
@@ -107,10 +111,6 @@ return [
             'heading' => 'Proyectos Realizados',
             'intro' => 'Bienvenido a nuestros proyectos de arquitectura y diseño de interiores residenciales y comerciales, donde el lujo se une a la artesanía. Explora cada espacio para descubrir toda la historia detrás de él.',
             'cta' => 'Solicitar Consultoría',
-        ],
-        'technical_concepts' => [
-            'heading' => 'Conceptos Técnicos y AutoCAD',
-            'intro' => 'Conoce el lado técnico de nuestro proceso — planos de planta, detallado estructural y documentación lista para construcción que traducen cada concepto en dibujos precisos y realizables.',
         ],
         'design_insights' => [
             'heading' => 'Diseño de Piezas',

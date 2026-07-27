@@ -9,7 +9,6 @@ return [
     'nav' => [
         'portfolio' => 'Portfólio',
         'completed_projects' => 'Projetos Concluídos',
-        'technical_concepts' => 'Conceitos Técnicos & AutoCAD',
         'design_insights' => 'Design de Peças',
         'who_we_are' => 'Quem Somos',
         'contact' => 'Contato',
@@ -20,7 +19,6 @@ return [
         'manifesto' => 'Serviços de design de interiores residenciais e comerciais de alto padrão, transformando espaços arquitetônicos em verdadeiras obras de arte funcionais.',
         'explore' => 'Explorar',
         'connect' => 'Conecte-se',
-        'technical_plans' => 'Plantas Técnicas & AutoCAD',
         'contact_us' => 'Fale Conosco',
         'rights' => 'Todos os direitos reservados.',
     ],
@@ -100,6 +98,12 @@ return [
         'phone' => 'Telefone',
         'budget' => 'Orçamento Estimado do Projeto',
         'submit' => 'Enviar',
+        'success' => 'Obrigado! Sua mensagem foi enviada — entraremos em contato em breve.',
+        'error' => 'Algo deu errado ao enviar sua mensagem. Verifique os campos abaixo e tente novamente.',
+        'validation' => [
+            'required' => 'Este campo é obrigatório.',
+            'email' => 'Digite um e-mail válido.',
+        ],
     ],
 
     'portfolio' => [
@@ -107,10 +111,6 @@ return [
             'heading' => 'Projetos Concluídos',
             'intro' => 'Bem-vindo aos nossos projetos residenciais e comerciais de arquitetura e design de interiores, onde o luxo encontra o savoir-faire. Explore cada espaço para descobrir toda a história por trás dele.',
             'cta' => 'Solicitar Consultoria',
-        ],
-        'technical_concepts' => [
-            'heading' => 'Conceitos Técnicos & AutoCAD',
-            'intro' => 'Conheça o lado técnico do nosso processo — plantas baixas, detalhamento estrutural e documentação pronta para construção que traduzem cada conceito em desenhos precisos e executáveis.',
         ],
         'design_insights' => [
             'heading' => 'Design de Peças',

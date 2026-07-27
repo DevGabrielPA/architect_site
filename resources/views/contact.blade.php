@@ -8,7 +8,7 @@
         <div class="contact-hero-overlay">
             <div class="contact-hero-content">
                 <p id="contact-hero-text" class="contact-hero-text"></p>
-                <a id="contact-hero-phone" href="tel:+17862244923" class="contact-hero-phone"></a>
+                <a id="contact-hero-phone" href="tel:+5531999137008" class="contact-hero-phone"></a>
             </div>
         </div>
     </section>
@@ -18,41 +18,50 @@
         <div class="contact-form-card">
             <h2 class="contact-form-title">{{ __('site.contact.form_title') }}</h2>
 
-            <form class="contact-form" onsubmit="return false;">
+            @if (session('contact_success'))
+                <p class="cf-alert cf-alert-success">{{ __('site.contact.success') }}</p>
+            @endif
+
+            @if ($errors->any())
+                <p class="cf-alert cf-alert-error">{{ __('site.contact.error') }}</p>
+            @endif
+
+            <form class="contact-form" method="POST" action="{{ locale_url('/contact') }}">
+                @csrf
                 <div class="cf-field">
                     <label for="cf-first-name">{{ __('site.contact.first_name') }} <span class="cf-req">*</span></label>
-                    <input type="text" id="cf-first-name" name="first_name" required>
+                    <input type="text" id="cf-first-name" name="first_name" value="{{ old('first_name') }}" required>
                 </div>
 
                 <div class="cf-field">
                     <label for="cf-last-name">{{ __('site.contact.last_name') }}</label>
-                    <input type="text" id="cf-last-name" name="last_name">
+                    <input type="text" id="cf-last-name" name="last_name" value="{{ old('last_name') }}">
                 </div>
 
                 <div class="cf-field">
                     <label for="cf-email">{{ __('site.contact.email') }} <span class="cf-req">*</span></label>
                     <div class="cf-input-icon">
                         <i class="fa-regular fa-envelope"></i>
-                        <input type="email" id="cf-email" name="email" required>
+                        <input type="email" id="cf-email" name="email" value="{{ old('email') }}" required>
                     </div>
                 </div>
 
                 <div class="cf-field">
                     <label for="cf-phone">{{ __('site.contact.phone') }} <span class="cf-req">*</span></label>
                     <div class="cf-phone">
-                        <select class="cf-phone-code" aria-label="Country code">
-                            <option value="+1" selected>&#127482;&#127480; +1</option>
-                            <option value="+55">&#127463;&#127479; +55</option>
-                            <option value="+44">&#127468;&#127463; +44</option>
-                            <option value="+351">&#127477;&#127481; +351</option>
+                        <select class="cf-phone-code" name="phone_code" aria-label="Country code">
+                            <option value="+55" @selected(old('phone_code', '+55') === '+55')>&#127463;&#127479; +55</option>
+                            <option value="+1" @selected(old('phone_code') === '+1')>&#127482;&#127480; +1</option>
+                            <option value="+44" @selected(old('phone_code') === '+44')>&#127468;&#127463; +44</option>
+                            <option value="+351" @selected(old('phone_code') === '+351')>&#127477;&#127481; +351</option>
                         </select>
-                        <input type="tel" id="cf-phone" name="phone" placeholder="(305) 555-0123" required>
+                        <input type="tel" id="cf-phone" name="phone" value="{{ old('phone') }}" placeholder="(31) 9 9913-7008" required>
                     </div>
                 </div>
 
                 <div class="cf-field">
                     <label for="cf-budget">{{ __('site.contact.budget') }} <span class="cf-req">*</span></label>
-                    <input type="text" id="cf-budget" name="budget" placeholder="{{ __('site.contact.budget') }}" required>
+                    <input type="text" id="cf-budget" name="budget" value="{{ old('budget') }}" placeholder="{{ __('site.contact.budget') }}" required>
                 </div>
 
                 <button type="submit" class="cf-submit">{{ __('site.contact.submit') }}</button>
@@ -104,6 +113,26 @@
 
         .cf-req {
             color: #834333;
+        }
+
+        .cf-alert {
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            border-radius: 4px;
+            padding: 14px 16px;
+            margin: 0 0 22px;
+        }
+
+        .cf-alert-success {
+            background-color: #eaf4ea;
+            color: #2f5c33;
+            border: 1px solid #bfe0c0;
+        }
+
+        .cf-alert-error {
+            background-color: #fbe9e7;
+            color: #8a2f22;
+            border: 1px solid #f0c2ba;
         }
 
         .cf-field input,
@@ -258,9 +287,8 @@
             var textEl = document.getElementById('contact-hero-text');
             var phoneEl = document.getElementById('contact-hero-phone');
 
-            // Número de exemplo — substitua pelo telefone real assim que estiver disponível.
             var fullText = {!! json_encode(__('site.contact.hero_intro')) !!};
-            var fullPhone = '+1 786-224-4923';
+            var fullPhone = '+55 (31) 9 9913-7008';
 
             var cursor = '<span class="contact-hero-cursor">|</span>';
             var i = 0;

@@ -9,7 +9,6 @@ return [
     'nav' => [
         'portfolio' => 'Portfolio',
         'completed_projects' => 'Completed Projects',
-        'technical_concepts' => 'Technical & AutoCAD Concepts',
         'design_insights' => 'Design Insights',
         'who_we_are' => 'Who We Are',
         'contact' => 'Contact',
@@ -20,7 +19,6 @@ return [
         'manifesto' => 'High-end residential and commercial interior design services, transforming architectural spaces into functional works of art.',
         'explore' => 'Explore',
         'connect' => 'Connect',
-        'technical_plans' => 'Technical & AutoCAD Plans',
         'contact_us' => 'Contact Us',
         'rights' => 'All Rights Reserved.',
     ],
@@ -100,6 +98,12 @@ return [
         'phone' => 'Phone',
         'budget' => 'Estimated Project Budget',
         'submit' => 'Submit',
+        'success' => 'Thank you! Your message has been sent — we\'ll be in touch soon.',
+        'error' => 'Something went wrong sending your message. Please check the fields below and try again.',
+        'validation' => [
+            'required' => 'This field is required.',
+            'email' => 'Please enter a valid email address.',
+        ],
     ],
 
     'portfolio' => [
@@ -107,10 +111,6 @@ return [
             'heading' => 'Completed Projects',
             'intro' => 'Welcome to our residential and commercial architecture and interior design projects, where luxury meets craftsmanship. Explore each space to discover the full story behind it.',
             'cta' => 'Request Consultation',
-        ],
-        'technical_concepts' => [
-            'heading' => 'Technical & AutoCAD Concepts',
-            'intro' => 'Welcome to the technical side of our process — floor plans, structural detailing and construction-ready documentation that translate every concept into precise, buildable drawings.',
         ],
         'design_insights' => [
             'heading' => 'Design Insights',

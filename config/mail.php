@@ -115,4 +115,15 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact Form Recipient
+    |--------------------------------------------------------------------------
+    |
+    | The address that receives submissions from the site's contact form.
+    |
+    */
+
+    'contact_to' => env('MAIL_CONTACT_TO', 'larissavarchitecture@gmail.com'),
+
 ];

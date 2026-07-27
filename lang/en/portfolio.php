@@ -5,19 +5,15 @@
 return [
 
     'completed_projects' => [
-        'bayfront-venetian-islands' => ['title' => 'Bayfront Venetian Islands'],
-        'new-build-ponce-davis' => ['title' => 'New Build Ponce Davis, Miami'],
-        'oceanfront-armani-casa' => ['title' => 'Oceanfront Armani Casa'],
-        'prive-penthouse-aventura' => ['title' => 'Prive Penthouse Aventura'],
-        'full-remodeling-fisher-island-oceanfront' => ['title' => 'Full Remodeling Fisher Island Oceanfront'],
-        'waterfront-fort-lauderdale' => ['title' => 'Waterfront Fort Lauderdale'],
-    ],
-
-    'technical_concepts' => [
-        'floor-plan-layout-studies' => ['title' => 'Floor Plan Layout Studies'],
-        'structural-detailing' => ['title' => 'Structural Detailing'],
-        'millwork-joinery-drawings' => ['title' => 'Millwork & Joinery Drawings'],
-        'lighting-electrical-plans' => ['title' => 'Lighting & Electrical Plans'],
+        'casa-branca' => ['title' => 'White House'],
+        'cozinha' => ['title' => 'Kitchen'],
+        'cozinha-adriana' => ['title' => "Adriana's Kitchen"],
+        'quarto-alice' => ['title' => "Alice's Room"],
+        'quarto-eva' => ['title' => "Eva's Room"],
+        'quarto-pe-e-lu' => ['title' => 'Pê & Lu\'s Room'],
+        'quarto-betina' => ['title' => "Betina's Room"],
+        'sala' => ['title' => 'Living Room'],
+        'suite-master' => ['title' => 'Master Suite'],
     ],
 
     'design_insights' => [

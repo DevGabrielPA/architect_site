@@ -3,19 +3,15 @@
 return [
 
     'completed_projects' => [
-        'bayfront-venetian-islands' => ['title' => 'Bayfront Venetian Islands'],
-        'new-build-ponce-davis' => ['title' => 'Construction Neuve à Ponce Davis, Miami'],
-        'oceanfront-armani-casa' => ['title' => "Armani Casa Face à l'Océan"],
-        'prive-penthouse-aventura' => ['title' => 'Penthouse Privé à Aventura'],
-        'full-remodeling-fisher-island-oceanfront' => ['title' => "Rénovation Complète Face à l'Océan à Fisher Island"],
-        'waterfront-fort-lauderdale' => ['title' => "Résidence au Bord de l'Eau à Fort Lauderdale"],
-    ],
-
-    'technical_concepts' => [
-        'floor-plan-layout-studies' => ['title' => "Études d'Aménagement de Plans"],
-        'structural-detailing' => ['title' => 'Détails Structurels'],
-        'millwork-joinery-drawings' => ['title' => 'Plans de Menuiserie & Ébénisterie'],
-        'lighting-electrical-plans' => ['title' => "Plans d'Éclairage & Électricité"],
+        'casa-branca' => ['title' => 'Maison Blanche'],
+        'cozinha' => ['title' => 'Cuisine'],
+        'cozinha-adriana' => ['title' => "Cuisine d'Adriana"],
+        'quarto-alice' => ['title' => "Chambre d'Alice"],
+        'quarto-eva' => ['title' => "Chambre d'Eva"],
+        'quarto-pe-e-lu' => ['title' => 'Chambre de Pê et Lu'],
+        'quarto-betina' => ['title' => 'Chambre de Betina'],
+        'sala' => ['title' => 'Salon'],
+        'suite-master' => ['title' => 'Suite Principale'],
     ],
 
     'design_insights' => [

@@ -5,7 +5,26 @@
     @php
         $imagePath = "images/{$imageFolder}/{$item['image']}";
         $imageExists = file_exists(public_path($imagePath));
-        $galleryImages = $item['images'] ?? ["{$imageFolder}/{$item['image']}"];
+
+        // Se o item não define 'images' no config, procura uma pasta com o mesmo nome
+        // do arquivo de capa (ex: images/portfolio/casa-branca/) e usa as fotos de dentro
+        // como galeria — mesma convenção já usada em saturnos/, vinculo/ e brisa/.
+        $imageBaseName = pathinfo($item['image'], PATHINFO_FILENAME);
+        $galleryDir = public_path("images/{$imageFolder}/{$imageBaseName}");
+        $galleryImages = $item['images'] ?? null;
+
+        if (!$galleryImages && is_dir($galleryDir)) {
+            $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+            $galleryFiles = array_filter(scandir($galleryDir), function (string $file) use ($galleryDir, $allowedExtensions) {
+                return is_file("{$galleryDir}/{$file}") && in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowedExtensions, true);
+            });
+            natsort($galleryFiles);
+            $galleryImages = array_map(fn (string $file) => "{$imageFolder}/{$imageBaseName}/{$file}", array_values($galleryFiles));
+        }
+
+        if (empty($galleryImages)) {
+            $galleryImages = ["{$imageFolder}/{$item['image']}"];
+        }
     @endphp
 
     <!-- HERO DE ENTRADA (IMAGEM CHEIA LOGO ABAIXO DO HEADER + TITULO SOBREPOSTO A ESQUERDA) -->

@@ -183,7 +183,7 @@
             </div>
 
             <div>
-                <div class="stat-number" data-target="20" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div class="stat-number" data-target="6" style="font-family: 'Inter', sans-serif; font-size: 44px; font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_years_experience') }}</div>
             </div>
 

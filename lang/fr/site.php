@@ -9,7 +9,6 @@ return [
     'nav' => [
         'portfolio' => 'Portfolio',
         'completed_projects' => 'Projets Réalisés',
-        'technical_concepts' => 'Concepts Techniques & AutoCAD',
         'design_insights' => 'Créations Design',
         'who_we_are' => 'Qui Sommes-Nous',
         'contact' => 'Contact',
@@ -20,7 +19,6 @@ return [
         'manifesto' => "Services de design d'intérieur résidentiel et commercial haut de gamme, transformant les espaces architecturaux en véritables œuvres d'art fonctionnelles.",
         'explore' => 'Explorer',
         'connect' => 'Contact',
-        'technical_plans' => 'Plans Techniques & AutoCAD',
         'contact_us' => 'Nous Contacter',
         'rights' => 'Tous droits réservés.',
     ],
@@ -100,6 +98,12 @@ return [
         'phone' => 'Téléphone',
         'budget' => 'Budget Estimé du Projet',
         'submit' => 'Envoyer',
+        'success' => 'Merci ! Votre message a été envoyé — nous vous répondrons bientôt.',
+        'error' => "Une erreur s'est produite lors de l'envoi de votre message. Veuillez vérifier les champs ci-dessous et réessayer.",
+        'validation' => [
+            'required' => 'Ce champ est obligatoire.',
+            'email' => 'Veuillez saisir une adresse e-mail valide.',
+        ],
     ],
 
     'portfolio' => [
@@ -107,10 +111,6 @@ return [
             'heading' => 'Projets Réalisés',
             'intro' => "Bienvenue dans nos projets d'architecture et de design d'intérieur résidentiels et commerciaux, où le luxe rencontre le savoir-faire. Explorez chaque espace pour découvrir toute l'histoire qui se cache derrière.",
             'cta' => 'Demander une Consultation',
-        ],
-        'technical_concepts' => [
-            'heading' => 'Concepts Techniques & AutoCAD',
-            'intro' => "Découvrez le volet technique de notre processus — plans d'étage, détails structurels et documentation prête pour la construction, traduisant chaque concept en plans précis et réalisables.",
         ],
         'design_insights' => [
             'heading' => 'Créations Design',

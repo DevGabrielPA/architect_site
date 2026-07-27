@@ -3,19 +3,15 @@
 return [
 
     'completed_projects' => [
-        'bayfront-venetian-islands' => ['title' => 'Bayfront Venetian Islands'],
-        'new-build-ponce-davis' => ['title' => 'Nueva Construcción en Ponce Davis, Miami'],
-        'oceanfront-armani-casa' => ['title' => 'Armani Casa Frente al Mar'],
-        'prive-penthouse-aventura' => ['title' => 'Penthouse Privé en Aventura'],
-        'full-remodeling-fisher-island-oceanfront' => ['title' => 'Remodelación Completa Frente al Mar en Fisher Island'],
-        'waterfront-fort-lauderdale' => ['title' => 'Residencia Frente al Agua en Fort Lauderdale'],
-    ],
-
-    'technical_concepts' => [
-        'floor-plan-layout-studies' => ['title' => 'Estudios de Distribución de Planos'],
-        'structural-detailing' => ['title' => 'Detallado Estructural'],
-        'millwork-joinery-drawings' => ['title' => 'Planos de Carpintería y Ebanistería'],
-        'lighting-electrical-plans' => ['title' => 'Planos de Iluminación y Eléctricos'],
+        'casa-branca' => ['title' => 'Casa Blanca'],
+        'cozinha' => ['title' => 'Cocina'],
+        'cozinha-adriana' => ['title' => 'Cocina de Adriana'],
+        'quarto-alice' => ['title' => 'Habitación de Alice'],
+        'quarto-eva' => ['title' => 'Habitación de Eva'],
+        'quarto-pe-e-lu' => ['title' => 'Habitación de Pê y Lu'],
+        'quarto-betina' => ['title' => 'Habitación de Betina'],
+        'sala' => ['title' => 'Sala de Estar'],
+        'suite-master' => ['title' => 'Suite Principal'],
     ],
 
     'design_insights' => [

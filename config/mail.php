@@ -124,6 +124,6 @@ return [
     |
     */
 
-    'contact_to' => env('MAIL_CONTACT_TO', 'larissavarchitecture@gmail.com'),
+    'contact_to' => env('MAIL_CONTACT_TO', 'larissavarquiterura@gmail.com'),
 
 ];

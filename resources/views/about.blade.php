@@ -8,15 +8,15 @@
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 70px;">
 
                 <!-- Coluna da Esquerda: Imagem -->
-                <div style="flex: 1 1 480px; min-width: 320px;">
+                <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
                     <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
                         <img src="{{ asset('images/who-we-are.png') }}" alt="Larissa Vasconcellos" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                     </div>
                 </div>
 
                 <!-- Coluna da Direita: Texto -->
-                <div style="flex: 1 1 480px; min-width: 320px;">
-                    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 400; color: #111111; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0;">
+                <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
+                    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 46px); font-weight: 400; color: #111111; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0;">
                         {{ __('site.about.heading') }}
                     </h1>
 
@@ -48,8 +48,8 @@
             <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 70px;">
 
                 <!-- Coluna da Esquerda: Our Team -->
-                <div style="flex: 1 1 480px; min-width: 320px;">
-                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 500; color: #834333; margin-bottom: 26px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0;">
+                <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 38px); font-weight: 500; color: #834333; margin-bottom: 26px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0;">
                         {{ __('site.about.team_heading') }}
                     </h2>
 
@@ -63,7 +63,7 @@
                 </div>
 
                 <!-- Coluna da Direita: Colmeia de Parceiros -->
-                <div style="flex: 1 1 480px; min-width: 320px;">
+                <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
                     @php
                         $hive = [
                             ['key' => 'interiors', 'slot' => 'top', 'align' => 'center', 'card' => 'bottom'],
@@ -219,6 +219,10 @@
 
             @media (max-width: 767px) {
                 .hive-wrap { margin: 0 auto; transform: scale(0.9); transform-origin: top center; }
+            }
+
+            @media (max-width: 480px) {
+                .hive-wrap { transform: scale(0.72); }
             }
         </style>
 

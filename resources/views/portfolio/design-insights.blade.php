@@ -4,7 +4,7 @@
     <!-- SECTION HERO (TITULO PRINCIPAL CENTRALIZADO + CTA) -->
     <section style="padding: 80px 0 60px; background-color: #ffffff; text-align: center;">
         <div style="max-width: 760px; margin: 0 auto; padding: 0 30px;">
-            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 500; color: #111111; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 24px;">
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 46px); font-weight: 500; color: #111111; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 24px;">
                 {{ __('site.portfolio.design_insights.heading') }}
             </h1>
             <p style="font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300; color: #111111; line-height: 1.85; letter-spacing: 0.01em; margin: 0 0 34px;">
@@ -22,15 +22,15 @@
             <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 50px;">
 
                 <!-- Coluna da Esquerda: Card com Citacao -->
-                <div style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
                     <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
-                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
+                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                          {{ __('site.portfolio.design_insights.quotes.lustre-saturnos') }}
                     </p>
                 </div>
 
                 <!-- Coluna da Direita: Lustre Saturnos em Destaque -->
-                <a href="{{ locale_url('/portfolio/design-insights/lustre-saturnos') }}" class="di-feature" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
+                <a href="{{ locale_url('/portfolio/design-insights/lustre-saturnos') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
                     <img src="{{ asset('images/design-insights/saturnos.png') }}" alt="Saturnos Chandelier" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.lustre-saturnos.title') }}</span>
@@ -75,16 +75,16 @@
             <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 50px;">
 
                 <!-- Coluna da Esquerda: Vinculo Lamp em Destaque -->
-                <a href="{{ locale_url('/portfolio/design-insights/vinculo-lamp') }}" class="di-feature" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
+                <a href="{{ locale_url('/portfolio/design-insights/vinculo-lamp') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
                     <img src="{{ asset('images/design-insights/vinculo.png') }}" alt="Vínculo Lamp" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.vinculo-lamp.title') }}</span>
                 </a>
 
                 <!-- Coluna da Direita: Card com Citacao -->
-                <div style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
                     <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
-                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
+                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                        {{ __('site.portfolio.design_insights.quotes.vinculo-lamp') }}
                     </p>
                 </div>
@@ -99,15 +99,15 @@
             <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 50px;">
 
                 <!-- Coluna da Esquerda: Card com Citacao -->
-                <div style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
                     <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
-                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
+                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                         {{ __('site.portfolio.design_insights.quotes.brisa-side-table') }}
                     </p>
                 </div>
 
                 <!-- Coluna da Direita: Brisa Side Table em Destaque -->
-                <a href="{{ locale_url('/portfolio/design-insights/brisa-side-table') }}" class="di-feature" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
+                <a href="{{ locale_url('/portfolio/design-insights/brisa-side-table') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
                     <img src="{{ asset('images/design-insights/brisa.png') }}" alt="Brisa Side Table" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.brisa-side-table.title') }}</span>

@@ -76,4 +76,14 @@
     @media (max-width: 600px) {
         .portfolio-masonry { column-count: 1; }
     }
+    @media (hover: none) {
+        .portfolio-item-overlay {
+            opacity: 1;
+            background: rgba(17, 17, 17, 0.35);
+        }
+        .portfolio-item-name {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>

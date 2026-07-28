@@ -45,7 +45,7 @@
                         <a href="{{ locale_url('/') }}" title="Larissa Vasconcellos" rel="home" style="text-decoration: none; display: inline-block;">
                             <span style="
                                 font-family: 'Cormorant Garamond', serif;
-                                font-size: 28px;
+                                font-size: clamp(16px, 4.5vw, 28px);
                                 font-weight: 400;
                                 color: #111111;
                                 text-transform: uppercase;
@@ -60,7 +60,7 @@
 
                     <!-- Mobile Menu Trigger -->
                     <div class="mobile-menu-col">
-                        <button class="mobile-menu-toggle" aria-label="Menu">
+                        <button class="mobile-menu-toggle" aria-label="{{ __('site.nav.open_menu') }}" aria-expanded="false" aria-controls="mobile-drawer">
                             <i class="fa-solid fa-bars"></i>
                         </button>
                     </div>
@@ -72,7 +72,7 @@
                             <!-- Portfolio Dropdown com a Setinha Baseada no Layout -->
                             <li class="has-dropdown">
                                 <a href="{{ locale_url('/portfolio') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio') ? 'active' : '' }}">
-                                    {{ __('site.nav.portfolio') }} <i class="fa-solid fa-angle-down" style="font-size: 11px; margin-left: 4px;"></i>
+                                    {{ __('site.nav.portfolio') }} <i class="fa-solid fa-angle-down dropdown-caret" style="font-size: 11px; margin-left: 4px;"></i>
                                 </a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ locale_url('/portfolio/completed-projects') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/completed-projects') ? 'active' : '' }}">{{ __('site.nav.completed_projects') }}</a></li>
@@ -97,7 +97,7 @@
                             <!-- Seletor de Idioma -->
                             <li class="has-dropdown">
                                 <a href="#" onclick="return false;" aria-label="{{ __('site.nav.language') }}">
-                                    {{ $localeLabels[app()->getLocale()] }} <i class="fa-solid fa-angle-down" style="font-size: 11px; margin-left: 4px;"></i>
+                                    {{ $localeLabels[app()->getLocale()] }} <i class="fa-solid fa-angle-down dropdown-caret" style="font-size: 11px; margin-left: 4px;"></i>
                                 </a>
                                 <ul class="sub-menu">
                                     @foreach ($localeLabels as $localeCode => $localeLabel)
@@ -113,6 +113,74 @@
             </div>
         </div>
     </header>
+
+    <!-- BACKDROP + DRAWER DO MENU MOBILE (hambúrguer, visível abaixo de 1024px) -->
+    <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="mobile-drawer-header">
+            <span class="mobile-drawer-brand">Larissa Vasconcellos</span>
+            <button type="button" class="mobile-drawer-close" aria-label="{{ __('site.nav.close_menu') }}">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav>
+            <ul class="mobile-drawer-nav">
+
+                <!-- Portfolio (accordion) -->
+                <li class="mobile-drawer-item has-accordion">
+                    <div class="mobile-drawer-row">
+                        <a href="{{ locale_url('/portfolio') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio') ? 'active' : '' }}">{{ __('site.nav.portfolio') }}</a>
+                        <button type="button" class="mobile-drawer-accordion-trigger" aria-expanded="false" aria-controls="mobile-drawer-portfolio-panel" aria-label="{{ __('site.nav.portfolio') }}">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="mobile-drawer-accordion-panel" id="mobile-drawer-portfolio-panel">
+                        <li><a href="{{ locale_url('/portfolio/completed-projects') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/completed-projects') ? 'active' : '' }}">{{ __('site.nav.completed_projects') }}</a></li>
+                        <li><a href="{{ locale_url('/portfolio/design-insights') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/design-insights') ? 'active' : '' }}">{{ __('site.nav.design_insights') }}</a></li>
+                    </ul>
+                </li>
+
+                <li class="mobile-drawer-item">
+                    <div class="mobile-drawer-row">
+                        <a href="{{ locale_url('/who-we-are') }}" class="{{ $navCurrentPath === 'who-we-are' ? 'active' : '' }}">{{ __('site.nav.who_we_are') }}</a>
+                    </div>
+                </li>
+
+                <li class="mobile-drawer-item">
+                    <div class="mobile-drawer-row">
+                        <a href="{{ locale_url('/contact') }}" class="{{ $navCurrentPath === 'contact' ? 'active' : '' }}">{{ __('site.nav.contact') }}</a>
+                    </div>
+                </li>
+
+                <li class="mobile-drawer-divider"></li>
+
+                <li class="mobile-drawer-item mobile-drawer-phone">
+                    <a href="tel:+5531999137008">
+                        <i class="fa-solid fa-phone"></i> <span>+55 (31) 9 9913-7008</span>
+                    </a>
+                </li>
+
+                <li class="mobile-drawer-divider"></li>
+
+                <!-- Idioma (accordion) -->
+                <li class="mobile-drawer-item has-accordion">
+                    <div class="mobile-drawer-row">
+                        <button type="button" class="mobile-drawer-accordion-trigger mobile-drawer-lang-trigger" aria-expanded="false" aria-controls="mobile-drawer-lang-panel">
+                            {{ $localeLabels[app()->getLocale()] }} <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <ul class="mobile-drawer-accordion-panel" id="mobile-drawer-lang-panel">
+                        @foreach ($localeLabels as $localeCode => $localeLabel)
+                            @continue($localeCode === app()->getLocale())
+                            <li><a href="{{ locale_url_to($localeCode, $navCurrentPath) }}">{{ $localeLabel }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
     <!-- MAIN INTERIOR PAGE CONTENT -->
     <main>
@@ -150,9 +218,9 @@
                         <i class="fa-solid fa-phone" style="margin-right: 8px; color: #111111; font-size: 13px;"></i> +55 (31) 9 9913-7008
                     </p>
                     <div class="social-icons">
-                        <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/larissa.santosvasconcellos?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
                     </div>
                 </div>
 

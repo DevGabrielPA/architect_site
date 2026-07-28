@@ -26,3 +26,15 @@
     background-color: #6b3527;
     transform: translateY(-2px);
 }
+
+/* ==========================================================================
+   3. UTILITÁRIO RESPONSIVO — neutraliza min-width fixo (280-320px) em colunas
+      flex nas telas mais estreitas (320-375px), onde esse min-width somado ao
+      padding do container causa overflow horizontal. Aplicar junto do
+      style="flex:...; min-width:...px" existente nessas colunas.
+   ========================================================================== */
+@media (max-width: 480px) {
+    .flex-col-min320 {
+        min-width: 0 !important;
+    }
+}

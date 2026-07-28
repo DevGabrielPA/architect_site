@@ -28,7 +28,7 @@
     @endphp
 
     <!-- HERO DE ENTRADA (IMAGEM CHEIA LOGO ABAIXO DO HEADER + TITULO SOBREPOSTO A ESQUERDA) -->
-    <section style="position: relative; width: 100%; height: 60vh; min-height: 420px; max-height: 680px; overflow: hidden; background-color: #f2f2f2;">
+    <section class="show-hero-section" style="position: relative; width: 100%; height: 60vh; min-height: 420px; max-height: 680px; overflow: hidden; background-color: #f2f2f2;">
         @if ($imageExists)
             <img src="{{ asset($imagePath) }}" alt="{{ $item['title'] }}" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
         @else
@@ -42,24 +42,53 @@
         <div style="position: absolute; inset: 0; max-width: 1400px; margin: 0 auto;">
 
             <!-- Area retangular transparente (teste: marrom translucido) -->
-            <div style="position: absolute; top: 0; left: 40px; width: 36%; min-width: 300px; max-width: 440px; height: 100%; background-color: rgba(74, 38, 28, 0.68);">
+            <div class="show-hero-panel" style="position: absolute; top: 0; left: 40px; width: 36%; min-width: 300px; max-width: 440px; height: 100%; background-color: rgba(74, 38, 28, 0.68);">
                 <a href="{{ locale_url($backUrl) }}" class="portfolio-back-link" style="position: absolute; top: 40px; left: 40px; right: 40px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #f3ddce; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s ease, opacity 0.2s ease;">
                     <i class="fa-solid fa-angle-left" style="font-size: 11px;"></i> {{ __('site.portfolio.show.back_to', ['label' => $backLabel]) }}
                 </a>
 
-                <style>
-                    .portfolio-back-link:hover {
-                        color: #ffffff;
-                        opacity: 0.85;
-                    }
-                </style>
-
-                <h1 style="position: absolute; top: 40%; left: 40px; right: 40px; margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; color: #ffffff; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3;">
+                <h1 class="show-hero-title" style="position: absolute; top: 40%; left: 40px; right: 40px; margin: 0; font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 500; color: #ffffff; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3;">
                     {{ $item['title'] }}
                 </h1>
             </div>
         </div>
     </section>
+
+    <style>
+        .portfolio-back-link:hover {
+            color: #ffffff;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .show-hero-panel {
+                width: calc(100% - 40px) !important;
+                min-width: 0 !important;
+                max-width: none !important;
+            }
+
+            .show-trailer-text {
+                padding: 32px 24px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .show-hero-panel {
+                left: 16px !important;
+                width: calc(100% - 32px) !important;
+            }
+
+            .show-hero-panel .portfolio-back-link,
+            .show-hero-panel .show-hero-title {
+                left: 20px !important;
+                right: 20px !important;
+            }
+
+            .show-gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 
     @if (!empty($item['video']))
         <!-- TRAILER + TITULO/DESCRICAO (colunas equilibradas, preenchendo mais a tela) -->
@@ -79,7 +108,7 @@
                     </div>
 
                     <!-- Coluna da Direita: Titulo + Texto Descritivo em Card (menor, deslocado para a direita) -->
-                    <div style="flex: 1 1 380px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 56px 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="show-trailer-text" style="flex: 1 1 380px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 56px 50px; display: flex; flex-direction: column; justify-content: center;">
                         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: #6b3527; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 26px; line-height: 1.3;">
                             {{ $item['title'] }}
                         </h3>
@@ -109,7 +138,7 @@
 
         <!-- GALERIA: 2 colunas, mesmo tamanho, distribuidas ate o fim da pagina, clicaveis com navegacao entre imagens -->
         <section style="width: 100%; padding: 0 24px 24px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="show-gallery-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                 @foreach ($galleryImages as $i => $galleryImage)
                     <button
                         type="button"

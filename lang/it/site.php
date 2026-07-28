@@ -13,6 +13,8 @@ return [
         'who_we_are' => 'Chi Siamo',
         'contact' => 'Contatti',
         'language' => 'Lingua',
+        'open_menu' => 'Apri menu',
+        'close_menu' => 'Chiudi menu',
     ],
 
     'footer' => [

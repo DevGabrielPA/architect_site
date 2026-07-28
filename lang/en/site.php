@@ -55,33 +55,33 @@ return [
         'team_paragraph' => 'Every project is shaped by a close circle of trusted collaborators working alongside Larissa. From the first sketch to the final detail, they bring the same rigor, care and creative eye that define every space we design — ensuring a seamless journey from concept to reality.',
         'team_hover_hint' => 'Hover or tap each hexagon to meet the partners behind every project.',
         'hive' => [
-            'creative_direction' => [
-                'label' => 'Creative Direction',
-                'desc' => 'Larissa leads the creative process herself — shaping the concept, reading the client\'s vision and guiding every partner toward one cohesive design.',
+            'architecture' => [
+                'label' => 'Architecture',
+                'desc' => 'Larissa leads the architectural concept herself — shaping the project from start to finish and guiding every stage toward one cohesive result.',
             ],
-            'technical_drawings' => [
-                'label' => 'Technical Drawings',
-                'desc' => 'Translate every concept into precise technical drawings and construction-ready documentation.',
+            'interiors' => [
+                'label' => 'Interiors',
+                'desc' => 'Plan interior spaces that bring together function, comfort and identity in every room.',
             ],
-            'finance' => [
-                'label' => 'Finance',
-                'desc' => 'Manage budgets and investments so every project stays on track, transparently and responsibly.',
+            'lighting' => [
+                'label' => 'Lighting',
+                'desc' => 'Design the light in every space to enhance texture, volume and the desired mood.',
             ],
-            'final_staging' => [
-                'label' => 'Final Staging',
-                'desc' => 'Bring the finished space to life with styling, decor and the final layer of detail.',
+            'furniture' => [
+                'label' => 'Furniture',
+                'desc' => 'Select and design bespoke pieces that give every space personality and comfort.',
             ],
-            'specifications' => [
-                'label' => 'Specifications',
-                'desc' => 'Define materials, finishes and technical specifications with precision and consistency.',
+            'decoration' => [
+                'label' => 'Decor',
+                'desc' => 'Curate the final objects, textures and finishes that bring the space to life.',
             ],
-            'construction_supervision' => [
-                'label' => 'Construction Supervision',
-                'desc' => 'Oversee every phase on-site, ensuring the build matches the design intent down to the last detail.',
+            'landscaping' => [
+                'label' => 'Landscaping',
+                'desc' => 'Integrate outdoor areas and greenery into the project, connecting architecture and nature.',
             ],
-            'purchasing_logistics' => [
-                'label' => 'Purchasing & Logistics',
-                'desc' => 'Source, manage and deliver every material and furnishing exactly where and when it\'s needed.',
+            'construction' => [
+                'label' => 'Construction',
+                'desc' => 'Oversee execution on site, ensuring the build faithfully matches the design.',
             ],
         ],
         'cta_heading' => 'Want to explore a little further?',

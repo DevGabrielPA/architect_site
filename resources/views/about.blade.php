@@ -66,14 +66,14 @@
                 <div style="flex: 1 1 480px; min-width: 320px;">
                     @php
                         $hive = [
-                            ['icon' => 'fa-drafting-compass', 'key' => 'technical_drawings', 'slot' => 'top', 'align' => 'center', 'card' => 'bottom'],
-                            ['icon' => 'fa-sack-dollar', 'key' => 'finance', 'slot' => 'right-upper', 'align' => 'right', 'card' => 'bottom'],
-                            ['icon' => 'fa-couch', 'key' => 'final_staging', 'slot' => 'right-lower', 'align' => 'right', 'card' => 'top'],
-                            ['icon' => 'fa-clipboard-list', 'key' => 'specifications', 'slot' => 'bottom', 'align' => 'center', 'card' => 'top'],
-                            ['icon' => 'fa-hard-hat', 'key' => 'construction_supervision', 'slot' => 'left-lower', 'align' => 'left', 'card' => 'top'],
-                            ['icon' => 'fa-dolly', 'key' => 'purchasing_logistics', 'slot' => 'left-upper', 'align' => 'left', 'card' => 'bottom'],
+                            ['key' => 'interiors', 'slot' => 'top', 'align' => 'center', 'card' => 'bottom'],
+                            ['key' => 'lighting', 'slot' => 'right-upper', 'align' => 'right', 'card' => 'bottom'],
+                            ['key' => 'furniture', 'slot' => 'right-lower', 'align' => 'right', 'card' => 'top'],
+                            ['key' => 'decoration', 'slot' => 'bottom', 'align' => 'center', 'card' => 'top'],
+                            ['key' => 'landscaping', 'slot' => 'left-lower', 'align' => 'left', 'card' => 'top'],
+                            ['key' => 'construction', 'slot' => 'left-upper', 'align' => 'left', 'card' => 'bottom'],
                         ];
-                        $center = ['icon' => 'fa-pen-ruler', 'key' => 'creative_direction'];
+                        $center = ['key' => 'architecture'];
 
                         $slotPos = [
                             'top'         => ['left' => 92,  'top' => 0],
@@ -91,7 +91,7 @@
                         <!-- Hexágono central: o arquiteto -->
                         <div class="hex-item hex-center align-center card-bottom" style="left: {{ $slotPos['center']['left'] }}px; top: {{ $slotPos['center']['top'] }}px;" tabindex="0">
                             <div class="partner-hexagon">
-                                <i class="fa-solid {{ $center['icon'] }}"></i>
+                                <span class="hex-icon" style="mask-image: url('{{ asset("images/icons/{$center['key']}.svg") }}'); -webkit-mask-image: url('{{ asset("images/icons/{$center['key']}.svg") }}');"></span>
                             </div>
                             <div class="hex-card">
                                 <span class="hex-card-title">{{ __("site.about.hive.{$center['key']}.label") }}</span>
@@ -102,7 +102,7 @@
                         @foreach ($hive as $partner)
                             <div class="hex-item align-{{ $partner['align'] }} card-{{ $partner['card'] }}" style="left: {{ $slotPos[$partner['slot']]['left'] }}px; top: {{ $slotPos[$partner['slot']]['top'] }}px;" tabindex="0">
                                 <div class="partner-hexagon">
-                                    <i class="fa-solid {{ $partner['icon'] }}"></i>
+                                    <span class="hex-icon" style="mask-image: url('{{ asset("images/icons/{$partner['key']}.svg") }}'); -webkit-mask-image: url('{{ asset("images/icons/{$partner['key']}.svg") }}');"></span>
                                 </div>
                                 <div class="hex-card">
                                     <span class="hex-card-title">{{ __("site.about.hive.{$partner['key']}.label") }}</span>
@@ -141,9 +141,16 @@
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 cursor: pointer;
             }
-            .hex-item .partner-hexagon i {
-                color: #ffffff;
-                font-size: 29px;
+            .hex-item .partner-hexagon .hex-icon {
+                width: 44px;
+                height: 44px;
+                background-color: #ffffff;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: contain;
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                -webkit-mask-size: contain;
             }
             .hex-item:hover .partner-hexagon,
             .hex-item:focus-within .partner-hexagon,

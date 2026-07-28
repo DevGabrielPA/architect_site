@@ -55,33 +55,33 @@ return [
         'team_paragraph' => 'Cada projeto é moldado por um círculo próximo de colaboradores de confiança que trabalham ao lado de Larissa. Do primeiro esboço ao detalhe final, eles trazem o mesmo rigor, cuidado e olhar criativo que definem cada espaço que projetamos — garantindo uma jornada perfeita do conceito à realidade.',
         'team_hover_hint' => 'Passe o mouse ou toque em cada hexágono para conhecer os parceiros por trás de cada projeto.',
         'hive' => [
-            'creative_direction' => [
-                'label' => 'Direção Criativa',
-                'desc' => 'Larissa lidera pessoalmente o processo criativo — moldando o conceito, interpretando a visão do cliente e guiando cada parceiro rumo a um design coeso.',
+            'architecture' => [
+                'label' => 'Arquitetura',
+                'desc' => 'Larissa lidera pessoalmente a concepção arquitetônica — moldando o projeto do início ao fim e guiando cada etapa rumo a um resultado coeso.',
             ],
-            'technical_drawings' => [
-                'label' => 'Desenhos Técnicos',
-                'desc' => 'Traduzem cada conceito em desenhos técnicos precisos e documentação pronta para construção.',
+            'interiors' => [
+                'label' => 'Interiores',
+                'desc' => 'Planejam ambientes internos que unem funcionalidade, conforto e identidade em cada espaço.',
             ],
-            'finance' => [
-                'label' => 'Financeiro',
-                'desc' => 'Gerenciam orçamentos e investimentos para que cada projeto siga no caminho certo, com transparência e responsabilidade.',
+            'lighting' => [
+                'label' => 'Iluminação',
+                'desc' => 'Projetam a luz de cada espaço para valorizar texturas, volumes e a atmosfera desejada.',
             ],
-            'final_staging' => [
-                'label' => 'Ambientação Final',
-                'desc' => 'Dão vida ao espaço finalizado com styling, decoração e a camada final de detalhes.',
+            'furniture' => [
+                'label' => 'Mobiliário',
+                'desc' => 'Selecionam e desenham peças sob medida que dão personalidade e conforto a cada ambiente.',
             ],
-            'specifications' => [
-                'label' => 'Especificações',
-                'desc' => 'Definem materiais, acabamentos e especificações técnicas com precisão e consistência.',
+            'decoration' => [
+                'label' => 'Decoração',
+                'desc' => 'Cuidam da curadoria final de objetos, texturas e acabamentos que dão vida ao ambiente.',
             ],
-            'construction_supervision' => [
-                'label' => 'Supervisão de Obra',
-                'desc' => 'Acompanham cada etapa no canteiro de obras, garantindo que a construção corresponda à intenção do projeto até o último detalhe.',
+            'landscaping' => [
+                'label' => 'Paisagismo',
+                'desc' => 'Integram áreas externas e vegetação ao projeto, conectando arquitetura e natureza.',
             ],
-            'purchasing_logistics' => [
-                'label' => 'Compras & Logística',
-                'desc' => 'Buscam, gerenciam e entregam cada material e mobília exatamente onde e quando são necessários.',
+            'construction' => [
+                'label' => 'Obra',
+                'desc' => 'Acompanham a execução no canteiro, garantindo que a construção corresponda fielmente ao projeto.',
             ],
         ],
         'cta_heading' => 'Quer explorar um pouco mais?',

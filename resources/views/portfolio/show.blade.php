@@ -43,9 +43,16 @@
 
             <!-- Area retangular transparente (teste: marrom translucido) -->
             <div style="position: absolute; top: 0; left: 40px; width: 36%; min-width: 300px; max-width: 440px; height: 100%; background-color: rgba(74, 38, 28, 0.68);">
-                <a href="{{ locale_url($backUrl) }}" style="position: absolute; top: 40px; left: 40px; right: 40px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #f3ddce; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase;">
+                <a href="{{ locale_url($backUrl) }}" class="portfolio-back-link" style="position: absolute; top: 40px; left: 40px; right: 40px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #f3ddce; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s ease, opacity 0.2s ease;">
                     <i class="fa-solid fa-angle-left" style="font-size: 11px;"></i> {{ __('site.portfolio.show.back_to', ['label' => $backLabel]) }}
                 </a>
+
+                <style>
+                    .portfolio-back-link:hover {
+                        color: #ffffff;
+                        opacity: 0.85;
+                    }
+                </style>
 
                 <h1 style="position: absolute; top: 40%; left: 40px; right: 40px; margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; color: #ffffff; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3;">
                     {{ $item['title'] }}

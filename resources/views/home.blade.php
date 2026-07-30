@@ -132,8 +132,8 @@
 
                 <!-- Coluna da Direita: Container da Imagem Sincronizado -->
                 <div class="flex-col-min320" style="flex: 1; min-width: 320px;">
-                    <!-- height: 100% preenche o espaÃ§o vertical exato determinado pelo texto ao lado -->
-                    <div style="width: 100%; height: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.04); overflow: hidden;">
+                    <!-- height: 100% preenche o espaÃ§o vertical exato determinado pelo texto ao lado (desktop); em mobile vira aspect-ratio fixo via .who-we-are-image-wrap -->
+                    <div class="who-we-are-image-wrap" style="width: 100%; height: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.04); overflow: hidden;">
                         <!-- object-fit: cover faz a foto preencher o retÃ¢ngulo sem distorcer e object-position mantÃ©m o enquadramento focado de cima para baixo -->
                         <img src="{{ asset('images/larissa.jpg') }}" alt="Larissa Vasconcellos" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
                     </div>
@@ -148,6 +148,12 @@
             }
             .who-we-are-title-link:hover .who-we-are-heading {
                 color: #834333;
+            }
+            @media (max-width: 768px) {
+                .who-we-are-image-wrap {
+                    height: auto !important;
+                    aspect-ratio: 4 / 5;
+                }
             }
         </style>
     </section>

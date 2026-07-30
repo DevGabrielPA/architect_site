@@ -17,6 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'setlocale' => SetLocale::class,
             'detectlocale' => DetectLocale::class,
         ]);
+
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

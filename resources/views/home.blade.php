@@ -178,8 +178,9 @@
     <style>
         @media (max-width: 768px) {
             .home-cta-section {
-                height: auto !important;
+                height: 60vh !important;
                 min-height: 420px !important;
+                max-height: 560px !important;
             }
         }
     </style>

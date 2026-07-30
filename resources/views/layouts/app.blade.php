@@ -219,7 +219,7 @@
                     </p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/larissa.santosvasconcellos?locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063760440652&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
                     </div>
                 </div>

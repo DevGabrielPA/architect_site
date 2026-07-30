@@ -183,22 +183,22 @@
         <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; text-align: center;">
 
             <div>
-                <div class="stat-number" data-target="400" data-suffix="+" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div class="stat-number" data-target="130" data-suffix="+" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_completed_projects') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="20" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div class="stat-number" data-target="4" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_team_members') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="15" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div class="stat-number" data-target="8" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_projects_in_progress') }}</div>
             </div>
 
             <div>
-                <div class="stat-number" data-target="6" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
+                <div class="stat-number" data-target="12" style="font-family: 'Inter', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 500; color: #ffffff; margin-bottom: 8px;">0</div>
                 <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; color: #f0e6e1;">{{ __('site.home.stat_years_experience') }}</div>
             </div>
 

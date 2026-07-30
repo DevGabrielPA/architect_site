@@ -31,20 +31,12 @@ services:
       - key: QUEUE_CONNECTION
         value: sync
       - key: MAIL_MAILER
-        value: smtp
-      - key: MAIL_SCHEME
-        value: smtps
-      - key: MAIL_HOST
-        value: smtp.gmail.com
-      - key: MAIL_PORT
-        value: "465"
-      - key: MAIL_USERNAME
-        value: larissavarquiterura@gmail.com
-      - key: MAIL_PASSWORD
+        value: resend
+      - key: RESEND_API_KEY
         sync: false
       - key: MAIL_FROM_ADDRESS
-        value: larissavarquiterura@gmail.com
+        value: onboarding@resend.dev
       - key: MAIL_FROM_NAME
         value: "LV Arquitetura"
       - key: MAIL_CONTACT_TO
-        value: larissavarquiterura@gmail.com
+        value: larissavasconcellosarquitetura@gmail.com

@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
         unzip \
         libsqlite3-dev \
+        libonig-dev \
     && docker-php-ext-install pdo pdo_sqlite mbstring bcmath \
     && rm -rf /var/lib/apt/lists/*
 

@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ __('site.meta.title') }}</title>
+    <meta name="description" content="{{ __('site.meta.description') }}">
+    <link rel="canonical" href="{{ locale_url(current_path_without_locale()) }}">
+
+    <!-- Open Graph: como o link aparece ao ser compartilhado (Instagram, WhatsApp, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('site.meta.title') }}">
+    <meta property="og:description" content="{{ __('site.meta.description') }}">
+    <meta property="og:url" content="{{ locale_url(current_path_without_locale()) }}">
+    <meta property="og:image" content="{{ asset('images/larissa.jpg') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -4,6 +4,7 @@ return [
 
     'meta' => [
         'title' => 'Larissa Vasconcellos | Luxury Interior Design',
+        'description' => 'Luxury architecture and interior design studio led by Larissa Vasconcellos. High-end residential and commercial projects, from concept to execution.',
     ],
 
     'nav' => [

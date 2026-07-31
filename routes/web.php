@@ -70,3 +70,32 @@ Route::middleware(['detectlocale', 'setlocale:en'])->group($routes);
 foreach (['pt', 'fr', 'es', 'it'] as $locale) {
     Route::prefix($locale)->middleware("setlocale:{$locale}")->group($routes);
 }
+
+// sitemap.xml e robots.txt são gerados a partir da URL atual (APP_URL), então
+// não precisam de ajuste manual quando o site trocar de domínio.
+Route::get('/sitemap.xml', function () {
+    $staticPaths = [
+        '/',
+        '/who-we-are',
+        '/contact',
+        '/portfolio/completed-projects',
+        '/portfolio/design-insights',
+    ];
+
+    $projectPaths = collect(config('portfolio.completed_projects'))
+        ->map(fn (array $project) => "/portfolio/completed-projects/{$project['slug']}");
+
+    $insightPaths = collect(config('portfolio.design_insights'))
+        ->map(fn (array $insight) => "/portfolio/design-insights/{$insight['slug']}");
+
+    $paths = collect($staticPaths)->merge($projectPaths)->merge($insightPaths);
+
+    return response()
+        ->view('sitemap', ['paths' => $paths, 'locales' => ['en', 'pt', 'fr', 'es', 'it']])
+        ->header('Content-Type', 'application/xml');
+});
+
+Route::get('/robots.txt', function () {
+    return response("User-agent: *\nAllow: /\n\nSitemap: " . url('/sitemap.xml') . "\n")
+        ->header('Content-Type', 'text/plain');
+});

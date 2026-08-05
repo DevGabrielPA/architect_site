@@ -12,7 +12,7 @@
     <meta property="og:title" content="{{ __('site.meta.title') }}">
     <meta property="og:description" content="{{ __('site.meta.description') }}">
     <meta property="og:url" content="{{ locale_url(current_path_without_locale()) }}">
-    <meta property="og:image" content="{{ asset('images/larissa.jpg') }}">
+    <meta property="og:image" content="{{ asset('images/larissa.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

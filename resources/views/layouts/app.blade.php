@@ -203,7 +203,7 @@
 
                 <!-- Coluna 1: Manifesto de Marca -->
                 <div class="footer-col">
-                    <h3 class="footer-title">Larissa Vasconcellos Arquitetura</h3>
+                    <h3 class="footer-title">{{ __('site.footer.brand_name') }}</h3>
                     <p style="line-height: 1.8; color: #666666; font-weight: 300;">
                         {{ __('site.footer.manifesto') }}
                     </p>
@@ -239,7 +239,7 @@
 
             <!-- Bottom Copyright Section -->
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} Larissa Vasconcellos Arquitetura. {{ __('site.footer.rights') }}</p>
+                <p>&copy; {{ date('Y') }} {{ __('site.footer.brand_name') }}. {{ __('site.footer.rights') }}</p>
             </div>
         </div>
     </footer>

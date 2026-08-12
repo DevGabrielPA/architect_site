@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos | Interior Design di Lusso',
+        'title' => 'Larissa Vasconcellos Architettura',
         'description' => "Studio di architettura e interior design di lusso guidato da Larissa Vasconcellos. Progetti residenziali e commerciali di alta gamma, dal concept alla realizzazione.",
     ],
 
@@ -23,14 +23,14 @@ return [
         'explore' => 'Esplora',
         'connect' => 'Connettiti',
         'contact_us' => 'Contattaci',
+        'brand_name' => 'Larissa Vasconcellos Architettura',
         'google_profile' => 'Profilo Google Business',
         'rights' => 'Tutti i diritti riservati.',
     ],
 
     'home' => [
-        'meta_title' => 'Larissa Vasconcellos Architettura | LV Arquitetura',
-        'meta_description' => "Larissa Vasconcellos è l'architetto alla guida di LV Arquitetura: architettura, interior design e pezzi d'autore. Con sede a Belo Horizonte, Brasile.",
-        'hero_title' => 'LV Arquitetura — Larissa Vasconcellos',
+        'meta_description' => "Larissa Vasconcellos Architettura: architettura, interior design e pezzi d'autore. Con sede a Belo Horizonte, Brasile.",
+        'hero_title' => 'Larissa Vasconcellos Architettura',
         'hero_tagline' => 'Architetto e Designer',
         'hero_subtitle' => "Trasformiamo spazi residenziali e commerciali di alta gamma in vere opere d'arte funzionali.",
         'hero_image_alt' => "Larissa Vasconcellos presenta un progetto di architettura e design",
@@ -54,8 +54,8 @@ return [
 
     'about' => [
         'heading' => 'Chi Siamo',
-        'image_alt' => 'Larissa Vasconcellos, architetto alla guida dello studio LV Arquitetura',
-        'p1' => "In LV Arquitetura, studio guidato dall'architetto Larissa Vasconcellos, crediamo che ogni spazio straordinario nasca sfocato — una sensazione, un'atmosfera, un'immagine che quasi si riesce a vedere ma non del tutto a mettere in parole. Il nostro mestiere è prendere quell'idea ancora indefinita che vive nella tua testa e darle forma: luce, materiale, proporzione e dettaglio, disposti finché lo spazio non sembra finalmente te.",
+        'image_alt' => 'Larissa Vasconcellos, architetto',
+        'p1' => "In Larissa Vasconcellos Architettura, crediamo che ogni spazio straordinario nasca sfocato — una sensazione, un'atmosfera, un'immagine che quasi si riesce a vedere ma non del tutto a mettere in parole. Il nostro mestiere è prendere quell'idea ancora indefinita che vive nella tua testa e darle forma: luce, materiale, proporzione e dettaglio, disposti finché lo spazio non sembra finalmente te.",
         'p2' => "Progettiamo con uno sguardo giovane e inquieto — curioso più che convenzionale, attratto da materiali audaci e dettagli sinceri, sempre pronto a mettere in discussione la risposta ovvia. Un approccio plasmato dal modo in cui le persone vogliono davvero vivere oggi: fluido, personale e discretamente sicuro di sé, mai preso in prestito da una formula.",
         'p3' => "Ascoltiamo prima ancora di tracciare una linea. Ogni schizzo, ogni materiale, ogni decisione spaziale viene messo alla prova con una sola domanda: questo assomiglia alla vita che avevi immaginato? Quando la risposta è sì, il progetto smette di essere un disegno su carta e diventa il primo vero passo verso il tuo spazio.",
         'get_in_touch' => 'Mettiti in Contatto',
@@ -98,8 +98,8 @@ return [
     ],
 
     'contact' => [
-        'image_alt' => 'Larissa Vasconcellos, architetto di LV Arquitetura, pronta a seguire il tuo progetto',
-        'hero_intro' => 'Ogni progetto inizia con una conversazione con Larissa Vasconcellos e il team di LV Arquitetura. Compila il modulo qui sotto, oppure chiama direttamente la nostra linea di assistenza clienti per fare una domanda o prenotare la tua consulenza al',
+        'image_alt' => 'Larissa Vasconcellos, architetto, pronta a seguire il tuo progetto',
+        'hero_intro' => 'Ogni progetto inizia con una conversazione con Larissa Vasconcellos. Compila il modulo qui sotto, oppure chiama direttamente la nostra linea di assistenza clienti per fare una domanda o prenotare la tua consulenza al',
         'form_title' => 'Per i Futuri Clienti',
         'first_name' => 'Nome',
         'last_name' => 'Cognome',

@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos | Design de Interiores de Luxo',
+        'title' => 'Larissa Vasconcellos Arquitetura',
         'description' => 'Estúdio de arquitetura e design de interiores de luxo com Larissa Vasconcellos. Projetos residenciais e comerciais de alto padrão, do conceito à execução.',
     ],
 
@@ -23,14 +23,14 @@ return [
         'explore' => 'Explorar',
         'connect' => 'Conecte-se',
         'contact_us' => 'Fale Conosco',
+        'brand_name' => 'Larissa Vasconcellos Arquitetura',
         'google_profile' => 'Perfil da Empresa no Google',
         'rights' => 'Todos os direitos reservados.',
     ],
 
     'home' => [
-        'meta_title' => 'Larissa Vasconcellos Arquitetura | LV Arquitetura',
-        'meta_description' => 'Larissa Vasconcellos é arquiteta à frente do estúdio LV Arquitetura, com projetos de arquitetura, design de interiores e peças autorais. Atendimento em BH e região.',
-        'hero_title' => 'LV Arquitetura — Larissa Vasconcellos',
+        'meta_description' => 'Larissa Vasconcellos Arquitetura: projetos de arquitetura, design de interiores e peças autorais. Atendimento em BH e região.',
+        'hero_title' => 'Larissa Vasconcellos Arquitetura',
         'hero_tagline' => 'Arquiteta e Designer',
         'hero_subtitle' => 'Transformando espaços residenciais e comerciais de alto padrão em verdadeiras obras de arte funcionais.',
         'hero_image_alt' => 'Larissa Vasconcellos apresentando projeto de arquitetura e design',
@@ -54,8 +54,8 @@ return [
 
     'about' => [
         'heading' => 'Quem Somos',
-        'image_alt' => 'Larissa Vasconcellos, arquiteta à frente do estúdio LV Arquitetura',
-        'p1' => 'Na LV Arquitetura, estúdio liderado pela arquiteta Larissa Vasconcellos, acreditamos que todo espaço extraordinário começa de forma embaçada — um sentimento, uma atmosfera, uma imagem que você quase consegue ver, mas não sabe bem como descrever em palavras. Nosso ofício é pegar essa ideia difusa que vive na sua cabeça e dar forma a ela: luz, material, proporção e detalhe, organizados até que o espaço finalmente pareça você.',
+        'image_alt' => 'Larissa Vasconcellos, arquiteta',
+        'p1' => 'Na Larissa Vasconcellos Arquitetura, acreditamos que todo espaço extraordinário começa de forma embaçada — um sentimento, uma atmosfera, uma imagem que você quase consegue ver, mas não sabe bem como descrever em palavras. Nosso ofício é pegar essa ideia difusa que vive na sua cabeça e dar forma a ela: luz, material, proporção e detalhe, organizados até que o espaço finalmente pareça você.',
         'p2' => 'Projetamos com um olhar jovem e inquieto — curioso em vez de convencional, atraído por materiais ousados e detalhes honestos, sempre questionando a resposta óbvia. É uma abordagem moldada pela forma como as pessoas realmente querem viver hoje: fluida, pessoal e discretamente confiante, nunca copiada de uma fórmula.',
         'p3' => 'Nós ouvimos antes de desenhar qualquer linha. Cada esboço, cada material, cada decisão espacial é testado contra uma única pergunta: isso parece a vida que você imaginou? Quando a resposta é sim, o projeto deixa de ser um desenho no papel e se torna o primeiro passo real rumo ao seu espaço.',
         'get_in_touch' => 'Entre em Contato',
@@ -98,8 +98,8 @@ return [
     ],
 
     'contact' => [
-        'image_alt' => 'Larissa Vasconcellos, arquiteta da LV Arquitetura, pronta para atender seu projeto',
-        'hero_intro' => 'Todo projeto começa com uma conversa com Larissa Vasconcellos e a equipe LV Arquitetura. Preencha o formulário abaixo ou ligue diretamente para nossa central de atendimento para tirar dúvidas ou agendar sua consultoria pelo',
+        'image_alt' => 'Larissa Vasconcellos, arquiteta pronta para atender seu projeto',
+        'hero_intro' => 'Todo projeto começa com uma conversa com Larissa Vasconcellos. Preencha o formulário abaixo ou ligue diretamente para nossa central de atendimento para tirar dúvidas ou agendar sua consultoria pelo',
         'form_title' => 'Para Futuros Clientes',
         'first_name' => 'Nome',
         'last_name' => 'Sobrenome',

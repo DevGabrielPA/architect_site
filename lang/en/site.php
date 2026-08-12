@@ -3,7 +3,7 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos | Luxury Interior Design',
+        'title' => 'Larissa Vasconcellos Architecture',
         'description' => 'Luxury architecture and interior design studio led by Larissa Vasconcellos. High-end residential and commercial projects, from concept to execution.',
     ],
 
@@ -23,14 +23,14 @@ return [
         'explore' => 'Explore',
         'connect' => 'Connect',
         'contact_us' => 'Contact Us',
+        'brand_name' => 'Larissa Vasconcellos Architecture',
         'google_profile' => 'Google Business Profile',
         'rights' => 'All Rights Reserved.',
     ],
 
     'home' => [
-        'meta_title' => 'Larissa Vasconcellos Architecture | LV Arquitetura',
-        'meta_description' => "Larissa Vasconcellos is the architect behind LV Arquitetura: architecture, interior design and signature furniture pieces. Based in Belo Horizonte, Brazil.",
-        'hero_title' => 'LV Arquitetura — Larissa Vasconcellos',
+        'meta_description' => "Larissa Vasconcellos Architecture: architecture, interior design and signature furniture pieces. Based in Belo Horizonte, Brazil.",
+        'hero_title' => 'Larissa Vasconcellos Architecture',
         'hero_tagline' => 'Architect & Designer',
         'hero_subtitle' => 'Transforming high-end residential and commercial spaces into functional works of art.',
         'hero_image_alt' => 'Larissa Vasconcellos presenting an architecture and design project',
@@ -54,8 +54,8 @@ return [
 
     'about' => [
         'heading' => 'Who We Are',
-        'image_alt' => 'Larissa Vasconcellos, architect leading LV Arquitetura studio',
-        'p1' => 'At LV Arquitetura, the studio led by architect Larissa Vasconcellos, we believe every extraordinary space starts out blurred — a feeling, a mood, an image you can almost see but can\'t quite put into words. Our craft is taking that hazy idea living in your head and giving it form: light, material, proportion and detail, arranged until the space finally feels like you.',
+        'image_alt' => 'Larissa Vasconcellos, architect',
+        'p1' => 'At Larissa Vasconcellos Architecture, we believe every extraordinary space starts out blurred — a feeling, a mood, an image you can almost see but can\'t quite put into words. Our craft is taking that hazy idea living in your head and giving it form: light, material, proportion and detail, arranged until the space finally feels like you.',
         'p2' => 'We design with a young, restless point of view — curious rather than conventional, drawn to bold materials and honest detail, and always questioning the obvious answer. It\'s an approach shaped by how people actually want to live today: fluid, personal and quietly confident, never borrowed from a formula.',
         'p3' => 'We listen before we ever draw a line. Every sketch, every material, every spatial decision is tested against one question: does this feel like the life you imagined? Once the answer is yes, the plan stops being a drawing on paper and becomes the first real step into your space.',
         'get_in_touch' => 'Get in Touch',
@@ -98,8 +98,8 @@ return [
     ],
 
     'contact' => [
-        'image_alt' => 'Larissa Vasconcellos, architect at LV Arquitetura, ready to discuss your project',
-        'hero_intro' => 'Every project starts with a conversation with Larissa Vasconcellos and the LV Arquitetura team. Fill out the form below, or call our client care line directly to ask a question or book your consultation at',
+        'image_alt' => 'Larissa Vasconcellos, architect ready to discuss your project',
+        'hero_intro' => 'Every project starts with a conversation with Larissa Vasconcellos. Fill out the form below, or call our client care line directly to ask a question or book your consultation at',
         'form_title' => 'For Prospective Clients',
         'first_name' => 'First Name',
         'last_name' => 'Last Name',

@@ -1,5 +1,8 @@
 ﻿@extends('layouts.app')
 
+@section('meta_title', __('site.home.meta_title'))
+@section('meta_description', __('site.home.meta_description'))
+
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
     <section class="hero-carousel-wrapper home-hero-section" style="position: relative; height: 85vh; width: 100%; overflow: hidden; background-color: #111;">
@@ -135,7 +138,7 @@
                     <!-- height: 100% preenche o espaÃ§o vertical exato determinado pelo texto ao lado (desktop); em mobile vira aspect-ratio fixo via .who-we-are-image-wrap -->
                     <div class="who-we-are-image-wrap" style="width: 100%; height: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.04); overflow: hidden;">
                         <!-- object-fit: cover faz a foto preencher o retÃ¢ngulo sem distorcer e object-position mantÃ©m o enquadramento focado de cima para baixo -->
-                        <img src="{{ asset('images/larissa.png') }}" alt="Larissa Vasconcellos" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
+                        <img src="{{ asset('images/larissa.png') }}" alt="{{ __('site.home.hero_image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
                     </div>
                 </div>
 

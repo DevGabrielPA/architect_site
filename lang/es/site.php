@@ -23,13 +23,17 @@ return [
         'explore' => 'Explorar',
         'connect' => 'Conéctate',
         'contact_us' => 'Contáctanos',
+        'google_profile' => 'Perfil de Negocio en Google',
         'rights' => 'Todos los derechos reservados.',
     ],
 
     'home' => [
-        'hero_title' => 'Larissa Vasconcellos',
-        'hero_tagline' => 'Arquitectura & Diseño',
+        'meta_title' => 'Larissa Vasconcellos Arquitectura | LV Arquitetura',
+        'meta_description' => 'Larissa Vasconcellos es arquitecta al frente de LV Arquitetura: arquitectura, diseño de interiores y piezas de autor. Con sede en Belo Horizonte, Brasil.',
+        'hero_title' => 'LV Arquitetura — Larissa Vasconcellos',
+        'hero_tagline' => 'Arquitecta y Diseñadora',
         'hero_subtitle' => 'Transformando espacios residenciales y comerciales de alta gama en verdaderas obras de arte funcionales.',
+        'hero_image_alt' => 'Larissa Vasconcellos presentando un proyecto de arquitectura y diseño',
         'who_we_are_heading' => 'Quiénes Somos',
         'who_we_are_p1' => 'Descubre la elegancia refinada de Larissa Vasconcellos, fundadora del estudio — reconocido internacionalmente por su trabajo en arquitectura y diseño de interiores de lujo. Con formación en arquitectura y una rica visión estética, Larissa combina precisión estructural con diseños sofisticados para crear espacios deslumbrantes y funcionales.',
         'who_we_are_p2' => 'En nuestro estudio, nos especializamos en arquitectura de interiores y exteriores de lujo, guiando a clientes exigentes desde el concepto espacial hasta la precisión técnica, con una atención inigualable a los detalles. Ya sea su primera propiedad de lujo o parte de un portafolio continuo de desarrollos, nuestro compromiso con la excelencia nunca flaquea.',
@@ -50,17 +54,18 @@ return [
 
     'about' => [
         'heading' => 'Quiénes Somos',
-        'p1' => 'En LV Arquitetura, creemos que todo espacio extraordinario comienza de forma difusa — un sentimiento, un ambiente, una imagen que casi puedes ver pero que no logras poner en palabras. Nuestro oficio es tomar esa idea difusa que vive en tu cabeza y darle forma: luz, material, proporción y detalle, organizados hasta que el espacio finalmente se sienta como tú.',
+        'image_alt' => 'Larissa Vasconcellos, arquitecta al frente del estudio LV Arquitetura',
+        'p1' => 'En LV Arquitetura, estudio liderado por la arquitecta Larissa Vasconcellos, creemos que todo espacio extraordinario comienza de forma difusa — un sentimiento, un ambiente, una imagen que casi puedes ver pero que no logras poner en palabras. Nuestro oficio es tomar esa idea difusa que vive en tu cabeza y darle forma: luz, material, proporción y detalle, organizados hasta que el espacio finalmente se sienta como tú.',
         'p2' => 'Diseñamos con una mirada joven e inquieta — curiosa en lugar de convencional, atraída por materiales audaces y detalles honestos, cuestionando siempre la respuesta obvia. Es un enfoque moldeado por cómo la gente realmente quiere vivir hoy: fluido, personal y discretamente seguro, nunca prestado de una fórmula.',
         'p3' => 'Escuchamos antes de trazar una sola línea. Cada boceto, cada material, cada decisión espacial se pone a prueba contra una sola pregunta: ¿esto se siente como la vida que imaginaste? Cuando la respuesta es sí, el plano deja de ser un dibujo en papel y se convierte en el primer paso real hacia tu espacio.',
         'get_in_touch' => 'Ponte en Contacto',
         'team_heading' => 'Nuestro Equipo',
-        'team_paragraph' => 'Cada proyecto es moldeado por un círculo cercano de colaboradores de confianza que trabajan junto a Larissa. Desde el primer boceto hasta el detalle final, aportan el mismo rigor, cuidado y ojo creativo que definen cada espacio que diseñamos — garantizando un recorrido fluido desde el concepto hasta la realidad.',
+        'team_paragraph' => 'Cada proyecto es moldeado por un círculo cercano de colaboradores de confianza que trabajan junto a Larissa Vasconcellos. Desde el primer boceto hasta el detalle final, aportan el mismo rigor, cuidado y ojo creativo que definen cada espacio que diseñamos — garantizando un recorrido fluido desde el concepto hasta la realidad.',
         'team_hover_hint' => 'Pasa el cursor o toca cada hexágono para conocer a los socios detrás de cada proyecto.',
         'hive' => [
             'architecture' => [
                 'label' => 'Arquitectura',
-                'desc' => 'Larissa lidera personalmente el concepto arquitectónico — dando forma al proyecto de principio a fin y guiando cada etapa hacia un resultado cohesivo.',
+                'desc' => 'Larissa Vasconcellos lidera personalmente el concepto arquitectónico — dando forma al proyecto de principio a fin y guiando cada etapa hacia un resultado cohesivo.',
             ],
             'interiors' => [
                 'label' => 'Interiores',
@@ -93,7 +98,8 @@ return [
     ],
 
     'contact' => [
-        'hero_intro' => 'Todo proyecto comienza con una conversación. Completa el formulario a continuación, o llama directamente a nuestra línea de atención al cliente para hacer una pregunta o reservar tu consultoría al',
+        'image_alt' => 'Larissa Vasconcellos, arquitecta de LV Arquitetura, lista para atender tu proyecto',
+        'hero_intro' => 'Todo proyecto comienza con una conversación con Larissa Vasconcellos y el equipo de LV Arquitetura. Completa el formulario a continuación, o llama directamente a nuestra línea de atención al cliente para hacer una pregunta o reservar tu consultoría al',
         'form_title' => 'Para Futuros Clientes',
         'first_name' => 'Nombre',
         'last_name' => 'Apellido',
@@ -112,12 +118,12 @@ return [
     'portfolio' => [
         'completed_projects' => [
             'heading' => 'Proyectos Realizados',
-            'intro' => 'Bienvenido a nuestros proyectos de arquitectura y diseño de interiores residenciales y comerciales, donde el lujo se une a la artesanía. Explora cada espacio para descubrir toda la historia detrás de él.',
+            'intro' => 'Bienvenido a nuestros proyectos de arquitectura y diseño de interiores residenciales y comerciales, firmados por Larissa Vasconcellos, donde el lujo se une a la artesanía. Explora cada espacio para descubrir toda la historia detrás de él.',
             'cta' => 'Solicitar Consultoría',
         ],
         'design_insights' => [
             'heading' => 'Diseño de Piezas',
-            'intro' => 'La creatividad se despierta en los espacios donde vivimos e interactuamos — nuestros recuerdos, inspiraciones y las referencias que tomamos de otros. Descubre las piezas de mobiliario y objetos detrás de nuestra visión.',
+            'intro' => 'La creatividad se despierta en los espacios donde vivimos e interactuamos — nuestros recuerdos, inspiraciones y las referencias que tomamos de otros. Descubre las piezas de mobiliario y objetos detrás de la visión de Larissa Vasconcellos.',
             'cta' => 'Ponte en Contacto',
             'quotes' => [
                 'lustre-saturnos' => 'Conocido como un "gigante gaseoso" — se destaca por la belleza de su sistema de anillos.',

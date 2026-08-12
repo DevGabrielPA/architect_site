@@ -3,7 +3,7 @@
 @section('content')
     <!-- SECTION HERO DE CONTATO (IMAGEM CHEIA NA HORIZONTAL, LOGO ABAIXO DO HEADER, COM TEXTO DIGITADO EM TEMPO REAL) -->
     <section class="contact-hero">
-        <img src="{{ asset('images/contato.png') }}" alt="Contact Larissa Vasconcellos" class="contact-hero-img">
+        <img src="{{ asset('images/contato.png') }}" alt="{{ __('site.contact.image_alt') }}" class="contact-hero-img">
 
         <div class="contact-hero-overlay">
             <div class="contact-hero-content">

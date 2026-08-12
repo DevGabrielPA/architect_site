@@ -10,7 +10,7 @@
                 <!-- Coluna da Esquerda: Imagem -->
                 <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
                     <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
-                        <img src="{{ asset('images/who-we-are.png') }}" alt="Larissa Vasconcellos" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+                        <img src="{{ asset('images/who-we-are.png') }}" alt="{{ __('site.about.image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                     </div>
                 </div>
 

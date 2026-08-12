@@ -15,7 +15,7 @@ services:
       - key: APP_KEY
         sync: false
       - key: APP_URL
-        value: https://www.larissavasconcellosarq.com
+        value: https://lv-architecture.com
       - key: APP_LOCALE
         value: en
       - key: APP_FALLBACK_LOCALE

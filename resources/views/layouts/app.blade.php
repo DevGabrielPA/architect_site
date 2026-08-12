@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('site.meta.title') }}</title>
-    <meta name="description" content="{{ __('site.meta.description') }}">
+    <title>@yield('meta_title', __('site.meta.title'))</title>
+    <meta name="description" content="@yield('meta_description', __('site.meta.description'))">
     <link rel="canonical" href="{{ locale_url(current_path_without_locale()) }}">
 
     <!-- Open Graph: como o link aparece ao ser compartilhado (Instagram, WhatsApp, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ __('site.meta.title') }}">
-    <meta property="og:description" content="{{ __('site.meta.description') }}">
+    <meta property="og:title" content="@yield('meta_title', __('site.meta.title'))">
+    <meta property="og:description" content="@yield('meta_description', __('site.meta.description'))">
     <meta property="og:url" content="{{ locale_url(current_path_without_locale()) }}">
     <meta property="og:image" content="{{ asset('images/larissa.png') }}">
 
@@ -203,7 +203,7 @@
 
                 <!-- Coluna 1: Manifesto de Marca -->
                 <div class="footer-col">
-                    <h3 class="footer-title">Larissa Vasconcellos</h3>
+                    <h3 class="footer-title">Larissa Vasconcellos Arquitetura</h3>
                     <p style="line-height: 1.8; color: #666666; font-weight: 300;">
                         {{ __('site.footer.manifesto') }}
                     </p>
@@ -230,6 +230,8 @@
                         <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100063760440652&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.youtube.com/@larissavasconcellosarquiteta" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://share.google/5KLAIKbAfHGnp8vVl" target="_blank" rel="noopener" aria-label="{{ __('site.footer.google_profile') }}"><i class="fa-brands fa-google"></i></a>
                     </div>
                 </div>
 
@@ -237,7 +239,7 @@
 
             <!-- Bottom Copyright Section -->
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} Larissa Vasconcellos. {{ __('site.footer.rights') }}</p>
+                <p>&copy; {{ date('Y') }} Larissa Vasconcellos Arquitetura. {{ __('site.footer.rights') }}</p>
             </div>
         </div>
     </footer>

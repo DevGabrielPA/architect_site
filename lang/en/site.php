@@ -23,13 +23,17 @@ return [
         'explore' => 'Explore',
         'connect' => 'Connect',
         'contact_us' => 'Contact Us',
+        'google_profile' => 'Google Business Profile',
         'rights' => 'All Rights Reserved.',
     ],
 
     'home' => [
-        'hero_title' => 'Larissa Vasconcellos',
-        'hero_tagline' => 'Architecture & Design',
+        'meta_title' => 'Larissa Vasconcellos Architecture | LV Arquitetura',
+        'meta_description' => "Larissa Vasconcellos is the architect behind LV Arquitetura: architecture, interior design and signature furniture pieces. Based in Belo Horizonte, Brazil.",
+        'hero_title' => 'LV Arquitetura — Larissa Vasconcellos',
+        'hero_tagline' => 'Architect & Designer',
         'hero_subtitle' => 'Transforming high-end residential and commercial spaces into functional works of art.',
+        'hero_image_alt' => 'Larissa Vasconcellos presenting an architecture and design project',
         'who_we_are_heading' => 'Who We Are',
         'who_we_are_p1' => 'Discover refined elegance with Larissa Vasconcellos, founder of the studio — an internationally recognized practice in luxury architecture and interior design. With an architectural background and rich aesthetic vision, Larissa blends structural precision with sophisticated layouts to create stunning, functional spaces.',
         'who_we_are_p2' => 'At our studio, we specialize in luxury interior and exterior architecture, guiding high-end clients from spatial concept to technical precision with unmatched attention to detail. Whether it\'s your first luxury property or a continuous development portfolio, our commitment to excellence never wavers.',
@@ -50,17 +54,18 @@ return [
 
     'about' => [
         'heading' => 'Who We Are',
-        'p1' => 'At LV Arquitetura, we believe every extraordinary space starts out blurred — a feeling, a mood, an image you can almost see but can\'t quite put into words. Our craft is taking that hazy idea living in your head and giving it form: light, material, proportion and detail, arranged until the space finally feels like you.',
+        'image_alt' => 'Larissa Vasconcellos, architect leading LV Arquitetura studio',
+        'p1' => 'At LV Arquitetura, the studio led by architect Larissa Vasconcellos, we believe every extraordinary space starts out blurred — a feeling, a mood, an image you can almost see but can\'t quite put into words. Our craft is taking that hazy idea living in your head and giving it form: light, material, proportion and detail, arranged until the space finally feels like you.',
         'p2' => 'We design with a young, restless point of view — curious rather than conventional, drawn to bold materials and honest detail, and always questioning the obvious answer. It\'s an approach shaped by how people actually want to live today: fluid, personal and quietly confident, never borrowed from a formula.',
         'p3' => 'We listen before we ever draw a line. Every sketch, every material, every spatial decision is tested against one question: does this feel like the life you imagined? Once the answer is yes, the plan stops being a drawing on paper and becomes the first real step into your space.',
         'get_in_touch' => 'Get in Touch',
         'team_heading' => 'Our Team',
-        'team_paragraph' => 'Every project is shaped by a close circle of trusted collaborators working alongside Larissa. From the first sketch to the final detail, they bring the same rigor, care and creative eye that define every space we design — ensuring a seamless journey from concept to reality.',
+        'team_paragraph' => 'Every project is shaped by a close circle of trusted collaborators working alongside Larissa Vasconcellos. From the first sketch to the final detail, they bring the same rigor, care and creative eye that define every space we design — ensuring a seamless journey from concept to reality.',
         'team_hover_hint' => 'Hover or tap each hexagon to meet the partners behind every project.',
         'hive' => [
             'architecture' => [
                 'label' => 'Architecture',
-                'desc' => 'Larissa leads the architectural concept herself — shaping the project from start to finish and guiding every stage toward one cohesive result.',
+                'desc' => 'Larissa Vasconcellos leads the architectural concept herself — shaping the project from start to finish and guiding every stage toward one cohesive result.',
             ],
             'interiors' => [
                 'label' => 'Interiors',
@@ -93,7 +98,8 @@ return [
     ],
 
     'contact' => [
-        'hero_intro' => 'Every project starts with a conversation. Fill out the form below, or call our client care line directly to ask a question or book your consultation at',
+        'image_alt' => 'Larissa Vasconcellos, architect at LV Arquitetura, ready to discuss your project',
+        'hero_intro' => 'Every project starts with a conversation with Larissa Vasconcellos and the LV Arquitetura team. Fill out the form below, or call our client care line directly to ask a question or book your consultation at',
         'form_title' => 'For Prospective Clients',
         'first_name' => 'First Name',
         'last_name' => 'Last Name',
@@ -112,12 +118,12 @@ return [
     'portfolio' => [
         'completed_projects' => [
             'heading' => 'Completed Projects',
-            'intro' => 'Welcome to our residential and commercial architecture and interior design projects, where luxury meets craftsmanship. Explore each space to discover the full story behind it.',
+            'intro' => 'Welcome to our residential and commercial architecture and interior design projects, signed by Larissa Vasconcellos, where luxury meets craftsmanship. Explore each space to discover the full story behind it.',
             'cta' => 'Request Consultation',
         ],
         'design_insights' => [
             'heading' => 'Design Insights',
-            'intro' => 'Creativity is unlocked by the spaces we live in and interact with — our memories, inspirations, and the references we draw from others. Discover the furniture and object design pieces behind our vision.',
+            'intro' => "Creativity is unlocked by the spaces we live in and interact with — our memories, inspirations, and the references we draw from others. Discover the furniture and object design pieces behind Larissa Vasconcellos' vision.",
             'cta' => 'Get in Touch',
             'quotes' => [
                 'lustre-saturnos' => 'Known as a "gas giant" — it stands out for the beauty of its ring system.',

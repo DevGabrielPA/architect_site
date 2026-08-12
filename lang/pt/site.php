@@ -30,7 +30,7 @@ return [
 
     'home' => [
         'meta_description' => 'Larissa Vasconcellos Arquitetura: projetos de arquitetura, design de interiores e peças autorais. Atendimento em BH e região.',
-        'hero_title' => 'Larissa Vasconcellos Arquitetura',
+        'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Arquiteta e Designer',
         'hero_subtitle' => 'Transformando espaços residenciais e comerciais de alto padrão em verdadeiras obras de arte funcionais.',
         'hero_image_alt' => 'Larissa Vasconcellos apresentando projeto de arquitetura e design',

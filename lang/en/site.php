@@ -30,7 +30,7 @@ return [
 
     'home' => [
         'meta_description' => "Larissa Vasconcellos Architecture: architecture, interior design and signature furniture pieces. Based in Belo Horizonte, Brazil.",
-        'hero_title' => 'Larissa Vasconcellos Architecture',
+        'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Architect & Designer',
         'hero_subtitle' => 'Transforming high-end residential and commercial spaces into functional works of art.',
         'hero_image_alt' => 'Larissa Vasconcellos presenting an architecture and design project',

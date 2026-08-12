@@ -30,7 +30,7 @@ return [
 
     'home' => [
         'meta_description' => "Larissa Vasconcellos Architettura: architettura, interior design e pezzi d'autore. Con sede a Belo Horizonte, Brasile.",
-        'hero_title' => 'Larissa Vasconcellos Architettura',
+        'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Architetto e Designer',
         'hero_subtitle' => "Trasformiamo spazi residenziali e commerciali di alta gamma in vere opere d'arte funzionali.",
         'hero_image_alt' => "Larissa Vasconcellos presenta un progetto di architettura e design",

@@ -231,7 +231,7 @@
                         <a href="https://www.facebook.com/profile.php?id=100063760440652&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
                         <a href="https://www.youtube.com/@larissavasconcellosarquiteta" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://share.google/5KLAIKbAfHGnp8vVl" target="_blank" rel="noopener" aria-label="{{ __('site.footer.google_profile') }}"><i class="fa-brands fa-google"></i></a>
+                        <a href="https://share.google/DafOSxlFl9Pd9Z1QJ" target="_blank" rel="noopener" aria-label="{{ __('site.footer.google_profile') }}"><i class="fa-brands fa-google"></i></a>
                     </div>
                 </div>
 

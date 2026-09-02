@@ -264,5 +264,10 @@
         </button>
     </div>
 
+    <!-- BOTÃO FLUTUANTE "VOLTAR AO TOPO" -->
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="{{ __('site.nav.back_to_top') }}">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
 </body>
 </html>

@@ -16,6 +16,7 @@ return [
         'language' => 'Lingua',
         'open_menu' => 'Apri menu',
         'close_menu' => 'Chiudi menu',
+        'back_to_top' => 'Torna su',
     ],
 
     'footer' => [

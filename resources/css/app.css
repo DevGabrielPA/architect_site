@@ -4,6 +4,7 @@
 @import "./footer.css";
 @import "./header.css"; /* Removido o comentário anterior! */
 @import "./lightbox.css";
+@import "./back-to-top.css";
 
 /* ==========================================================================
    2. BOTÕES DE MARCA (CTA) — cor sólida marrom com hover mais escuro

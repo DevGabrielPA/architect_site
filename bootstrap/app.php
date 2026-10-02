@@ -19,6 +19,10 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->trustProxies(at: '*');
+
+        // Só a rota do webhook da Stripe: a Stripe não envia token CSRF, e a
+        // assinatura (Stripe-Signature) já garante autenticidade da requisição.
+        $middleware->validateCsrfTokens(except: ['stripe/webhook']);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

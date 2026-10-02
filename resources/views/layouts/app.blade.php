@@ -90,6 +90,7 @@
                             </li>
 
                             <li><a href="{{ locale_url('/who-we-are') }}" class="{{ $navCurrentPath === 'who-we-are' ? 'active' : '' }}">{{ __('site.nav.who_we_are') }}</a></li>
+                            <li><a href="{{ locale_url('/style-quiz') }}" class="{{ $navCurrentPath === 'style-quiz' ? 'active' : '' }}">{{ __('site.nav.style_quiz') }}</a></li>
                             <li><a href="{{ locale_url('/contact') }}" class="{{ $navCurrentPath === 'contact' ? 'active' : '' }}">{{ __('site.nav.contact') }}</a></li>
 
                             <li class="header-divider"></li>
@@ -154,6 +155,12 @@
                 <li class="mobile-drawer-item">
                     <div class="mobile-drawer-row">
                         <a href="{{ locale_url('/who-we-are') }}" class="{{ $navCurrentPath === 'who-we-are' ? 'active' : '' }}">{{ __('site.nav.who_we_are') }}</a>
+                    </div>
+                </li>
+
+                <li class="mobile-drawer-item">
+                    <div class="mobile-drawer-row">
+                        <a href="{{ locale_url('/style-quiz') }}" class="{{ $navCurrentPath === 'style-quiz' ? 'active' : '' }}">{{ __('site.nav.style_quiz') }}</a>
                     </div>
                 </li>
 

@@ -6,6 +6,7 @@
     <p><strong>Name:</strong> {{ $data['full_name'] }}</p>
     <p><strong>Email:</strong> {{ $data['email'] }}</p>
     <p><strong>Phone:</strong> {{ $data['phone_full'] }}</p>
+    <p><strong>Country/Region:</strong> {{ $data['country_name'] }}</p>
     <p><strong>Estimated budget:</strong> {{ $data['budget'] }}</p>
 
     <hr>

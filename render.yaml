@@ -40,3 +40,9 @@ services:
         value: "LV Arquitetura"
       - key: MAIL_CONTACT_TO
         value: larissavasconcellosarquitetura@gmail.com
+      - key: STRIPE_KEY
+        sync: false
+      - key: STRIPE_SECRET
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false

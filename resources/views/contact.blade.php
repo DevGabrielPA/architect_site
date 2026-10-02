@@ -60,6 +60,16 @@
                 </div>
 
                 <div class="cf-field">
+                    <label for="cf-country">{{ __('site.contact.country') }} <span class="cf-req">*</span></label>
+                    <select id="cf-country" name="country" required>
+                        @foreach (__('site.countries') as $code => $name)
+                            <option value="{{ $code }}" @selected(old('country', 'BR') === $code)>{{ $name }}</option>
+                        @endforeach
+                        <option value="OT" @selected(old('country') === 'OT')>{{ __('site.contact.country_other') }}</option>
+                    </select>
+                </div>
+
+                <div class="cf-field">
                     <label for="cf-budget">{{ __('site.contact.budget') }} <span class="cf-req">*</span></label>
                     <input type="text" id="cf-budget" name="budget" value="{{ old('budget') }}" placeholder="{{ __('site.contact.budget') }}" required>
                 </div>
@@ -136,6 +146,7 @@
         }
 
         .cf-field input,
+        .cf-field select,
         .cf-phone-code {
             width: 100%;
             font-family: 'Inter', sans-serif;
@@ -149,6 +160,7 @@
         }
 
         .cf-field input:focus,
+        .cf-field select:focus,
         .cf-phone-code:focus {
             outline: none;
             border-color: #834333;

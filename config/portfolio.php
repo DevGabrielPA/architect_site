@@ -5,16 +5,23 @@
 // enquanto o arquivo não existir, o grid mostra automaticamente um placeholder "Image Coming Soon".
 return [
 
+    // 'styles' abaixo é usado pelo Teste de Estilo de Decoração (/style-quiz)
+    // para mostrar projetos que combinam com o estilo vencedor de quem fez o
+    // teste. Chaves válidas: classic, minimalist, rustic, industrial,
+    // scandinavian, bohemian, contemporary (config/quiz.php). Preenchidos
+    // como [] por enquanto — TODO: Larissa precisa revisar as fotos de cada
+    // projeto e marcar com o(s) estilo(s) que realmente combinam (pode marcar
+    // mais de um por projeto).
     'completed_projects' => [
-        ['title' => 'Casa Branca', 'slug' => 'casa-branca', 'image' => 'casa-branca.png', 'ratio' => '3 / 2'],
-        ['title' => 'Cozinha', 'slug' => 'cozinha', 'image' => 'cozinha.jpg', 'ratio' => '3 / 2'],
-        ['title' => 'Cozinha Adriana', 'slug' => 'cozinha-adriana', 'image' => 'cozinha-adriana.png', 'ratio' => '16 / 9'],
-        ['title' => 'Quarto Alice', 'slug' => 'quarto-alice', 'image' => 'quarto-alice.png', 'ratio' => '1 / 1'],
-        ['title' => 'Quarto Eva', 'slug' => 'quarto-eva', 'image' => 'quarto-eva.png', 'ratio' => '16 / 9'],
-        ['title' => 'Quarto Pê e Lu', 'slug' => 'quarto-pe-e-lu', 'image' => 'quarto-pe-e-lu.png', 'ratio' => '16 / 9'],
-        ['title' => 'Quarto Betina', 'slug' => 'quarto-betina', 'image' => 'quarto-betina.png', 'ratio' => '3 / 2'],
-        ['title' => 'Sala', 'slug' => 'sala', 'image' => 'sala.png', 'ratio' => '3 / 4'],
-        ['title' => 'Suíte Master', 'slug' => 'suite-master', 'image' => 'suite-master.png', 'ratio' => '7 / 5'],
+        ['title' => 'Casa Branca', 'slug' => 'casa-branca', 'image' => 'casa-branca.png', 'ratio' => '3 / 2', 'styles' => []],
+        ['title' => 'Cozinha', 'slug' => 'cozinha', 'image' => 'cozinha.jpg', 'ratio' => '3 / 2', 'styles' => []],
+        ['title' => 'Cozinha Adriana', 'slug' => 'cozinha-adriana', 'image' => 'cozinha-adriana.png', 'ratio' => '16 / 9', 'styles' => []],
+        ['title' => 'Quarto Alice', 'slug' => 'quarto-alice', 'image' => 'quarto-alice.png', 'ratio' => '1 / 1', 'styles' => []],
+        ['title' => 'Quarto Eva', 'slug' => 'quarto-eva', 'image' => 'quarto-eva.png', 'ratio' => '16 / 9', 'styles' => []],
+        ['title' => 'Quarto Pê e Lu', 'slug' => 'quarto-pe-e-lu', 'image' => 'quarto-pe-e-lu.png', 'ratio' => '16 / 9', 'styles' => []],
+        ['title' => 'Quarto Betina', 'slug' => 'quarto-betina', 'image' => 'quarto-betina.png', 'ratio' => '3 / 2', 'styles' => []],
+        ['title' => 'Sala', 'slug' => 'sala', 'image' => 'sala.png', 'ratio' => '3 / 4', 'styles' => []],
+        ['title' => 'Suíte Master', 'slug' => 'suite-master', 'image' => 'suite-master.png', 'ratio' => '7 / 5', 'styles' => []],
     ],
 
     // TODO: títulos e imagens abaixo são placeholders — substituir pelas peças reais do portfólio de design.

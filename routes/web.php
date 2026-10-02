@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StripeWebhookController;
+use App\Http\Controllers\StyleQuizController;
 use Illuminate\Support\Facades\Route;
 
 // Define todas as rotas uma única vez; o mesmo conjunto é registrado sem
@@ -61,6 +63,14 @@ $routes = function () {
             'backLabel' => __('site.nav.design_insights'),
         ]);
     });
+
+    // Teste de Estilo de Decoração: sem banco de dados, o "estado" do quiz e
+    // do pagamento vive inteiramente num token criptografado na URL (?r=...),
+    // ver app/helpers.php (quiz_mint_unpaid_token/quiz_mint_paid_token/quiz_decode_token).
+    Route::get('/style-quiz', [StyleQuizController::class, 'show']);
+    Route::post('/style-quiz/submit', [StyleQuizController::class, 'submit'])->middleware('throttle:10,1');
+    Route::get('/style-quiz/result', [StyleQuizController::class, 'result']);
+    Route::post('/style-quiz/checkout', [StyleQuizController::class, 'checkout'])->middleware('throttle:10,1');
 };
 
 // Inglês: idioma padrão, sem prefixo na URL.
@@ -71,6 +81,10 @@ foreach (['pt', 'fr', 'es', 'it'] as $locale) {
     Route::prefix($locale)->middleware("setlocale:{$locale}")->group($routes);
 }
 
+// Webhook da Stripe: endpoint de máquina, não uma página — registrado uma
+// única vez, sem prefixo de idioma, e isento de CSRF (ver bootstrap/app.php).
+Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
+
 // sitemap.xml e robots.txt são gerados a partir da URL atual (APP_URL), então
 // não precisam de ajuste manual quando o site trocar de domínio.
 Route::get('/sitemap.xml', function () {
@@ -80,6 +94,7 @@ Route::get('/sitemap.xml', function () {
         '/contact',
         '/portfolio/completed-projects',
         '/portfolio/design-insights',
+        '/style-quiz',
     ];
 
     $projectPaths = collect(config('portfolio.completed_projects'))

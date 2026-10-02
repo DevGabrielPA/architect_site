@@ -22,11 +22,16 @@ class ContactController extends Controller
             'email' => ['required', 'email', 'max:255'],
             'phone_code' => ['required', 'string', 'max:5'],
             'phone' => ['required', 'string', 'max:30'],
+            'country' => ['required', 'string', 'max:2'],
             'budget' => ['required', 'string', 'max:255'],
         ], $messages);
 
         $validated['full_name'] = trim($validated['first_name'] . ' ' . ($validated['last_name'] ?? ''));
         $validated['phone_full'] = $validated['phone_code'] . ' ' . $validated['phone'];
+        $countries = __('site.countries');
+        $validated['country_name'] = $validated['country'] === 'OT'
+            ? __('site.contact.country_other')
+            : ($countries[$validated['country']] ?? $validated['country']);
 
         Mail::to(config('mail.contact_to'))->send(new ContactFormMail($validated));
 

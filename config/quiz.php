@@ -32,11 +32,11 @@ return [
     // quiz_dimensions() em app/helpers.php. A ordem aqui é a ordem na tela;
     // nomes dos polos e textos dos cards ficam em lang/*/quiz.php ('dimensions').
     'dimensions' => [
-        'tones'     => ['classic' => 40, 'minimalist' => 15, 'rustic' => 70, 'industrial' => 90, 'scandinavian' => 5,  'bohemian' => 60, 'contemporary' => 30], // tons claros → tons escuros
-        'color'     => ['classic' => 30, 'minimalist' => 5,  'rustic' => 35, 'industrial' => 15, 'scandinavian' => 20, 'bohemian' => 95, 'contemporary' => 35], // neutro → colorido
-        'lines'     => ['classic' => 80, 'minimalist' => 5,  'rustic' => 55, 'industrial' => 15, 'scandinavian' => 35, 'bohemian' => 85, 'contemporary' => 25], // linhas retas → linhas curvas
-        'character' => ['classic' => 10, 'minimalist' => 30, 'rustic' => 90, 'industrial' => 45, 'scandinavian' => 75, 'bohemian' => 85, 'contemporary' => 25], // sofisticado → aconchegante
-        'materials' => ['classic' => 30, 'minimalist' => 70, 'rustic' => 5,  'industrial' => 95, 'scandinavian' => 20, 'bohemian' => 15, 'contemporary' => 65], // naturais → industriais
+        'tempo'     => ['classic' => 5,  'minimalist' => 90, 'rustic' => 20, 'industrial' => 70, 'scandinavian' => 65, 'bohemian' => 40, 'contemporary' => 95], // tradicional → moderno
+        'elementos' => ['classic' => 85, 'minimalist' => 5,  'rustic' => 45, 'industrial' => 35, 'scandinavian' => 20, 'bohemian' => 95, 'contemporary' => 30], // clean → detalhado
+        'cor'       => ['classic' => 30, 'minimalist' => 5,  'rustic' => 35, 'industrial' => 15, 'scandinavian' => 20, 'bohemian' => 95, 'contemporary' => 35], // neutro → colorido
+        'linhas'    => ['classic' => 80, 'minimalist' => 5,  'rustic' => 55, 'industrial' => 15, 'scandinavian' => 35, 'bohemian' => 85, 'contemporary' => 25], // linhas retas → linhas curvas
+        'materiais' => ['classic' => 30, 'minimalist' => 70, 'rustic' => 5,  'industrial' => 95, 'scandinavian' => 20, 'bohemian' => 15, 'contemporary' => 65], // naturais → industriais
     ],
 
 ];

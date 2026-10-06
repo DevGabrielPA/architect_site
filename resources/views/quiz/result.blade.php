@@ -156,7 +156,12 @@
                                                             <span class="qzr-swatch-color" style="background-color: {{ $hex }}"></span>
                                                         @endif
                                                         @php $colorName = is_array($color) ? ($color['name'] ?? '') : $color; @endphp
-                                                        <span @class(['qzr-swatch-name', 'qzr-pending' => quiz_is_pending($colorName)])>{{ $colorName }}</span>
+                                                        <span class="qzr-swatch-info">
+                                                            <span @class(['qzr-swatch-name', 'qzr-pending' => quiz_is_pending($colorName)])>{{ $colorName }}</span>
+                                                            @if ($hex && !quiz_is_pending($colorName))
+                                                                <span class="qzr-swatch-hex">{{ strtoupper($hex) }}</span>
+                                                            @endif
+                                                        </span>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -764,37 +769,50 @@
             padding: 6px 14px;
         }
 
+        /* Paleta: amostra redonda com nome e hex ao lado */
         .qzr-swatches {
             list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 14px 20px;
             margin: 0;
             padding: 0;
         }
 
         .qzr-swatch {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 8px;
-            width: 76px;
-            text-align: center;
+            gap: 12px;
         }
 
         .qzr-swatch-color {
-            width: 56px;
-            height: 56px;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 4px 10px rgba(93, 61, 34, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 8px rgba(93, 61, 34, 0.12);
+        }
+
+        .qzr-swatch-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
         }
 
         .qzr-swatch-name {
             font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.35;
+            color: #333333;
+        }
+
+        .qzr-swatch-hex {
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
-            line-height: 1.4;
-            color: #555555;
+            letter-spacing: 0.06em;
+            color: #888888;
         }
 
         /* ---------- 3. O que funciona / Pontos de atenção ---------- */

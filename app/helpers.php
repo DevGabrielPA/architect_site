@@ -110,7 +110,7 @@ if (!function_exists('quiz_score_answers')) {
 
 if (!function_exists('quiz_dimensions')) {
     /**
-     * Calcula as 5 dimensões do resultado (tons, cor, linhas, caráter,
+     * Calcula as 5 dimensões do resultado (tempo, elementos, cor, linhas,
      * materiais) a partir de TODAS as respostas, não só do estilo vencedor:
      * valor = soma(respostas do estilo × peso do estilo no eixo) ÷ total de
      * respostas, arredondado. valor >= 50 → predomina o polo direito (exibe

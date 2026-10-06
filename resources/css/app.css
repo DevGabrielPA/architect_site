@@ -40,3 +40,12 @@
         flex-basis: 100% !important;
     }
 }
+/* ==========================================================================
+   4. BOTÃO DE ENVIO TRAVADO — aplicado por resources/js/form-lock.js enquanto
+      o formulário está sendo enviado (evita duplo clique).
+   ========================================================================== */
+button.is-submitting,
+button.is-submitting:hover {
+    opacity: 0.6;
+    cursor: wait;
+}

@@ -26,7 +26,7 @@
                 <p class="cf-alert cf-alert-error">{{ __('site.contact.error') }}</p>
             @endif
 
-            <form class="contact-form" method="POST" action="{{ locale_url('/contact') }}">
+            <form class="contact-form" method="POST" action="{{ locale_url('/contact') }}" data-lock-on-submit>
                 @csrf
                 <div class="cf-field">
                     <label for="cf-first-name">{{ __('site.contact.first_name') }} <span class="cf-req">*</span></label>

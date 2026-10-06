@@ -23,11 +23,23 @@ class StripeWebhookController extends Controller
      */
     public function handle(Request $request): Response
     {
+        $webhookSecret = (string) config('services.stripe.webhook_secret');
+
+        // Com o segredo vazio, a assinatura vira um HMAC com chave vazia que
+        // qualquer um consegue calcular — ou seja, qualquer pessoa poderia
+        // forjar um "pagamento confirmado". Sem segredo, recusa tudo (500 faz
+        // a Stripe tentar de novo depois, quando o segredo estiver configurado).
+        if ($webhookSecret === '') {
+            Log::error('Stripe webhook received but STRIPE_WEBHOOK_SECRET is not configured.');
+
+            return response('', 500);
+        }
+
         try {
             $event = Webhook::constructEvent(
                 $request->getContent(),
                 (string) $request->header('Stripe-Signature'),
-                config('services.stripe.webhook_secret'),
+                $webhookSecret,
             );
         } catch (\UnexpectedValueException|SignatureVerificationException $e) {
             Log::warning('Stripe webhook signature verification failed.', ['error' => $e->getMessage()]);

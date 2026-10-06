@@ -9,7 +9,7 @@ return [
 
     'intro' => [
         'heading' => 'Qual È Il Tuo Stile D\'Arredamento?',
-        'subheading' => 'Rispondi a 20 domande rapide con immagini e scopri quale dei 7 stili ti rispecchia di più — e quanto del tuo risultato riflette ciascuno degli altri.',
+        'subheading' => 'Rispondi a 20 domande rapide con immagini e scopri quale dei 7 stili ti rispecchia di più — e come il tuo gusto si divide tra palette, forme e materiali.',
         'start_button' => 'Inizia Il Test',
     ],
 
@@ -48,22 +48,70 @@ return [
     'result' => [
         'ready_heading' => 'Il Tuo Risultato È Pronto!',
         'ready_body' => 'Hai risposto a tutte le 20 domande. Sblocca ora il tuo Report Completo dello Stile per un pagamento unico di 3 $.',
-        'winner_heading' => 'Il tuo stile predominante è:',
-        'breakdown_heading' => 'Il Tuo Profilo Completo di Stile',
         'unlock_heading' => 'Report Completo dello Stile',
-        'unlock_body' => 'Per soli 3 $, sblocchi il risultato dettagliato del tuo test, con informazioni importanti sul tuo stile: quale dei 7 stili ti rispecchia di più e il grafico completo di compatibilità, la descrizione dettagliata del tuo stile, persone famose che lo condividono, progetti del nostro portfolio che ti rispecchiano, e come questo stile si adatta a casa tua, al lavoro e ai tuoi gusti in generale.',
+        'unlock_body' => 'Per soli 3 $, sblocchi il risultato dettagliato del tuo test: quale dei 7 stili ti rispecchia di più, le cinque dimensioni del tuo gusto (palette, forme e materiali) calcolate a partire da tutte le tue risposte, come appare il tuo stile nella pratica — caratteristiche, materiali e palette di colori — e cosa funziona per te, insieme ai punti di attenzione.',
         'unlock_cta' => 'Vedi Il Mio Risultato',
         'checkout_cancelled' => 'Il pagamento è stato annullato. Sblocca di nuovo quando sei pronto a vedere il tuo risultato.',
         'checkout_error' => 'Non è stato possibile avviare il pagamento in questo momento. Riprova tra poco.',
         'invalid_token' => 'Questo link del risultato non è valido o è scaduto. Rifai il test per ottenere un nuovo risultato.',
-        'matching_projects_heading' => 'I Nostri Progetti In Questo Stile',
-        'no_matching_projects' => 'Stiamo ancora selezionando i progetti del portfolio che meglio si adattano a questo stile — nel frattempo, dai un\'occhiata a tutto il nostro portfolio.',
-        'view_all_projects' => 'Vedi tutti i progetti',
-        'famous_people_heading' => 'Persone Famose Con Questo Stile',
-        'home_fit_heading' => 'A Casa',
-        'work_fit_heading' => 'Al Lavoro',
-        'taste_fit_heading' => 'Nei Tuoi Gusti In Generale',
-        'retake_cta' => 'Rifai il test',
+        'hero_label' => 'Il tuo stile architettonico è',
+        'dimensions_heading' => 'Le dimensioni del tuo stile',
+        'dimensions_intro' => 'Queste cinque dimensioni sono calcolate a partire da tutte le tue risposte, e non solo dallo stile arrivato primo. Mostrano da che parte pende il tuo gusto in fatto di palette, forme e materiali, e con quale intensità. Passa il mouse o tocca ciascuna per scoprire cosa dice di te.',
+        'practice_heading' => 'Il tuo stile nella pratica',
+        'practice_characteristics' => 'Caratteristiche',
+        'practice_materials' => 'Materiali principali',
+        'practice_palette' => 'Palette di colori',
+        'fit_heading' => 'Cosa funziona e punti di attenzione',
+        'works_heading' => 'Cosa funziona per te',
+        'watch_outs_heading' => 'Punti di attenzione',
+        'projects_heading' => 'Progetti in questo stile',
+        'sidebar_label' => 'Il tuo stile è:',
+        'sections_nav_label' => 'Sezioni della pagina',
+        'on_this_page' => 'In questa pagina',
+        'share' => 'Condividi',
+        'share_copied' => 'Link copiato!',
+        'share_text' => 'Il mio stile d\'arredamento è :style. Fai il test e scopri il tuo:',
+    ],
+
+    // Seção "Dimensões do seu estilo": nomes dos polos (esquerdo = 0,
+    // direito = 100) e o texto do card de cada polo. Pesos e cálculo em
+    // config/quiz.php ('dimensions') e quiz_dimensions() em app/helpers.php.
+    'dimensions' => [
+        'tones' => [
+            'group' => 'Palette',
+            'left' => 'Toni chiari',
+            'right' => 'Toni scuri',
+            'left_text' => 'I toni chiari sono un tuo tratto distintivo. Ami gli ambienti luminosi e ariosi, in cui il bianco, il beige e i legni chiari ampliano lo spazio e portano leggerezza.',
+            'right_text' => 'Il tuo tratto più marcato qui sono i toni scuri. Ami gli ambienti con profondità e personalità, in cui il marrone, la grafite e il nero creano un\'atmosfera intima.',
+        ],
+        'color' => [
+            'group' => 'Palette',
+            'left' => 'Neutro',
+            'right' => 'Colorato',
+            'left_text' => 'Preferisci una palette neutra. Pochi colori, ben abbinati, rendono l\'ambiente calmo e mettono in risalto forme e materiali.',
+            'right_text' => 'Il colore è una parte importante del tuo gusto. Ti senti bene in ambienti vivaci, con fantasie e abbinamenti che esprimono personalità.',
+        ],
+        'lines' => [
+            'group' => 'Caratteristiche',
+            'left' => 'Linee rette',
+            'right' => 'Linee curve',
+            'left_text' => 'Le linee rette sono un tuo tratto distintivo. Ami le forme semplici e geometriche, che rendono l\'ambiente ordinato e visivamente pulito.',
+            'right_text' => 'Ti ritrovi nelle linee curve. Forme arrotondate, archi e dettagli ornamentali portano movimento e morbidezza all\'ambiente.',
+        ],
+        'character' => [
+            'group' => 'Caratteristiche',
+            'left' => 'Sofisticato',
+            'right' => 'Accogliente',
+            'left_text' => 'Il tuo tratto più marcato qui è la raffinatezza. Apprezzi gli ambienti eleganti e ben rifiniti, in cui ogni dettaglio sembra essere stato pensato.',
+            'right_text' => 'Dai priorità all\'accoglienza. Per te, un buon ambiente è quello che invita a restare, con texture morbide, luce calda e un\'atmosfera di casa vissuta.',
+        ],
+        'materials' => [
+            'group' => 'Materiali',
+            'left' => 'Materiali naturali',
+            'right' => 'Materiali industriali',
+            'left_text' => 'Preferisci i materiali naturali. Legno, pietra, fibre e tessuti come lino e cotone portano la texture e il calore che cerchi.',
+            'right_text' => 'Ti ritrovi nei materiali industriali. Cemento, acciaio e vetro danno all\'ambiente l\'aspetto urbano e attuale che ti rispecchia.',
+        ],
     ],
 
     'checkout' => [
@@ -73,101 +121,101 @@ return [
     'mail' => [
         'unlocked_subject' => 'Il Tuo Risultato Completo del Test di Stile È Pronto',
         'unlocked_heading' => 'Il tuo risultato completo è sbloccato!',
-        'unlocked_body' => 'Il tuo pagamento è stato confermato e il risultato completo del tuo Test di Stile d\'Arredamento è ora disponibile. Il tuo stile predominante è <strong>:style</strong> — clicca sul pulsante qui sotto per vedere la descrizione completa, le persone famose che condividono questo stile, i progetti corrispondenti e molto altro.',
+        'unlocked_body' => 'Il tuo pagamento è stato confermato e il risultato completo del tuo Test di Stile d\'Arredamento è ora disponibile. Il tuo stile predominante è <strong>:style</strong> — clicca sul pulsante qui sotto per scoprire le dimensioni del tuo gusto, come appare il tuo stile nella pratica e molto altro.',
         'unlocked_cta' => 'Vedi Il Mio Risultato Completo',
     ],
 
+    // Conteúdo da página de resultado de cada estilo. Campos vazios ficam
+    // ocultos na página (ela continua funcionando) — preencher um estilo por vez.
+    //   hero_text  → 2 parágrafos, começando por "Sendo do estilo [nome], você…"
+    //   practice   → characteristics/materials: 'text' (2–3 frases) + 'items' (lista curta);
+    //                palette: 'text' + 'colors' => [['name' => 'Bege', 'hex' => '#E8DCC4'], ...]
+    //   works      → 4 a 6 itens ['title' => '...', 'text' => '...'] (O que funciona para você)
+    //   watch_outs → 3 a 5 itens ['title' => '...', 'text' => '...'] (Pontos de atenção)
     'styles' => [
 
         'classic' => [
             'name' => 'Classico',
-            'description' => 'Lo stile classico valorizza la simmetria, le proporzioni e i dettagli raffinati: cornici, boiserie, colonne, tessuti nobili come velluto e lino, e una palette che va dai neutri all\'oro e a toni profondi come il bordeaux e il verde scuro. Non insegue le tendenze: punta a un\'eleganza senza tempo, pezzi di qualità che attraversano le generazioni e una finitura impeccabile in ogni dettaglio.',
-            'home_fit' => 'A casa, lo stile classico richiede spazi ben definiti e formali: soggiorni con poltrone imbottite, tavoli da pranzo in legno massello e illuminazione con lampadari o applique lavorate. Si adatta a chi ama ricevere con eleganza e valorizza una casa che trasmetta tradizione e solidità.',
-            'work_fit' => 'Al lavoro, il classico si ritrova in uffici con librerie in legno dal pavimento al soffitto, scrivanie robuste e un\'estetica che trasmette autorità e fiducia — molto comune in studi legali, società di consulenza e spazi dirigenziali.',
-            'taste_fit' => 'Fuori casa, chi si identifica con il classico tende ad amare la moda senza tempo, i musei e l\'arte tradizionale, i ristoranti con servizio alla francese e i viaggi in città storiche come Parigi, Roma o Vienna.',
-            'famous_people' => [
-                ['name' => 'Ralph Lauren', 'note' => 'Stilista americano il cui marchio è sinonimo di eleganza classica senza tempo, con collezioni ispirate alle dimore inglesi e all\'"old money" americano.'],
-                ['name' => 'Jackie Kennedy', 'note' => 'Ha restaurato i saloni di rappresentanza della Casa Bianca con mobili d\'epoca, simmetria e gusto classico, diventando ancora oggi un riferimento di stile.'],
-                ['name' => 'Aerin Lauder', 'note' => 'Nipote di Estée Lauder e interior designer, ha costruito il suo marchio personale interamente attorno al glamour classico e senza tempo.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'minimalist' => [
             'name' => 'Minimalista',
-            'description' => 'Il minimalismo è l\'arte di eliminare tutto il superfluo finché non resta solo l\'essenziale: linee pulite, palette neutre (bianco, grigio, nero), superfici lisce e mobili funzionali senza ornamenti. Ogni oggetto ha uno scopo preciso, e lo spazio vuoto conta quanto l\'arredo — il risultato è una sensazione di calma, ordine e chiarezza mentale.',
-            'home_fit' => 'A casa, il minimalismo si traduce in armadi a scomparsa che nascondono il disordine, pochissimi elementi decorativi (ma di altissima qualità) e l\'abitudine costante di tenere tutto in ordine. È lo stile ideale per chi apprezza lo spazio libero e non ama accumulare.',
-            'work_fit' => 'Al lavoro, il minimalismo si manifesta con scrivanie pulite, pochissimi oggetti in vista e ambienti pensati per la concentrazione — molto diffuso negli uffici tecnologici, negli studi di design e nelle startup.',
-            'taste_fit' => 'In generale, chi ha questo stile tende a preferire un guardaroba capsule, tecnologia discreta, viaggiare con pochi bagagli e una vita quotidiana con meno oggetti, ma più intenzionali.',
-            'famous_people' => [
-                ['name' => 'Kim Kardashian', 'note' => 'La sua villa in California, tutta sui toni neutri e praticamente priva di oggetti decorativi, è uno degli esempi di minimalismo più discussi dai media.'],
-                ['name' => 'Steve Jobs', 'note' => 'Viveva — e progettava — secondo la massima "less is more"; la sua casa era famosa per avere quasi nessun mobile.'],
-                ['name' => 'Jony Ive', 'note' => 'Ex responsabile del design di Apple, ha trasformato il minimalismo in un linguaggio visivo globale attraverso prodotti e spazi.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'rustic' => [
             'name' => 'Rustico',
-            'description' => 'Lo stile rustico celebra i materiali naturali e imperfetti: legno di recupero, pietra grezza, tessuti come lino e iuta, e una palette terrosa che richiama la campagna. È uno stile caldo e accogliente, che valorizza i segni del tempo e dell\'artigianalità più di una finitura industriale perfetta.',
-            'home_fit' => 'A casa, il rustico si manifesta con travi in legno a vista, tavoli massicci segnati dall\'uso, camini e un arredamento pieno di elementi naturali come piante, cesti in fibra e ceramiche artigianali. Si adatta a chi sogna una casa di campagna, anche vivendo in città.',
-            'work_fit' => 'Al lavoro, il rustico emerge in caffetterie, locande e spazi che vogliono trasmettere calore e autenticità — meno comune negli uffici aziendali tradizionali, ma sempre più presente nei coworking con un approccio più umano e organico.',
-            'taste_fit' => 'In generale, questo stile si abbina all\'amore per la cucina casalinga, i mercati dei produttori locali, l\'abbigliamento in tessuti naturali e i viaggi in campagna, nelle fattorie e verso destinazioni naturalistiche.',
-            'famous_people' => [
-                ['name' => 'Joanna e Chip Gaines', 'note' => 'Conduttori del programma "Fixer Upper" e fondatori di Magnolia, hanno trasformato lo stile fattoria/rustico in un fenomeno mondiale.'],
-                ['name' => 'Ree Drummond', 'note' => 'Conosciuta come "The Pioneer Woman", vive in un ranch e celebra lo stile rustico americano in tutto ciò che fa.'],
-                ['name' => 'Amber Lewis', 'note' => 'Interior designer americana nota per aver creato il cosiddetto "rustico californiano", che unisce legno, lino e toni terrosi.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'industrial' => [
             'name' => 'Industriale',
-            'description' => 'Lo stile industriale è nato dalla trasformazione di vecchie fabbriche e magazzini in abitazioni, e conserva ancora oggi questa estetica: mattoni a vista, tubi e travi metalliche visibili, cemento levigato e un equilibrio tra il grezzo e il raffinato. È uno stile urbano, disinvolto e dalla forte personalità.',
-            'home_fit' => 'A casa, l\'industriale si manifesta con soffitti alti, infissi in ferro, lampade a sospensione in stile fabbrica e mobili che uniscono legno di recupero e metallo. Si adatta a chi ama spazi ampi e integrati, con un\'atmosfera più disinvolta che tradizionale.',
-            'work_fit' => 'Al lavoro, è uno degli stili più popolari negli uffici creativi, nelle agenzie pubblicitarie e nei coworking — il look "da fabbrica" trasmette informalità, creatività e semplicità, anche in ambienti professionali.',
-            'taste_fit' => 'In generale, chi si identifica con l\'industriale tende ad amare la moda urbana, la musica alternativa, la birra artigianale e i quartieri creativi/bohémien delle grandi città.',
-            'famous_people' => [
-                ['name' => 'Andy Warhol', 'note' => 'Il suo studio, "The Factory", a New York, è ancora oggi sinonimo di loft industriale con mattoni a vista e struttura metallica.'],
-                ['name' => 'Diane Keaton', 'note' => 'Attrice e appassionata di architettura, ha ristrutturato diverse case esplorando cemento a vista e materiali grezzi — argomento di un libro che ha scritto sul tema.'],
-                ['name' => 'Anderson Cooper', 'note' => 'Ha acquistato un vecchio edificio industriale a Brooklyn per ristrutturarlo come propria abitazione, lasciando tubi e travi a vista.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'scandinavian' => [
             'name' => 'Scandinavo',
-            'description' => 'Lo stile scandinavo è sinonimo di semplicità funzionale: legno chiaro, pareti bianche, tanta luce naturale e un arredamento essenziale ma accogliente — il celebre concetto nordico di "hygge". È uno stile pratico, pensato per la vita di tutti i giorni, senza mai rinunciare al comfort visivo.',
-            'home_fit' => 'A casa, lo scandinavo si manifesta con mobili dalle linee semplici, plaid di lana, candele, piante e una palette chiara che amplia visivamente gli spazi. È lo stile ideale per chi vuole una casa funzionale, ordinata e accogliente allo stesso tempo.',
-            'work_fit' => 'Al lavoro, lo scandinavo si traduce in uffici luminosi, con tanta luce naturale, arredi ergonomici e un\'estetica neutra che aiuta a mantenere la concentrazione senza risultare fredda o impersonale — molto comune nelle aziende di design e tecnologia.',
-            'taste_fit' => 'In generale, si adatta a chi valorizza la qualità della vita, l\'equilibrio tra lavoro e riposo, il design funzionale nordico e uno stile di vita più lento e consapevole.',
-            'famous_people' => [
-                ['name' => 'Alvar Aalto', 'note' => 'Architetto e designer finlandese, uno dei creatori dell\'estetica scandinava: funzionale, luminosa e in legno naturale.'],
-                ['name' => 'Ingvar Kamprad', 'note' => 'Fondatore di IKEA, ha portato il design funzionale e accessibile scandinavo in tutto il mondo.'],
-                ['name' => 'Ilse Crawford', 'note' => 'Interior designer britannica nota per aver unito il comfort nordico ("hygge") a un\'estetica contemporanea.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'bohemian' => [
             'name' => 'Boho',
-            'description' => 'Il boho è lo stile più libero ed espressivo di tutti: un mix di fantasie, texture, colori vivaci, pezzi vintage, oggetti artigianali e articoli provenienti da culture e viaggi diversi. Non esiste una regola fissa — ciò che conta è che ogni pezzo racconti una storia e rifletta la personalità di chi vive lì.',
-            'home_fit' => 'A casa, il boho si manifesta con tappeti sovrapposti, cuscini fantasia, piante in abbondanza, macramè e mobili trovati nei mercatini dell\'usato. Si adatta a chi ama una casa viva, ricca di stratificazioni e ricordi affettivi.',
-            'work_fit' => 'Al lavoro, il boho tende a comparire in atelier, studi creativi e spazi per artisti — luoghi dove la creatività e l\'espressione personale sono più apprezzate della formalità.',
-            'taste_fit' => 'In generale, questo stile si abbina all\'amore per una moda con fantasie e texture varie, la musica indie/world, i viaggi verso mete esotiche e uno stile di vita più spontaneo e creativo.',
-            'famous_people' => [
-                ['name' => 'Frida Kahlo', 'note' => 'La sua "Casa Azul" a Città del Messico resta uno dei più grandi riferimenti dello stile boho-artistico.'],
-                ['name' => 'Florence Welch', 'note' => 'Cantante dei Florence + The Machine, nota per un universo estetico ricco di richiami vintage, naturali e boho.'],
-                ['name' => 'Sienna Miller', 'note' => 'Icona di moda degli anni 2000 che ha contribuito a rendere popolare il look boho-chic sia nella moda che in casa.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
         'contemporary' => [
             'name' => 'Contemporaneo',
-            'description' => 'Il contemporaneo è lo stile del "qui e ora": linee pulite, tecnologia integrata, materiali come vetro, acciaio e cemento, e un\'estetica sempre in dialogo con le ultime tendenze di architettura e design. A differenza del moderno (legato a un periodo storico specifico), il contemporaneo si reinventa continuamente.',
-            'home_fit' => 'A casa, il contemporaneo si manifesta con verde integrato, illuminazione LED a incasso, domotica e un design che unisce comfort e tecnologia all\'avanguardia. Si adatta a chi ama restare sempre aggiornato e valorizza l\'innovazione nella vita di tutti i giorni.',
-            'work_fit' => 'Al lavoro, è lo stile predominante negli uffici aziendali moderni, nelle torri commerciali e negli spazi che vogliono trasmettere innovazione, efficienza e un\'immagine all\'avanguardia sul mercato.',
-            'taste_fit' => 'In generale, si adatta a chi segue le tendenze di design e tecnologia, ama l\'architettura audace, viaggia verso metropoli come New York, Tokyo o Dubai, e conduce una vita connessa e dinamica.',
-            'famous_people' => [
-                ['name' => 'Zaha Hadid', 'note' => 'Architetta diventata simbolo del design contemporaneo, con forme fluide e progetti che hanno rotto con l\'architettura tradizionale.'],
-                ['name' => 'Norman Foster', 'note' => 'Architetto britannico e punto di riferimento del design contemporaneo, che unisce tecnologia, vetro e forme estremamente pulite.'],
-                ['name' => 'Beyoncé e Jay-Z', 'note' => 'Collezionano ville ultracontemporanee in tutto il mondo, sempre con architetture audaci e tecnologia all\'avanguardia.'],
+            'hero_text' => [],
+            'practice' => [
+                'characteristics' => ['text' => '', 'items' => []],
+                'materials' => ['text' => '', 'items' => []],
+                'palette' => ['text' => '', 'colors' => []],
             ],
+            'works' => [],
+            'watch_outs' => [],
         ],
 
     ],

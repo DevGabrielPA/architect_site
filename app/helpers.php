@@ -108,6 +108,134 @@ if (!function_exists('quiz_score_answers')) {
     }
 }
 
+if (!function_exists('quiz_dimensions')) {
+    /**
+     * Calcula as 5 dimensões do resultado (tons, cor, linhas, caráter,
+     * materiais) a partir de TODAS as respostas, não só do estilo vencedor:
+     * valor = soma(respostas do estilo × peso do estilo no eixo) ÷ total de
+     * respostas, arredondado. valor >= 50 → predomina o polo direito (exibe
+     * valor%); < 50 → polo esquerdo (exibe 100 − valor%). Pesos em
+     * config('quiz.dimensions').
+     *
+     * @param  string[]  $answers
+     * @return array<int, array{key: string, value: int, side: 'left'|'right', percent: int}>
+     */
+    function quiz_dimensions(array $answers): array
+    {
+        $styles = config('quiz.styles');
+        $letters = range('A', chr(ord('A') + count($styles) - 1));
+
+        $counts = array_fill_keys($styles, 0);
+
+        foreach ($answers as $answer) {
+            $index = array_search($answer, $letters, true);
+
+            if ($index !== false) {
+                $counts[$styles[$index]]++;
+            }
+        }
+
+        $total = array_sum($counts);
+        $dimensions = [];
+
+        foreach (config('quiz.dimensions') as $axis => $weights) {
+            $weighted = 0;
+
+            foreach ($counts as $style => $count) {
+                $weighted += $count * ($weights[$style] ?? 0);
+            }
+
+            $value = $total > 0 ? (int) round($weighted / $total) : 50;
+            $side = $value >= 50 ? 'right' : 'left';
+
+            $dimensions[] = [
+                'key' => $axis,
+                'value' => $value,
+                'side' => $side,
+                'percent' => $side === 'right' ? $value : 100 - $value,
+            ];
+        }
+
+        return $dimensions;
+    }
+}
+
+if (!function_exists('quiz_style_content')) {
+    /**
+     * Conteúdo de um estilo (lang/*\/quiz.php → 'styles.{key}') já com todos
+     * os campos preenchidos com valores vazios por padrão, para a página de
+     * resultado nunca quebrar enquanto um estilo ainda não tiver texto.
+     *
+     * @return array{name: string, hero_text: string[], practice: array, works: array, watch_outs: array}
+     */
+    function quiz_style_content(string $styleKey): array
+    {
+        $content = trans("quiz.styles.{$styleKey}");
+        $content = is_array($content) ? $content : [];
+
+        $block = fn (string $name, string $listKey) => [
+            'text' => (string) ($content['practice'][$name]['text'] ?? ''),
+            $listKey => array_values(array_filter((array) ($content['practice'][$name][$listKey] ?? []))),
+        ];
+
+        $style = [
+            'name' => (string) ($content['name'] ?? $styleKey),
+            'hero_text' => array_values(array_filter((array) ($content['hero_text'] ?? []))),
+            'practice' => [
+                'characteristics' => $block('characteristics', 'items'),
+                'materials' => $block('materials', 'items'),
+                'palette' => $block('palette', 'colors'),
+            ],
+            'works' => array_values(array_filter((array) ($content['works'] ?? []), fn ($item) => !empty($item['title']))),
+            'watch_outs' => array_values(array_filter((array) ($content['watch_outs'] ?? []), fn ($item) => !empty($item['title']))),
+        ];
+
+        return config('quiz.content_placeholders') ? quiz_fill_placeholders($style) : $style;
+    }
+}
+
+if (!function_exists('quiz_fill_placeholders')) {
+    /**
+     * TEMPORÁRIO (só para visualizar o layout enquanto os textos não chegam):
+     * preenche cada campo vazio do estilo com um marcador "[... pendente]".
+     * Ligado por QUIZ_CONTENT_PLACEHOLDERS=true no .env (padrão: desligado,
+     * então nunca aparece em produção). Para remover de vez: apagar esta
+     * função, a linha que a chama em quiz_style_content(), o bloco do
+     * wireframe de projetos em StyleQuizController::result(), a chave
+     * 'content_placeholders' em config/quiz.php e a classe .qzr-pending na view.
+     */
+    function quiz_fill_placeholders(array $style): array
+    {
+        $text = '[texto pendente]';
+        $item = '[item pendente]';
+        $pendingEntry = ['title' => '[título pendente]', 'text' => $text];
+
+        $style['hero_text'] = $style['hero_text'] ?: [$text, $text];
+
+        foreach (['characteristics', 'materials'] as $name) {
+            $style['practice'][$name]['text'] = $style['practice'][$name]['text'] ?: $text;
+            $style['practice'][$name]['items'] = $style['practice'][$name]['items'] ?: [$item, $item, $item];
+        }
+
+        $style['practice']['palette']['text'] = $style['practice']['palette']['text'] ?: $text;
+        $style['practice']['palette']['colors'] = $style['practice']['palette']['colors']
+            ?: array_fill(0, 3, ['name' => '[cor pendente]', 'hex' => '#DDDDDD']);
+
+        $style['works'] = $style['works'] ?: array_fill(0, 3, $pendingEntry);
+        $style['watch_outs'] = $style['watch_outs'] ?: array_fill(0, 3, $pendingEntry);
+
+        return $style;
+    }
+}
+
+if (!function_exists('quiz_is_pending')) {
+    /** True para os marcadores "[... pendente]" de quiz_fill_placeholders() (destacados na view). */
+    function quiz_is_pending(mixed $value): bool
+    {
+        return is_string($value) && str_starts_with($value, '[') && str_ends_with($value, 'pendente]');
+    }
+}
+
 if (!function_exists('quiz_decode_token')) {
     /**
      * Decripta um token de resultado do quiz (?r=...). Retorna null se o
@@ -115,21 +243,71 @@ if (!function_exists('quiz_decode_token')) {
      * vazar para um erro 500, e nunca "conserta" ou confia parcialmente
      * num token que falhou a verificação de autenticidade.
      *
-     * @return array{v: int, answers: string[], locale: string, created_at: string, paid: bool, paid_at?: string, checkout_session_id?: string}|null
+     * Aceita o formato compacto atual (v2) e o formato antigo (v1, chaves
+     * por extenso) e devolve sempre o mesmo formato normalizado.
+     *
+     * @return array{answers: string[], locale: string, paid: bool, checkout_session_id: ?string}|null
      */
     function quiz_decode_token(string $token): ?array
     {
         try {
-            $payload = json_decode(Crypt::decryptString($token), true);
+            $raw = json_decode(Crypt::decryptString($token), true);
         } catch (DecryptException) {
             return null;
         }
 
-        if (!is_array($payload) || !isset($payload['answers']) || !is_array($payload['answers'])) {
+        if (!is_array($raw)) {
             return null;
         }
 
-        return $payload;
+        if (($raw['v'] ?? null) === 2) {
+            if (!isset($raw['a']) || !is_string($raw['a'])) {
+                return null;
+            }
+
+            return [
+                'answers' => str_split($raw['a']),
+                'locale' => $raw['l'] ?? config('app.fallback_locale'),
+                'paid' => (bool) ($raw['p'] ?? false),
+                'checkout_session_id' => $raw['s'] ?? null,
+            ];
+        }
+
+        if (!isset($raw['answers']) || !is_array($raw['answers'])) {
+            return null;
+        }
+
+        return [
+            'answers' => $raw['answers'],
+            'locale' => $raw['locale'] ?? config('app.fallback_locale'),
+            'paid' => (bool) ($raw['paid'] ?? false),
+            'checkout_session_id' => $raw['checkout_session_id'] ?? null,
+        ];
+    }
+}
+
+if (!function_exists('quiz_encode_token')) {
+    /**
+     * Serializa um payload normalizado no formato compacto v2 (respostas como
+     * uma string "ABCG...", chaves de uma letra, data em timestamp). Mantém o
+     * token curto: ele precisa caber no limite de 500 caracteres do metadata
+     * da Stripe (ver StyleQuizController::checkout()) e deixa a URL menor.
+     */
+    function quiz_encode_token(array $payload): string
+    {
+        $compact = [
+            'v' => 2,
+            'a' => implode('', $payload['answers']),
+            'l' => $payload['locale'],
+            't' => now()->getTimestamp(),
+            'p' => $payload['paid'] ? 1 : 0,
+        ];
+
+        if (!empty($payload['checkout_session_id'])) {
+            $compact['s'] = $payload['checkout_session_id'];
+        }
+
+        return Crypt::encryptString(json_encode($compact));
     }
 }
 
@@ -143,15 +321,12 @@ if (!function_exists('quiz_mint_unpaid_token')) {
      */
     function quiz_mint_unpaid_token(array $answers): string
     {
-        $payload = [
-            'v' => 1,
+        return quiz_encode_token([
             'answers' => $answers,
             'locale' => App::getLocale(),
-            'created_at' => now()->toIso8601String(),
             'paid' => false,
-        ];
-
-        return Crypt::encryptString(json_encode($payload));
+            'checkout_session_id' => null,
+        ]);
     }
 }
 
@@ -166,10 +341,9 @@ if (!function_exists('quiz_mint_paid_token')) {
     function quiz_mint_paid_token(array $payload, string $checkoutSessionId): string
     {
         $payload['paid'] = true;
-        $payload['paid_at'] = now()->toIso8601String();
         $payload['checkout_session_id'] = $checkoutSessionId;
 
-        return Crypt::encryptString(json_encode($payload));
+        return quiz_encode_token($payload);
     }
 }
 

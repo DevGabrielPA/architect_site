@@ -57,25 +57,32 @@ class StyleQuizController extends Controller
 
         $sessionId = $request->query('session_id');
 
-        if ($sessionId && !$payload['paid']) {
-            $verifiedToken = $this->verifyAndMintIfPaid($sessionId, $payload);
+        if (is_string($sessionId) && str_starts_with($sessionId, 'cs_') && !$payload['paid']) {
+            $verifiedToken = $this->verifyAndMintIfPaid($sessionId, $token, $payload);
 
             if ($verifiedToken) {
                 return redirect(locale_url('/style-quiz/result') . '?r=' . urlencode($verifiedToken));
             }
         }
 
-        ['scores' => $scores, 'winner' => $winnerKey] = quiz_score_answers($payload['answers']);
+        ['winner' => $winnerKey] = quiz_score_answers($payload['answers']);
 
         $matchingProjects = collect(config('portfolio.completed_projects'))
             ->filter(fn (array $project) => in_array($winnerKey, $project['styles'] ?? [], true))
-            ->take(3)
             ->map(fn (array $project) => portfolio_translate($project, 'completed_projects'))
             ->values();
 
+        // TEMPORÁRIO: wireframe da seção de projetos enquanto nenhum projeto
+        // estiver vinculado ao estilo (mesma chave dos marcadores de texto —
+        // ver quiz_fill_placeholders() em app/helpers.php).
+        if ($matchingProjects->isEmpty() && config('quiz.content_placeholders')) {
+            $matchingProjects = collect(array_fill(0, 3, ['title' => '[projeto pendente]', 'slug' => null, 'image' => null]));
+        }
+
         return view('quiz.result', [
-            'scores' => $scores,
             'winnerKey' => $winnerKey,
+            'style' => quiz_style_content($winnerKey),
+            'dimensions' => quiz_dimensions($payload['answers']),
             'unlocked' => (bool) $payload['paid'],
             'token' => $token,
             'matchingProjects' => $matchingProjects,
@@ -93,6 +100,18 @@ class StyleQuizController extends Controller
         }
 
         $resultUrl = locale_url('/style-quiz/result') . '?r=' . urlencode($token);
+
+        if ($payload['paid']) {
+            return redirect($resultUrl);
+        }
+
+        // A Stripe aceita no máximo 500 caracteres por valor de metadata; se o
+        // token passar disso o checkout falharia de qualquer jeito.
+        if (strlen($token) > 500) {
+            report(new \RuntimeException('Quiz token exceeds Stripe metadata limit (' . strlen($token) . ' chars).'));
+
+            return redirect($resultUrl)->with('quiz_checkout_error', true);
+        }
 
         try {
             Stripe::setApiKey(config('services.stripe.secret'));
@@ -130,8 +149,13 @@ class StyleQuizController extends Controller
      * do Checkout (o webhook continua sendo a fonte de verdade — ver
      * StripeWebhookController). Retorna o novo token pago, ou null se o
      * pagamento ainda não estiver confirmado/algo falhar.
+     *
+     * O session_id vem da URL (o usuário controla), então além de confirmar
+     * que ele foi pago, conferimos que o pagamento foi feito PARA ESTE token:
+     * sem isso, um único session_id pago desbloquearia o resultado de
+     * qualquer pessoa (IDOR).
      */
-    private function verifyAndMintIfPaid(string $sessionId, array $payload): ?string
+    private function verifyAndMintIfPaid(string $sessionId, string $token, array $payload): ?string
     {
         try {
             Stripe::setApiKey(config('services.stripe.secret'));
@@ -141,6 +165,12 @@ class StyleQuizController extends Controller
         }
 
         if ($session->payment_status !== 'paid') {
+            return null;
+        }
+
+        $paidForToken = (string) ($session->metadata->quiz_token ?? '');
+
+        if ($paidForToken === '' || !hash_equals($paidForToken, $token)) {
             return null;
         }
 

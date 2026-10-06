@@ -21,7 +21,7 @@ $routes = function () {
         return view('contact');
     });
 
-    Route::post('/contact', [ContactController::class, 'send']);
+    Route::post('/contact', [ContactController::class, 'send'])->middleware('throttle:contact');
 
     // O item de menu "Portfolio" leva direto para Completed Projects
     Route::get('/portfolio', function () {
@@ -68,9 +68,9 @@ $routes = function () {
     // do pagamento vive inteiramente num token criptografado na URL (?r=...),
     // ver app/helpers.php (quiz_mint_unpaid_token/quiz_mint_paid_token/quiz_decode_token).
     Route::get('/style-quiz', [StyleQuizController::class, 'show']);
-    Route::post('/style-quiz/submit', [StyleQuizController::class, 'submit'])->middleware('throttle:10,1');
-    Route::get('/style-quiz/result', [StyleQuizController::class, 'result']);
-    Route::post('/style-quiz/checkout', [StyleQuizController::class, 'checkout'])->middleware('throttle:10,1');
+    Route::post('/style-quiz/submit', [StyleQuizController::class, 'submit'])->middleware('throttle:quiz-submit');
+    Route::get('/style-quiz/result', [StyleQuizController::class, 'result'])->middleware('throttle:quiz-result');
+    Route::post('/style-quiz/checkout', [StyleQuizController::class, 'checkout'])->middleware('throttle:quiz-checkout');
 };
 
 // Inglês: idioma padrão, sem prefixo na URL.
@@ -83,7 +83,7 @@ foreach (['pt', 'fr', 'es', 'it'] as $locale) {
 
 // Webhook da Stripe: endpoint de máquina, não uma página — registrado uma
 // única vez, sem prefixo de idioma, e isento de CSRF (ver bootstrap/app.php).
-Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle']);
+Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])->middleware('throttle:stripe-webhook');
 
 // sitemap.xml e robots.txt são gerados a partir da URL atual (APP_URL), então
 // não precisam de ajuste manual quando o site trocar de domínio.

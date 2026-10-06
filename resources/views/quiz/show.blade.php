@@ -24,7 +24,7 @@
             </p>
         </div>
 
-        <form id="qz-form" class="qz-form" method="POST" action="{{ locale_url('/style-quiz/submit') }}">
+        <form id="qz-form" class="qz-form" method="POST" data-lock-on-submit action="{{ locale_url('/style-quiz/submit') }}">
             @csrf
 
             @for ($i = 1; $i <= $totalQuestions; $i++)

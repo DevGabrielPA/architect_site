@@ -127,7 +127,7 @@ return [
 
     // Conteúdo da página de resultado de cada estilo. Campos vazios ficam
     // ocultos na página (ela continua funcionando) — preencher um estilo por vez.
-    //   hero_text  → 2 parágrafos, começando por "Sendo do estilo [nome], você…"
+    //   hero_text  → 3 parágrafos, começando por "Sendo do estilo [nome], você…"
     //   practice   → characteristics/materials: 'text' (2–3 frases) + 'items' (lista curta);
     //                palette: 'text' + 'colors' => [['name' => 'Bege', 'hex' => '#E8DCC4'], ...]
     //   works      → 4 a 6 itens ['title' => '...', 'text' => '...'] (O que funciona para você)
@@ -136,7 +136,11 @@ return [
 
         'classic' => [
             'name' => 'Clásico',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Clásico, tienes un gusto refinado y valoras la sofisticación en cada ambiente. Los espacios que más van contigo impresionan a primera vista, por la nobleza de los materiales y la presencia imponente de la arquitectura. Para ti, un ambiente bonito es aquel en el que nada parece improvisado: las proporciones tienen sentido, las piezas dialogan entre sí y cada detalle se eligió con cuidado.',
+                'Te gustan los ambientes que sorprenden la mirada y revelan algo nuevo en cada visita. Te fijas en el diseño de una moldura, en el brillo de una lámpara de cristal, en el tacto del terciopelo o en el dorado discreto de un tirador. Valoras lo que está bien hecho y hecho para durar, y prefieres invertir en pocas piezas de calidad antes que seguir la tendencia del momento. Tu casa tiende a contar una historia, con muebles de familia, obras de arte y objetos que ganan valor con el tiempo.',
+                'París quizá sea la ciudad que mejor refleja tu gusto. Los apartamentos parisinos del siglo XIX reúnen casi todo lo que admiras: techos altos, paredes con boiseries, suelos de madera en espiga, chimeneas de mármol y ventanales que se abren a balcones de hierro forjado. Son la prueba de que la tradición, bien cuidada, no pasa de moda. Y ese mismo espíritu cabe en un apartamento actual, con la elección adecuada de materiales, proporciones y detalles.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El clásico parte de la simetría y la proporción. Los ambientes se organizan en torno a un punto central, como una chimenea o un aparador, y los detalles trabajados dan el acabado.',
@@ -184,7 +188,11 @@ return [
 
         'minimalist' => [
             'name' => 'Minimalista',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Minimalista, tienes un gusto claro y decidido y valoras la sencillez en cada ambiente. Los espacios que más van contigo impresionan por su calma: pocas piezas, líneas limpias y espacio libre para circular. Para ti, un ambiente bonito es aquel en el que todo tiene función y lugar, y nada está ahí solo para llenar espacio.',
+                'Te gustan los ambientes que descansan la mirada. Te fijas en la precisión del encuentro entre la pared y el suelo, en la luz que entra sin obstáculos, en la textura de una madera clara o en la ligereza de una encimera de vidrio. Valoras la calidad más que la cantidad, y prefieres tener menos cosas, siempre que estén elegidas con criterio. Tu casa tiende a ser ordenada y silenciosa, un lugar donde la mente se desacelera después del día.',
+                'Japón quizá sea el lugar que mejor refleja tu gusto. Allí, el espacio vacío se trata como parte de la arquitectura. Las casas tradicionales de Kioto, con paneles correderos de papel, suelo de tatami y casi ningún mueble, y las obras del arquitecto Tadao Ando, hechas de hormigón liso y luz natural, muestran cómo pocos elementos bien elegidos pueden impactar tanto como un ambiente lleno de detalles. Y ese mismo espíritu cabe en un apartamento actual, con una carpintería bien planificada, materiales bien resueltos y espacio para respirar.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El minimalismo reduce el ambiente a lo necesario. Cada pieza tiene una función y un lugar definidos, y el espacio vacío forma parte del proyecto.',
@@ -232,7 +240,11 @@ return [
 
         'rustic' => [
             'name' => 'Rústico',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Rústico, tienes un gusto acogedor y valoras lo natural en cada ambiente. Los espacios que más van contigo impresionan por su calidez: madera, piedra y tejidos que invitan a quedarse. Para ti, un ambiente bonito es aquel que parece vivido, en el que los materiales se muestran tal como son, con sus marcas, y la casa no parece montada para una foto.',
+                'Te gustan los ambientes que despiertan los sentidos. Te fijas en las vetas de una mesa de madera maciza, en la textura irregular de una pared de piedra, en el olor de una cocina de leña o en el tacto de una manta de algodón crudo. Valoras lo hecho a mano y lo que envejece bien, y te parece más bonita una pieza con marcas de uso que una recién salida de la tienda. Tu casa tiende a ser un punto de encuentro, con una mesa grande, una cocina animada y lugar para recibir a quien llega.',
+                'Las antiguas haciendas de Minas Gerais, en Brasil, quizá sean el lugar que mejor refleja tu gusto. Paredes gruesas, vigas de madera vistas, suelos de tablones anchos, cocina de leña en el centro de la cocina y una galería abierta al campo reúnen casi todo lo que admiras. Muestran cómo materiales sencillos, usados tal como son, crean una calidez que ningún acabado sofisticado sustituye. Y ese mismo espíritu cabe en un apartamento actual, con madera de verdad, texturas naturales y luz cálida.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El rústico lleva la naturaleza al interior de la casa. Los materiales aparecen tal como son, con vetas, nudos y marcas, y el ambiente invita a quedarse.',
@@ -280,7 +292,11 @@ return [
 
         'industrial' => [
             'name' => 'Industrial',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Industrial, tienes un gusto urbano y auténtico y valoras la verdad de los materiales en cada ambiente. Los espacios que más van contigo impresionan por su atmósfera: hormigón, metal y ladrillo a la vista, tonos oscuros y una luz que parece dibujar el ambiente. Para ti, un ambiente bonito es aquel que no esconde cómo se construyó y convierte la propia estructura en parte de la decoración.',
+                'Te gustan los ambientes con aire de gran ciudad, y quedan aún mejor de noche. Te fijas en la luz indirecta que recorta una pared de hormigón, en el trazado de una tubería vista, en el brillo del metal bajo una lámpara o en el cuero gastado de un sillón. Valoras lo resistente y funcional, aunque tenga marcas de uso, y te gusta que la tecnología forme parte del espacio: sonido, pantallas e iluminación integrados en el proyecto, y no escondidos. Tu casa tiende a ser abierta e integrada, con salón, cocina y espacio de trabajo compartiendo el mismo ambiente.',
+                'Los lofts del SoHo, en Nueva York, quizá sean el lugar que mejor refleja tu gusto. En los años 60 y 70, artistas empezaron a vivir en antiguas fábricas y naves del barrio y mantuvieron lo que encontraron: ladrillo visto, columnas de hierro, grandes ventanales de carpintería metálica y techos altos. Allí nació la idea de que un espacio hecho para el trabajo puede convertirse en una casa llena de carácter. Y ese mismo espíritu cabe en un apartamento actual, con losa de hormigón vista, iluminación en carril, puntos de luz de color y ventanas que dejan entrar la ciudad.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Inspirado en los antiguos galpones y lofts de Nueva York, el industrial muestra lo que otros estilos esconden: la estructura, las tuberías y las instalaciones quedan a la vista.',
@@ -328,7 +344,11 @@ return [
 
         'scandinavian' => [
             'name' => 'Escandinavo',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Escandinavo, tienes un gusto ligero y natural y valoras la luz, el aire y la sencillez en cada ambiente. Los espacios que más van contigo transmiten una sensación de libertad: paredes claras, pocos muebles y ventanales amplios que traen el paisaje hacia dentro. Para ti, un ambiente bonito es aquel que es sencillo sin ser frío, en el que nada sobra y todo invita a respirar hondo.',
+                'Te gustan los ambientes que parecen una pausa en las prisas. Te fijas en la luz de la mañana atravesando una cortina fina, en el diseño limpio de una silla de madera clara, en el tacto de una manta de lana o en el verde de fuera, enmarcado por la ventana. Valoras una vida más sencilla y cercana a la naturaleza, con pocas cosas, bien diseñadas y elegidas con cuidado. Tu casa tiende a ser luminosa y silenciosa, con un rincón de lectura junto a la ventana y espacio libre para que la mirada llegue lejos.',
+                'Las casas nórdicas a orillas de los fiordos y lagos de Noruega y Suecia quizá sean el lugar que mejor refleja tu gusto. Por fuera, están en medio de una naturaleza inmensa; por dentro, son blancas, luminosas y ordenadas, con madera clara, pocos objetos y grandes ventanales que convierten el paisaje en el elemento principal de la casa. En países donde la luz del invierno escasea, aprovechar cada rayo de sol se ha convertido casi en una filosofía. Y ese mismo espíritu cabe en un apartamento actual, con luz natural bien aprovechada, colores claros, tejidos naturales y plantas.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El escandinavo nació en países de inviernos largos y poca luz, y por eso valora la claridad y el confort. Es funcional como el minimalista, pero más acogedor.',
@@ -376,7 +396,11 @@ return [
 
         'bohemian' => [
             'name' => 'Bohemio',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Bohemio, tienes un gusto libre y creativo y valoras la personalidad en cada ambiente. Los espacios que más van contigo impresionan por su energía: colores, estampados, plantas y objetos que parecen venir de distintos rincones del mundo. Para ti, un ambiente bonito es aquel que cuenta quién vive allí, en el que nada tiene que combinar a la perfección y todo tiene un motivo para estar.',
+                'Te gustan los ambientes que despiertan la curiosidad. Te fijas en la trama de una alfombra hecha a mano, en el dibujo de un cojín bordado, en la luz filtrada por una lámpara de mimbre o en una planta que cae por la estantería. Valoras las piezas con historia, encontradas en mercadillos, viajes y anticuarios, y prefieres un objeto único a un conjunto comprado de una vez. Tu casa tiende a ser un lugar de expresión, con cojines por el suelo, música sonando y conversaciones que se alargan hasta tarde.',
+                'Marrakech, en Marruecos, quizá sea la ciudad que mejor refleja tu gusto. Sus riads, casas tradicionales orientadas hacia un patio interior, reúnen casi todo lo que admiras: azulejos de colores, madera tallada, faroles de metal calado, alfombras superpuestas y cojines repartidos por el suelo. Allí, colores y culturas se mezclan con naturalidad, y cada rincón parece haberse montado a lo largo del tiempo. Y ese mismo espíritu cabe en un apartamento actual, con una base neutra, piezas encontradas, plantas y colores elegidos para dialogar entre sí.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El bohemio es libre y personal. Mezcla épocas, culturas y estampados, y cada objeto suele tener una historia: un viaje, una feria, una herencia.',
@@ -424,7 +448,11 @@ return [
 
         'contemporary' => [
             'name' => 'Contemporáneo',
-            'hero_text' => [],
+            'hero_text' => [
+                'Siendo del estilo Contemporáneo, tienes un gusto actual, elegante y atrevido, y valoras lo más nuevo en diseño en cada ambiente. Los espacios que más van contigo impresionan por la sorpresa: formas inesperadas, materiales nobles usados de una manera nueva y piezas que parecen esculturas. Para ti, un ambiente bonito es aquel que tiene actitud, moderno sin ser frío y sofisticado sin ser previsible.',
+                'Te gustan los ambientes que causan impacto. Te fijas en un sillón de curvas atrevidas, en una lámpara que parece una obra de arte, en la veta marcada de una piedra de gran formato o en un único punto de color que cambia todo el salón. Valoras la creatividad y la innovación, te gusta ver tecnología y diseño trabajando juntos y no te da miedo una pieza extravagante, siempre que el conjunto siga equilibrado. Tu casa tiende a ser integrada y fluida, con cada ambiente pensado como una composición.',
+                'Dubái quizá sea la ciudad que mejor refleja tu gusto. En pocas décadas, se ha convertido en un laboratorio de arquitectura atrevida: el Burj Khalifa, con más de 800 metros de altura, y el Museo del Futuro, de forma ovalada con un vacío en el centro y fachada cubierta de caligrafía árabe, muestran cómo la creatividad puede convertirse en símbolo de una ciudad. Por dentro, hoteles y apartamentos siguen la misma línea, con mármol en grandes paneles, iluminación escenográfica y piezas de diseño que parecen esculturas. Allí, lujo e innovación van de la mano. Y ese mismo espíritu cabe en un apartamento actual, con una base neutra, piezas de diseño llamativas y materiales usados de forma creativa.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'El contemporáneo es el estilo del presente. Acompaña lo más actual en diseño y tecnología y combina referencias modernas y clásicas con equilibrio.',

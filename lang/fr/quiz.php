@@ -127,7 +127,7 @@ return [
 
     // Conteúdo da página de resultado de cada estilo. Campos vazios ficam
     // ocultos na página (ela continua funcionando) — preencher um estilo por vez.
-    //   hero_text  → 2 parágrafos, começando por "Sendo do estilo [nome], você…"
+    //   hero_text  → 3 parágrafos, começando por "Sendo do estilo [nome], você…"
     //   practice   → characteristics/materials: 'text' (2–3 frases) + 'items' (lista curta);
     //                palette: 'text' + 'colors' => [['name' => 'Bege', 'hex' => '#E8DCC4'], ...]
     //   works      → 4 a 6 itens ['title' => '...', 'text' => '...'] (O que funciona para você)
@@ -136,7 +136,11 @@ return [
 
         'classic' => [
             'name' => 'Classique',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Classique, vous avez des goûts raffinés et appréciez la sophistication dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent au premier regard, par la noblesse des matériaux et la présence imposante de l\'architecture. Pour vous, une belle pièce est une pièce où rien ne semble improvisé : les proportions ont du sens, les meubles dialoguent entre eux et chaque détail a été choisi avec soin.',
+                'Vous aimez les intérieurs qui surprennent le regard et révèlent quelque chose de nouveau à chaque visite. Vous remarquez le dessin d\'une moulure, l\'éclat d\'un lustre en cristal, le toucher d\'un velours ou le doré discret d\'une poignée. Vous appréciez ce qui est bien fait et fait pour durer, et préférez investir dans quelques pièces de qualité plutôt que suivre la tendance du moment. Votre maison a tendance à raconter une histoire, avec des meubles de famille, des œuvres d\'art et des objets qui prennent de la valeur avec le temps.',
+                'Paris est peut-être la ville qui traduit le mieux vos goûts. Les appartements haussmanniens du XIXe siècle réunissent presque tout ce que vous admirez : hauteur sous plafond, murs à boiseries, parquet en point de Hongrie, cheminées en marbre et hautes fenêtres ouvrant sur des balcons en fer forgé. Ils sont la preuve que la tradition, lorsqu\'elle est bien entretenue, ne se démode pas. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec les bons choix de matériaux, de proportions et de détails.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le classique part de la symétrie et de la proportion. Les pièces s\'organisent autour d\'un point central, comme une cheminée ou une console, et les détails travaillés apportent la finition.',
@@ -184,7 +188,11 @@ return [
 
         'minimalist' => [
             'name' => 'Minimaliste',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Minimaliste, vous avez des goûts clairs et affirmés et appréciez la simplicité dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent par leur calme : peu de meubles, des lignes épurées et de l\'espace libre pour circuler. Pour vous, une belle pièce est une pièce où tout a une fonction et une place, et où rien n\'est là juste pour remplir l\'espace.',
+                'Vous aimez les intérieurs qui reposent le regard. Vous remarquez la précision de la jonction entre le mur et le sol, la lumière qui entre sans obstacle, la texture d\'un bois clair ou la légèreté d\'un plateau en verre. Vous privilégiez la qualité à la quantité, et préférez posséder moins de choses, pourvu qu\'elles soient choisies avec discernement. Votre maison a tendance à être ordonnée et silencieuse, un lieu où l\'esprit ralentit après la journée.',
+                'Le Japon est peut-être le lieu qui traduit le mieux vos goûts. Là-bas, le vide est considéré comme une partie de l\'architecture. Les maisons traditionnelles de Kyoto, avec leurs panneaux coulissants en papier, leurs sols en tatami et presque aucun meuble, et les œuvres de l\'architecte Tadao Ando, faites de béton lisse et de lumière naturelle, montrent comment quelques éléments bien choisis peuvent marquer autant qu\'une pièce pleine de détails. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec une menuiserie bien pensée, des matériaux bien maîtrisés et de l\'espace pour respirer.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le minimalisme réduit la pièce au nécessaire. Chaque meuble a une fonction et une place définies, et l\'espace vide fait partie du projet.',
@@ -232,7 +240,11 @@ return [
 
         'rustic' => [
             'name' => 'Rustique',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Rustique, vous avez des goûts chaleureux et appréciez le naturel dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent par leur douceur de vivre : du bois, de la pierre et des tissus qui invitent à rester. Pour vous, une belle pièce est une pièce qui semble habitée, où les matériaux se montrent tels qu\'ils sont, avec leurs marques, et où la maison ne semble pas mise en scène pour une photo.',
+                'Vous aimez les intérieurs qui éveillent les sens. Vous remarquez les veines d\'une table en bois massif, la texture irrégulière d\'un mur en pierre, l\'odeur d\'un poêle à bois ou le toucher d\'un plaid en coton brut. Vous appréciez le fait main et ce qui vieillit bien, et trouvez plus belle une pièce marquée par l\'usage qu\'une autre tout juste sortie du magasin. Votre maison a tendance à être un lieu de rencontre, avec une grande table, une cuisine animée et de la place pour accueillir ceux qui arrivent.',
+                'Les anciennes fazendas du Minas Gerais, au Brésil, sont peut-être le lieu qui traduit le mieux vos goûts. Des murs épais, des poutres en bois apparentes, des planchers en larges lames, un fourneau à bois au cœur de la cuisine et une véranda ouverte sur la campagne réunissent presque tout ce que vous admirez. Elles montrent comment des matériaux simples, utilisés tels quels, créent une chaleur qu\'aucune finition sophistiquée ne remplace. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec du vrai bois, des textures naturelles et une lumière chaude.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le rustique fait entrer la nature dans la maison. Les matériaux se montrent tels qu\'ils sont, avec leurs veines, leurs nœuds et leurs marques, et la pièce invite à rester.',
@@ -280,7 +292,11 @@ return [
 
         'industrial' => [
             'name' => 'Industriel',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Industriel, vous avez des goûts urbains et authentiques et appréciez la vérité des matériaux dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent par leur atmosphère : béton, métal et brique apparents, tons sombres et une lumière qui semble dessiner la pièce. Pour vous, une belle pièce est une pièce qui ne cache pas comment elle a été construite et qui fait de sa propre structure un élément du décor.',
+                'Vous aimez les intérieurs qui ont un air de grande ville, et ils sont encore plus beaux la nuit. Vous remarquez la lumière indirecte qui découpe un mur en béton, le tracé d\'une tuyauterie apparente, l\'éclat du métal sous une lampe ou le cuir patiné d\'un fauteuil. Vous appréciez ce qui est robuste et fonctionnel, même marqué par l\'usage, et aimez que la technologie fasse partie de l\'espace : son, écrans et éclairage intégrés au projet, et non cachés. Votre maison a tendance à être ouverte et décloisonnée, avec le salon, la cuisine et l\'espace de travail réunis dans une même pièce.',
+                'Les lofts de SoHo, à New York, sont peut-être le lieu qui traduit le mieux vos goûts. Dans les années 1960 et 1970, des artistes se sont installés dans les anciennes usines et entrepôts du quartier et ont gardé ce qu\'ils y ont trouvé : brique apparente, colonnes en fonte, grandes verrières à châssis métallique et hauts plafonds. C\'est là qu\'est née l\'idée qu\'un espace conçu pour le travail peut devenir une maison pleine de caractère. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec une dalle en béton apparente, un éclairage sur rail, des touches de lumière colorée et des fenêtres qui laissent entrer la ville.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Inspiré des anciens entrepôts et lofts de New York, le style industriel montre ce que les autres styles cachent : la structure, les tuyaux et les installations restent apparents.',
@@ -328,7 +344,11 @@ return [
 
         'scandinavian' => [
             'name' => 'Scandinave',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Scandinave, vous avez des goûts légers et naturels et appréciez la lumière, l\'air et la simplicité dans chaque pièce. Les espaces qui vous ressemblent le plus procurent une sensation de liberté : murs clairs, peu de meubles et larges fenêtres qui font entrer le paysage. Pour vous, une belle pièce est une pièce simple sans être froide, où rien n\'est de trop et où tout invite à respirer profondément.',
+                'Vous aimez les intérieurs qui ressemblent à une pause dans le tourbillon du quotidien. Vous remarquez la lumière du matin à travers un voilage, la ligne épurée d\'une chaise en bois clair, le toucher d\'un plaid en laine ou la verdure dehors, encadrée par la fenêtre. Vous appréciez une vie plus simple et proche de la nature, avec peu de choses, bien dessinées et choisies avec soin. Votre maison a tendance à être lumineuse et silencieuse, avec un coin lecture près de la fenêtre et de l\'espace libre pour que le regard porte loin.',
+                'Les maisons nordiques au bord des fjords et des lacs de Norvège et de Suède sont peut-être le lieu qui traduit le mieux vos goûts. Dehors, elles se trouvent au milieu d\'une nature immense ; dedans, elles sont blanches, lumineuses et ordonnées, avec du bois clair, peu d\'objets et de grandes fenêtres qui font du paysage l\'élément principal de la maison. Dans ces pays où la lumière d\'hiver est rare, profiter de chaque rayon de soleil est devenu presque une philosophie. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec une lumière naturelle bien exploitée, des couleurs claires, des tissus naturels et des plantes.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le scandinave est né dans des pays aux longs hivers et à la lumière rare, c\'est pourquoi il valorise la clarté et le confort. Il est fonctionnel comme le minimaliste, mais plus accueillant.',
@@ -376,7 +396,11 @@ return [
 
         'bohemian' => [
             'name' => 'Bohème',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Bohème, vous avez des goûts libres et créatifs et appréciez la personnalité dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent par leur énergie : couleurs, motifs, plantes et objets qui semblent venir des quatre coins du monde. Pour vous, une belle pièce est une pièce qui raconte qui y vit, où rien n\'a besoin d\'être parfaitement assorti et où chaque chose a une raison d\'être là.',
+                'Vous aimez les intérieurs qui éveillent la curiosité. Vous remarquez la trame d\'un tapis tissé à la main, le motif d\'un coussin brodé, la lumière filtrée par une lampe en rotin ou une plante qui retombe le long d\'une étagère. Vous appréciez les pièces qui ont une histoire, chinées dans des marchés, en voyage ou chez des antiquaires, et préférez un objet unique à un ensemble acheté d\'un coup. Votre maison a tendance à être un lieu d\'expression, avec des coussins au sol, de la musique et des conversations qui se prolongent tard dans la nuit.',
+                'Marrakech, au Maroc, est peut-être la ville qui traduit le mieux vos goûts. Ses riads, maisons traditionnelles tournées vers un patio intérieur, réunissent presque tout ce que vous admirez : zelliges colorés, bois sculpté, lanternes en métal ajouré, tapis superposés et coussins éparpillés sur le sol. Là-bas, couleurs et cultures se mêlent avec naturel, et chaque recoin semble avoir été composé au fil du temps. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec une base neutre, des pièces chinées, des plantes et des couleurs choisies pour dialoguer entre elles.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le bohème est libre et personnel. Il mélange les époques, les cultures et les motifs, et chaque objet a souvent une histoire : un voyage, une brocante, un héritage.',
@@ -424,7 +448,11 @@ return [
 
         'contemporary' => [
             'name' => 'Contemporain',
-            'hero_text' => [],
+            'hero_text' => [
+                'Avec un style Contemporain, vous avez des goûts actuels, chics et audacieux, et appréciez les dernières nouveautés du design dans chaque pièce. Les espaces qui vous ressemblent le plus impressionnent par leur effet de surprise : formes inattendues, matériaux nobles utilisés d\'une manière nouvelle et pièces qui ressemblent à des sculptures. Pour vous, une belle pièce est une pièce qui a du caractère, moderne sans être froide et sophistiquée sans être prévisible.',
+                'Vous aimez les intérieurs qui font de l\'effet. Vous remarquez un fauteuil aux courbes audacieuses, une lampe qui ressemble à une œuvre d\'art, le veinage marqué d\'une pierre en grand format ou une seule touche de couleur qui transforme tout le salon. Vous appréciez la créativité et l\'innovation, aimez voir la technologie et le design travailler ensemble et n\'avez pas peur d\'une pièce extravagante, tant que l\'ensemble reste équilibré. Votre maison a tendance à être ouverte et fluide, chaque pièce étant pensée comme une composition.',
+                'Dubaï est peut-être la ville qui traduit le mieux vos goûts. En quelques décennies, elle est devenue un laboratoire d\'architecture audacieuse : la Burj Khalifa, haute de plus de 800 mètres, et le Musée du Futur, de forme ovale avec un vide en son centre et une façade couverte de calligraphie arabe, montrent comment la créativité peut devenir le symbole d\'une ville. À l\'intérieur, hôtels et appartements suivent la même ligne, avec du marbre en grands panneaux, un éclairage scénographique et des pièces de design qui ressemblent à des sculptures. Là-bas, luxe et innovation vont de pair. Et ce même esprit trouve sa place dans un appartement d\'aujourd\'hui, avec une base neutre, des pièces de design marquantes et des matériaux utilisés de façon créative.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Le contemporain est le style du présent. Il suit ce qui se fait d\'actuel en design et en technologie et associe avec équilibre des références modernes et classiques.',

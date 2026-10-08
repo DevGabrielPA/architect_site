@@ -127,7 +127,7 @@ return [
 
     // Conteúdo da página de resultado de cada estilo. Campos vazios ficam
     // ocultos na página (ela continua funcionando) — preencher um estilo por vez.
-    //   hero_text  → 2 parágrafos, começando por "Sendo do estilo [nome], você…"
+    //   hero_text  → 3 parágrafos, começando por "Sendo do estilo [nome], você…"
     //   practice   → characteristics/materials: 'text' (2–3 frases) + 'items' (lista curta);
     //                palette: 'text' + 'colors' => [['name' => 'Bege', 'hex' => '#E8DCC4'], ...]
     //   works      → 4 a 6 itens ['title' => '...', 'text' => '...'] (O que funciona para você)
@@ -136,7 +136,11 @@ return [
 
         'classic' => [
             'name' => 'Clássico',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Clássico, você tem um gosto refinado e valoriza a sofisticação em cada ambiente. Os espaços que mais combinam com você impressionam logo à primeira vista, pela nobreza dos materiais e pela presença imponente da arquitetura. Para você, um ambiente bonito é aquele em que nada parece improvisado: as proporções fazem sentido, as peças conversam entre si e cada detalhe foi escolhido com cuidado.',
+                'Você gosta de ambientes que surpreendem o olhar e revelam algo novo a cada visita. Repara no desenho de uma moldura, no brilho de um lustre de cristal, no toque de um veludo ou no dourado discreto de um puxador. Valoriza o que é bem feito e feito para durar, e prefere investir em poucas peças de qualidade a acompanhar a tendência da vez. Sua casa tende a contar uma história, com móveis de família, obras de arte e objetos que ganham valor com o tempo.',
+                'Paris talvez seja a cidade que melhor traduz o seu gosto. Os apartamentos parisienses do século XIX reúnem quase tudo o que você admira: pé-direito alto, paredes com boiseries, piso de madeira em espinha de peixe, lareiras de mármore e janelas altas que se abrem para sacadas de ferro trabalhado. São a prova de que a tradição, quando bem cuidada, não sai de moda. E esse mesmo espírito cabe em um apartamento atual, com as escolhas certas de materiais, proporções e detalhes.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O clássico parte da simetria e da proporção. Os ambientes se organizam em torno de um ponto central, como uma lareira ou um aparador, e os detalhes trabalhados dão o acabamento.',
@@ -184,7 +188,11 @@ return [
 
         'minimalist' => [
             'name' => 'Minimalista',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Minimalista, você tem um gosto claro e decidido e valoriza a simplicidade em cada ambiente. Os espaços que mais combinam com você impressionam pela calma: poucas peças, linhas limpas e espaço livre para circular. Para você, um ambiente bonito é aquele em que tudo tem função e lugar, e nada está ali só para preencher espaço.',
+                'Você gosta de ambientes que descansam o olhar. Repara na precisão do encontro entre a parede e o piso, na luz que entra sem obstáculos, na textura de uma madeira clara ou na leveza de um tampo de vidro. Valoriza a qualidade mais do que a quantidade, e prefere ter menos coisas, desde que escolhidas com critério. Sua casa tende a ser organizada e silenciosa, um lugar onde a cabeça desacelera depois do dia.',
+                'O Japão talvez seja o lugar que melhor traduz o seu gosto. Lá, o espaço vazio é tratado como parte da arquitetura. As casas tradicionais de Quioto, com painéis de correr em papel, piso de tatame e quase nenhum móvel, e as obras do arquiteto Tadao Ando, feitas de concreto liso e luz natural, mostram como poucos elementos bem escolhidos podem marcar tanto quanto um ambiente cheio de detalhes. E esse mesmo espírito cabe em um apartamento atual, com marcenaria bem planejada, materiais bem resolvidos e espaço para respirar.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O minimalismo reduz o ambiente ao que é necessário. Cada peça tem função e lugar definidos, e o espaço vazio faz parte do projeto.',
@@ -232,7 +240,11 @@ return [
 
         'rustic' => [
             'name' => 'Rústico',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Rústico, você tem um gosto acolhedor e valoriza o natural em cada ambiente. Os espaços que mais combinam com você impressionam pelo aconchego: madeira, pedra e tecidos que convidam a ficar. Para você, um ambiente bonito é aquele que parece vivido, em que os materiais aparecem como são, com suas marcas, e a casa não parece montada para uma foto.',
+                'Você gosta de ambientes que despertam os sentidos. Repara nos veios de uma mesa de madeira maciça, na textura irregular de uma parede de pedra, no cheiro de um fogão a lenha ou no toque de uma manta de algodão cru. Valoriza o feito à mão e o que envelhece bem, e acha mais bonita uma peça com marcas de uso do que uma recém-saída da loja. Sua casa tende a ser um ponto de encontro, com mesa grande, cozinha movimentada e lugar para receber quem chega.',
+                'As antigas fazendas de Minas Gerais talvez sejam o lugar que melhor traduz o seu gosto. Paredes grossas, vigas de madeira aparentes, piso de tábuas largas, fogão a lenha no centro da cozinha e uma varanda aberta para o campo reúnem quase tudo o que você admira. Mostram como materiais simples, usados como são, criam um aconchego que nenhum acabamento sofisticado substitui. E esse mesmo espírito cabe em um apartamento atual, com madeira de verdade, texturas naturais e luz quente.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O rústico traz a natureza para dentro de casa. Os materiais aparecem como são, com veios, nós e marcas, e o ambiente convida a ficar.',
@@ -280,7 +292,11 @@ return [
 
         'industrial' => [
             'name' => 'Industrial',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Industrial, você tem um gosto urbano e autêntico e valoriza a verdade dos materiais em cada ambiente. Os espaços que mais combinam com você impressionam pela atmosfera: concreto, metal e tijolo à mostra, tons escuros e uma luz que parece desenhar o ambiente. Para você, um ambiente bonito é aquele que não esconde como foi construído e transforma a própria estrutura em parte da decoração.',
+                'Você gosta de ambientes com cara de cidade grande, e eles ficam ainda melhores à noite. Repara na luz indireta que recorta uma parede de concreto, no traçado de uma tubulação aparente, no brilho do metal sob uma luminária ou no couro gasto de uma poltrona. Valoriza o que é resistente e funcional, mesmo com marcas de uso, e gosta quando a tecnologia faz parte do espaço: som, telas e iluminação integrados ao projeto, e não escondidos dele. Sua casa tende a ser aberta e integrada, com sala, cozinha e espaço de trabalho dividindo o mesmo ambiente.',
+                'Os lofts do SoHo, em Nova York, talvez sejam o lugar que melhor traduz o seu gosto. Nos anos 1960 e 1970, artistas passaram a morar em antigas fábricas e galpões do bairro e mantiveram o que encontraram: tijolo aparente, colunas de ferro, janelões de caixilho metálico e pé-direito alto. Ali nasceu a ideia de que um espaço feito para o trabalho pode virar uma casa cheia de caráter. E esse mesmo espírito cabe em um apartamento atual, com laje aparente, iluminação em trilho, pontos de luz colorida e janelas que deixam a cidade entrar.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Inspirado nos antigos galpões e lofts de Nova York, o industrial mostra o que outros estilos escondem: estrutura, tubulação e instalações ficam aparentes.',
@@ -328,7 +344,11 @@ return [
 
         'scandinavian' => [
             'name' => 'Escandinavo',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Escandinavo, você tem um gosto leve e natural e valoriza a luz, o ar e a simplicidade em cada ambiente. Os espaços que mais combinam com você trazem uma sensação de liberdade: paredes claras, poucos móveis e janelas amplas que trazem a paisagem para dentro. Para você, um ambiente bonito é aquele que é simples sem ser frio, em que nada sobra e tudo convida a respirar fundo.',
+                'Você gosta de ambientes que parecem uma pausa na correria. Repara na luz da manhã atravessando uma cortina fina, no desenho limpo de uma cadeira de madeira clara, no toque de uma manta de lã ou no verde lá fora, emoldurado pela janela. Valoriza uma vida mais simples e próxima da natureza, com poucas coisas, bem desenhadas e escolhidas com cuidado. Sua casa tende a ser clara e silenciosa, com um canto de leitura perto da janela e espaço livre para o olhar ir longe.',
+                'As casas nórdicas à beira dos fiordes e lagos da Noruega e da Suécia talvez sejam o lugar que melhor traduz o seu gosto. Por fora, ficam no meio de uma natureza imensa; por dentro, são brancas, luminosas e organizadas, com madeira clara, poucos objetos e grandes janelas que transformam a paisagem no principal elemento da casa. Em países onde a luz do inverno é rara, aproveitar cada raio de sol virou quase uma filosofia. E esse mesmo espírito cabe em um apartamento atual, com luz natural bem aproveitada, cores claras, tecidos naturais e plantas.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O escandinavo nasceu em países de inverno longo e pouca luz, e por isso valoriza a claridade e o conforto. É funcional como o minimalista, mas mais acolhedor.',
@@ -376,7 +396,11 @@ return [
 
         'bohemian' => [
             'name' => 'Boêmio',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Boêmio, você tem um gosto livre e criativo e valoriza a personalidade em cada ambiente. Os espaços que mais combinam com você impressionam pela energia: cores, estampas, plantas e objetos que parecem ter vindo de diferentes cantos do mundo. Para você, um ambiente bonito é aquele que conta quem mora ali, em que nada precisa combinar perfeitamente e tudo tem um motivo para estar.',
+                'Você gosta de ambientes que despertam a curiosidade. Repara na trama de um tapete feito à mão, no desenho de uma almofada bordada, na luz filtrada por uma luminária de palha ou numa planta que desce pela estante. Valoriza peças com história, garimpadas em feiras, viagens e antiquários, e prefere um objeto único a um conjunto comprado de uma vez. Sua casa tende a ser um lugar de expressão, com almofadas pelo chão, música tocando e conversas que se estendem até tarde.',
+                'Marrakech, no Marrocos, talvez seja a cidade que melhor traduz o seu gosto. Seus riads, casas tradicionais voltadas para um pátio interno, reúnem quase tudo o que você admira: azulejos coloridos, madeira entalhada, lanternas de metal recortado, tapetes sobrepostos e almofadas espalhadas pelo chão. Ali, cores e culturas se misturam com naturalidade, e cada canto parece ter sido montado ao longo do tempo. E esse mesmo espírito cabe em um apartamento atual, com uma base neutra, peças garimpadas, plantas e cores escolhidas para conversar entre si.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O boêmio é livre e pessoal. Mistura épocas, culturas e estampas, e cada objeto costuma ter uma história: uma viagem, uma feira, uma herança.',
@@ -424,7 +448,11 @@ return [
 
         'contemporary' => [
             'name' => 'Contemporâneo',
-            'hero_text' => [],
+            'hero_text' => [
+                'Sendo do estilo Contemporâneo, você tem um gosto atual, chique e ousado, e valoriza o que há de mais novo em design em cada ambiente. Os espaços que mais combinam com você impressionam pela surpresa: formas inesperadas, materiais nobres usados de um jeito novo e peças que parecem esculturas. Para você, um ambiente bonito é aquele que tem atitude, moderno sem ser frio e sofisticado sem ser previsível.',
+                'Você gosta de ambientes que causam impacto. Repara numa poltrona de curvas ousadas, numa luminária que parece uma obra de arte, no veio marcante de uma pedra em grande formato ou num único ponto de cor que muda a sala inteira. Valoriza a criatividade e a inovação, gosta de ver tecnologia e design trabalhando juntos e não tem medo de uma peça extravagante, desde que o conjunto continue equilibrado. Sua casa tende a ser integrada e fluida, com cada ambiente pensado como uma composição.',
+                'Dubai talvez seja a cidade que melhor traduz o seu gosto. Em poucas décadas, ela se tornou um laboratório de arquitetura ousada: o Burj Khalifa, com mais de 800 metros de altura, e o Museu do Futuro, de forma oval com um vazio no centro e fachada coberta de caligrafia árabe, mostram como a criatividade pode virar símbolo de uma cidade. Por dentro, hotéis e apartamentos seguem a mesma linha, com mármore em grandes painéis, iluminação cenográfica e peças de design que parecem esculturas. Ali, luxo e inovação andam juntos. E esse mesmo espírito cabe em um apartamento atual, com uma base neutra, peças de design marcantes e materiais usados de forma criativa.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'O contemporâneo é o estilo do presente. Acompanha o que há de atual em design e tecnologia e combina referências modernas e clássicas com equilíbrio.',

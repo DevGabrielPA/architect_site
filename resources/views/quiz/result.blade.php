@@ -889,7 +889,7 @@
 
         .qzr-projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 20px;
         }
 
@@ -1060,6 +1060,27 @@
 
         /* ---------- Responsivo ---------- */
 
+        /* Notebooks (1001–1200px): card lateral e painel de dimensões mais
+           estreitos para a coluna principal não ficar espremida. */
+        @media (min-width: 1001px) and (max-width: 1200px) {
+            .qzr-report {
+                grid-template-columns: minmax(0, 1fr) 260px;
+                gap: 40px;
+            }
+
+            .qzr-dims-panel {
+                grid-template-columns: minmax(0, 1fr) 230px;
+            }
+
+            .qzr-dims-detail {
+                padding: 26px 20px;
+            }
+
+            .qzr-fit-list {
+                gap: 22px 28px;
+            }
+        }
+
         @media (max-width: 1000px) {
             .qzr-report {
                 grid-template-columns: minmax(0, 1fr);
@@ -1112,6 +1133,10 @@
 
             .qzr-practice-block {
                 padding: 22px 20px;
+            }
+
+            .qzr-projects-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
         }
     </style>

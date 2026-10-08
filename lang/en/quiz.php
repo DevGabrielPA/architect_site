@@ -127,7 +127,7 @@ return [
 
     // Conteúdo da página de resultado de cada estilo. Campos vazios ficam
     // ocultos na página (ela continua funcionando) — preencher um estilo por vez.
-    //   hero_text  → 2 parágrafos, começando por "Sendo do estilo [nome], você…"
+    //   hero_text  → 3 parágrafos, começando por "Sendo do estilo [nome], você…"
     //   practice   → characteristics/materials: 'text' (2–3 frases) + 'items' (lista curta);
     //                palette: 'text' + 'colors' => [['name' => 'Bege', 'hex' => '#E8DCC4'], ...]
     //   works      → 4 a 6 itens ['title' => '...', 'text' => '...'] (O que funciona para você)
@@ -136,7 +136,11 @@ return [
 
         'classic' => [
             'name' => 'Classic',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Classic style, you have refined taste and value sophistication in every room. The spaces that suit you best make an impression at first sight, through the nobility of their materials and the commanding presence of their architecture. To you, a beautiful room is one where nothing feels improvised: the proportions make sense, the pieces speak to each other and every detail has been chosen with care.',
+                'You like rooms that catch the eye and reveal something new with every visit. You notice the profile of a moulding, the sparkle of a crystal chandelier, the feel of velvet or the subtle gold of a handle. You value what is well made and made to last, and would rather invest in a few quality pieces than follow the trend of the moment. Your home tends to tell a story, with family furniture, works of art and objects that gain value over time.',
+                'Paris may be the city that best captures your taste. Nineteenth-century Parisian apartments bring together almost everything you admire: high ceilings, panelled boiserie walls, herringbone wood floors, marble fireplaces and tall windows opening onto wrought-iron balconies. They are proof that tradition, when well cared for, never goes out of style. And that same spirit fits in a modern apartment, with the right choices of materials, proportions and details.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Classic style starts from symmetry and proportion. Rooms are organized around a focal point, such as a fireplace or a sideboard, and crafted details provide the finishing touch.',
@@ -184,7 +188,11 @@ return [
 
         'minimalist' => [
             'name' => 'Minimalist',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Minimalist style, you have clear, decisive taste and value simplicity in every room. The spaces that suit you best make an impression through their calm: few pieces, clean lines and open space to move around. To you, a beautiful room is one where everything has a purpose and a place, and nothing is there just to fill space.',
+                'You like rooms that give the eye a rest. You notice the precision where wall meets floor, light coming in unobstructed, the texture of pale wood or the lightness of a glass tabletop. You value quality over quantity, and prefer to own fewer things, as long as they are chosen with care. Your home tends to be organized and quiet, a place where your mind slows down after the day.',
+                'Japan may be the place that best captures your taste. There, empty space is treated as part of the architecture. The traditional houses of Kyoto, with sliding paper panels, tatami floors and almost no furniture, and the work of architect Tadao Ando, made of smooth concrete and natural light, show how a few well-chosen elements can make as strong an impression as a room full of detail. And that same spirit fits in a modern apartment, with well-planned joinery, well-resolved materials and room to breathe.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Minimalism reduces the room to what is necessary. Every piece has a defined function and place, and empty space is part of the design.',
@@ -232,7 +240,11 @@ return [
 
         'rustic' => [
             'name' => 'Rustic',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Rustic style, you have warm, welcoming taste and value what is natural in every room. The spaces that suit you best make an impression through their coziness: wood, stone and fabrics that invite you to stay. To you, a beautiful room is one that feels lived in, where materials show up as they are, marks and all, and the house does not look staged for a photo.',
+                'You like rooms that awaken the senses. You notice the grain of a solid wood table, the uneven texture of a stone wall, the smell of a wood-burning stove or the feel of a raw cotton throw. You value the handmade and things that age well, and find a piece with signs of use more beautiful than one fresh from the store. Your home tends to be a gathering place, with a big table, a busy kitchen and room to welcome whoever arrives.',
+                'The old farmhouses of Minas Gerais, in Brazil, may be the place that best captures your taste. Thick walls, exposed wooden beams, wide plank floors, a wood-burning stove at the heart of the kitchen and a veranda open to the countryside bring together almost everything you admire. They show how simple materials, used as they are, create a warmth that no sophisticated finish can replace. And that same spirit fits in a modern apartment, with real wood, natural textures and warm light.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Rustic style brings nature indoors. Materials appear as they are, with grain, knots and marks, and the room invites you to stay.',
@@ -280,7 +292,11 @@ return [
 
         'industrial' => [
             'name' => 'Industrial',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with an Industrial style, you have urban, authentic taste and value honesty of materials in every room. The spaces that suit you best make an impression through their atmosphere: exposed concrete, metal and brick, dark tones and light that seems to draw the room. To you, a beautiful room is one that does not hide how it was built and turns the structure itself into part of the decor.',
+                'You like rooms that feel like a big city, and they get even better at night. You notice indirect light grazing a concrete wall, the path of exposed piping, the gleam of metal under a lamp or the worn leather of an armchair. You value what is sturdy and functional, even with signs of use, and you like it when technology is part of the space: sound, screens and lighting built into the design, not hidden from it. Your home tends to be open and integrated, with living room, kitchen and workspace sharing the same space.',
+                'The lofts of SoHo, in New York, may be the place that best captures your taste. In the 1960s and 1970s, artists began living in the neighborhood\'s old factories and warehouses and kept what they found: exposed brick, cast-iron columns, large steel-framed windows and high ceilings. That is where the idea was born that a space made for work can become a home full of character. And that same spirit fits in a modern apartment, with an exposed concrete ceiling, track lighting, touches of colored light and windows that let the city in.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Inspired by the old warehouses and lofts of New York, industrial style shows what other styles hide: structure, pipes and fittings are left exposed.',
@@ -328,7 +344,11 @@ return [
 
         'scandinavian' => [
             'name' => 'Scandinavian',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Scandinavian style, you have light, natural taste and value light, air and simplicity in every room. The spaces that suit you best bring a sense of freedom: pale walls, few pieces of furniture and wide windows that bring the landscape inside. To you, a beautiful room is one that is simple without being cold, where nothing is superfluous and everything invites you to take a deep breath.',
+                'You like rooms that feel like a pause from the rush. You notice morning light coming through a sheer curtain, the clean outline of a pale wood chair, the feel of a wool throw or the green outside, framed by the window. You value a simpler life, closer to nature, with few things, well designed and carefully chosen. Your home tends to be bright and quiet, with a reading nook by the window and open space for the eye to wander.',
+                'The Nordic houses on the fjords and lakes of Norway and Sweden may be the place that best captures your taste. Outside, they sit in the middle of vast nature; inside, they are white, bright and orderly, with pale wood, few objects and large windows that make the landscape the main feature of the house. In countries where winter light is scarce, making the most of every ray of sun has become almost a philosophy. And that same spirit fits in a modern apartment, with well-used natural light, pale colors, natural fabrics and plants.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Scandinavian style was born in countries with long winters and little light, which is why it values brightness and comfort. It is functional like minimalism, but more welcoming.',
@@ -376,7 +396,11 @@ return [
 
         'bohemian' => [
             'name' => 'Bohemian',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Bohemian style, you have free, creative taste and value personality in every room. The spaces that suit you best make an impression through their energy: colors, patterns, plants and objects that seem to come from different corners of the world. To you, a beautiful room is one that tells who lives there, where nothing has to match perfectly and everything has a reason to be there.',
+                'You like rooms that spark curiosity. You notice the weave of a handmade rug, the pattern of an embroidered cushion, light filtered through a rattan lamp or a plant trailing down a bookcase. You value pieces with a story, found at markets, on trips and in antique shops, and prefer a one-of-a-kind object to a set bought all at once. Your home tends to be a place of self-expression, with cushions on the floor, music playing and conversations that run late into the night.',
+                'Marrakech, in Morocco, may be the city that best captures your taste. Its riads, traditional houses built around an inner courtyard, bring together almost everything you admire: colorful tiles, carved wood, pierced metal lanterns, layered rugs and cushions scattered across the floor. There, colors and cultures blend naturally, and every corner seems to have been put together over time. And that same spirit fits in a modern apartment, with a neutral base, found pieces, plants and colors chosen to work together.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Bohemian style is free and personal. It mixes eras, cultures and patterns, and each object usually has a story: a trip, a market, an heirloom.',
@@ -424,7 +448,11 @@ return [
 
         'contemporary' => [
             'name' => 'Contemporary',
-            'hero_text' => [],
+            'hero_text' => [
+                'As someone with a Contemporary style, you have current, chic and daring taste, and value the latest in design in every room. The spaces that suit you best make an impression through surprise: unexpected shapes, fine materials used in new ways and pieces that look like sculptures. To you, a beautiful room is one with attitude, modern without being cold and sophisticated without being predictable.',
+                'You like rooms that make an impact. You notice an armchair with bold curves, a lamp that looks like a work of art, the striking veining of a large-format stone slab or a single touch of color that changes the whole room. You value creativity and innovation, like to see technology and design working together and are not afraid of an extravagant piece, as long as the whole stays balanced. Your home tends to be open and fluid, with each room conceived as a composition.',
+                'Dubai may be the city that best captures your taste. In just a few decades, it has become a laboratory of daring architecture: the Burj Khalifa, more than 800 meters tall, and the Museum of the Future, an oval form with a void at its center and a facade covered in Arabic calligraphy, show how creativity can become the symbol of a city. Inside, hotels and apartments follow the same line, with large marble panels, theatrical lighting and design pieces that look like sculptures. There, luxury and innovation go hand in hand. And that same spirit fits in a modern apartment, with a neutral base, striking design pieces and materials used creatively.',
+            ],
             'practice' => [
                 'characteristics' => [
                     'text' => 'Contemporary is the style of the present. It keeps up with what is current in design and technology and combines modern and classic references with balance.',

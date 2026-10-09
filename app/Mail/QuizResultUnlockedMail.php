@@ -7,23 +7,25 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\App;
 
 class QuizResultUnlockedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    // O idioma NÃO pode ser uma propriedade promovida `string $locale`: a
+    // Mailable já declara `public $locale` (sem tipo) e redeclará-la com tipo
+    // é erro fatal do PHP. Usamos o locale() nativo, que faz o Laravel montar
+    // assunto e corpo do e-mail nesse idioma.
     public function __construct(
         public string $resultUrl,
         public string $winningStyleName,
-        public string $locale,
+        string $locale,
     ) {
+        $this->locale($locale);
     }
 
     public function envelope(): Envelope
     {
-        App::setLocale($this->locale);
-
         return new Envelope(
             subject: __('quiz.mail.unlocked_subject'),
         );
@@ -31,8 +33,6 @@ class QuizResultUnlockedMail extends Mailable
 
     public function content(): Content
     {
-        App::setLocale($this->locale);
-
         return new Content(view: 'emails.quiz-result-unlocked');
     }
 }

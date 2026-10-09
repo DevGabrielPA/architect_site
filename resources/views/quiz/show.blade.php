@@ -316,6 +316,13 @@
         .is-hidden {
             display: none !important;
         }
+
+        /* O atributo [hidden] perde para qualquer `display` do CSS (ex.:
+           .qz-nav-button é inline-block); sem isto o "Próxima" continuava
+           visível na última pergunta e avançava para perguntas inexistentes. */
+        .qz-quiz-section [hidden] {
+            display: none !important;
+        }
     </style>
 
     <script>
@@ -380,7 +387,7 @@
 
             function goToQuestion(index) {
                 cancelPendingAdvance();
-                current = index;
+                current = Math.max(0, Math.min(index, total - 1));
                 showQuestion(current);
                 quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }

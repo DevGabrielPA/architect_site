@@ -34,8 +34,14 @@ class AppServiceProvider extends ServiceProvider
         // O IP vem de client_ip() (app/helpers.php): atrás da Cloudflare do
         // Render, $request->ip() devolve o IP da Cloudflare, que muda a cada
         // requisição — e aí o limite nunca era atingido.
+        // Contato: cada envio dispara até 2 e-mails (para a Larissa + resposta
+        // automática), então além do limite por minuto há um teto diário.
+        RateLimiter::for('contact', fn (Request $request) => [
+            Limit::perMinute(5)->by('min:' . client_ip($request)),
+            Limit::perDay(15)->by('day:' . client_ip($request)),
+        ]);
+
         $perMinute = [
-            'contact' => 5,          // cada envio dispara um e-mail (cota do Resend)
             'quiz-submit' => 10,
             'quiz-checkout' => 10,   // cada clique cria uma sessão na Stripe
             'quiz-result' => 30,     // com ?session_id=, cada acesso consulta a Stripe

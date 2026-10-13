@@ -7,6 +7,7 @@ use App\Mail\ContactFormMail;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
 
@@ -14,6 +15,17 @@ class ContactController extends Controller
 {
     // Ninguém preenche o formulário de verdade em menos que isso.
     private const MIN_SECONDS_TO_FILL = 3;
+
+    // Nome aceito na resposta automática: só letras (com acento), espaço,
+    // apóstrofo e hífen, até 40 caracteres — nada de ponto, número, "@" ou
+    // quebra de linha, que é o que um texto de golpe precisa. Fora disso a
+    // Larissa recebe a mensagem normalmente, só a resposta automática não sai.
+    private const NAME_PATTERN = "/^[\\p{L}\\p{M}][\\p{L}\\p{M} '’-]{0,39}\\z/u";
+
+    // Cota grátis do Resend: 100 e-mails/dia, somando as mensagens para a
+    // Larissa e o e-mail do resultado pago do quiz. Respostas automáticas
+    // param neste limite para nunca esgotar a cota.
+    private const MAX_AUTOREPLIES_PER_DAY = 30;
 
     public function send(Request $request): RedirectResponse
     {
@@ -61,6 +73,28 @@ class ContactController extends Controller
     private function sendAutoReply(Request $request, array $validated): void
     {
         $firstName = trim($validated['first_name']);
+
+        // O site manda este e-mail para QUALQUER endereço digitado, com o nome
+        // digitado dentro. Sem estas travas, dava para usar o formulário para
+        // mandar golpe ("Maria, seu cadastro foi bloqueado, acesse x.com")
+        // em nome da Larissa, ou para encher a caixa de alguém.
+        if (!preg_match(self::NAME_PATTERN, $firstName)) {
+            return;
+        }
+
+        $recipientKey = 'contact_autoreply_to_' . sha1(mb_strtolower($validated['email']));
+
+        if (!Cache::add($recipientKey, true, now()->addDay())) {
+            return; // esse endereço já recebeu a resposta nas últimas 24h
+        }
+
+        $dailyKey = 'contact_autoreply_count_' . now()->format('Y-m-d');
+        Cache::add($dailyKey, 0, now()->addDays(2));
+
+        if (Cache::increment($dailyKey) > self::MAX_AUTOREPLIES_PER_DAY) {
+            return; // preserva a cota do Resend para o e-mail pago do quiz
+        }
+
         $firstName = mb_strtoupper(mb_substr($firstName, 0, 1)) . mb_substr($firstName, 1);
 
         try {

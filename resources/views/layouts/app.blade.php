@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('meta_title', __('site.meta.title'))</title>
     <meta name="description" content="@yield('meta_description', __('site.meta.description'))">
+    @hasSection('meta_robots')
+        <meta name="robots" content="@yield('meta_robots')">
+    @endif
     <link rel="canonical" href="{{ locale_url(current_path_without_locale()) }}">
 
     <!-- Open Graph: como o link aparece ao ser compartilhado (Instagram, WhatsApp, etc.) -->
@@ -30,6 +33,48 @@
     @foreach (['en', 'pt', 'fr', 'es', 'it'] as $hreflangLocale)
         <link rel="alternate" hreflang="{{ $hreflangLocale }}" href="{{ locale_url_to($hreflangLocale, $hreflangPath) }}">
     @endforeach
+
+    <!-- Dados estruturados (schema.org): dizem ao Google quem é a empresa, o site
+         e os perfis oficiais, para ligar o nome da marca ao site e ao Teste de Estilo -->
+    @php
+        $siteUrl = rtrim(url('/'), '/');
+        $structuredData = [
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                [
+                    '@type' => 'Organization',
+                    '@id' => $siteUrl . '/#organization',
+                    'name' => 'Larissa Vasconcellos Arquitetura',
+                    'alternateName' => ['LV Arquitetura', 'LV Architecture', 'Larissa Vasconcellos'],
+                    'url' => $siteUrl . '/',
+                    'image' => asset('images/larissa.png'),
+                    'description' => __('site.meta.description'),
+                    'telephone' => '+55-31-99913-7008',
+                    'founder' => [
+                        '@type' => 'Person',
+                        'name' => 'Larissa Vasconcellos',
+                        'jobTitle' => 'Architect and Interior Designer',
+                    ],
+                    'sameAs' => [
+                        'https://www.instagram.com/larissavasconcellos_studio/',
+                        'https://www.facebook.com/profile.php?id=100063760440652',
+                        'https://pin.it/7tyW73IlQ',
+                        'https://www.youtube.com/@larissavasconcellosarquiteta',
+                    ],
+                ],
+                [
+                    '@type' => 'WebSite',
+                    '@id' => $siteUrl . '/#website',
+                    'name' => 'Larissa Vasconcellos Arquitetura',
+                    'url' => $siteUrl . '/',
+                    'inLanguage' => ['en', 'pt', 'fr', 'es', 'it'],
+                    'publisher' => ['@id' => $siteUrl . '/#organization'],
+                ],
+            ],
+        ];
+    @endphp
+    <script type="application/ld+json">{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
+    @stack('structured_data')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

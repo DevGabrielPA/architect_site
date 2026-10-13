@@ -3,8 +3,10 @@
 return [
 
     'meta' => [
-        'title' => 'Test di Stile d\'Arredamento | Larissa Vasconcellos',
-        'description' => 'Scopri in pochi minuti quale stile d\'arredamento ti rispecchia di più: Classico, Minimalista, Rustico, Industriale, Scandinavo, Boho o Contemporaneo.',
+        'title' => 'Test di Stile d\'Arredamento | Larissa Vasconcellos Architettura',
+        'description' => 'Test di Stile creato dall\'architetta Larissa Vasconcellos: scopri in pochi minuti se il tuo stile d\'arredamento è Classico, Minimalista, Rustico, Industriale, Scandinavo, Boho o Contemporaneo.',
+        // Nome do serviço nos dados estruturados (schema.org) da página do teste.
+        'service_name' => 'Test di Stile d\'Arredamento',
     ],
 
     'intro' => [

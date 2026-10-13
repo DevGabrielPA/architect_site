@@ -2,6 +2,8 @@
 
 @section('meta_title', __('quiz.meta.title'))
 @section('meta_description', __('quiz.meta.description'))
+{{-- Resultado (pago ou não) é pessoal e vive num token na URL: nunca indexar. --}}
+@section('meta_robots', 'noindex, nofollow')
 
 @section('content')
     @php

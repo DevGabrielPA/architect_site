@@ -3,8 +3,10 @@
 return [
 
     'meta' => [
-        'title' => 'Test de Style de Décoration | Larissa Vasconcellos',
-        'description' => 'Découvrez en quelques minutes quel style de décoration vous correspond le mieux : Classique, Minimaliste, Rustique, Industriel, Scandinave, Bohème ou Contemporain.',
+        'title' => 'Test de Style de Décoration | Larissa Vasconcellos Architecture',
+        'description' => 'Test de Style créé par l\'architecte Larissa Vasconcellos : découvrez en quelques minutes si votre style de décoration est Classique, Minimaliste, Rustique, Industriel, Scandinave, Bohème ou Contemporain.',
+        // Nome do serviço nos dados estruturados (schema.org) da página do teste.
+        'service_name' => 'Test de Style de Décoration',
     ],
 
     'intro' => [

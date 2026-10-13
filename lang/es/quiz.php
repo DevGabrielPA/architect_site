@@ -3,8 +3,10 @@
 return [
 
     'meta' => [
-        'title' => 'Test de Estilo de Decoración | Larissa Vasconcellos',
-        'description' => 'Descubre en pocos minutos qué estilo de decoración te queda mejor: Clásico, Minimalista, Rústico, Industrial, Escandinavo, Bohemio o Contemporáneo.',
+        'title' => 'Test de Estilo de Decoración | Larissa Vasconcellos Arquitectura',
+        'description' => 'Test de Estilo creado por la arquitecta Larissa Vasconcellos: descubre en pocos minutos si tu estilo de decoración es Clásico, Minimalista, Rústico, Industrial, Escandinavo, Bohemio o Contemporáneo.',
+        // Nome do serviço nos dados estruturados (schema.org) da página do teste.
+        'service_name' => 'Test de Estilo de Decoración',
     ],
 
     'intro' => [

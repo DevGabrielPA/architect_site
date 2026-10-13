@@ -3,6 +3,37 @@
 @section('meta_title', __('quiz.meta.title'))
 @section('meta_description', __('quiz.meta.description'))
 
+{{-- Liga o Teste de Estilo à empresa (Organization definida em layouts/app). --}}
+@push('structured_data')
+    @php
+        $siteUrl = rtrim(url('/'), '/');
+        $quizData = [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            '@id' => locale_url('/style-quiz') . '#webpage',
+            'url' => locale_url('/style-quiz'),
+            'name' => __('quiz.meta.title'),
+            'description' => __('quiz.meta.description'),
+            'inLanguage' => app()->getLocale(),
+            'isPartOf' => ['@id' => $siteUrl . '/#website'],
+            'publisher' => ['@id' => $siteUrl . '/#organization'],
+            'mainEntity' => [
+                '@type' => 'Service',
+                'name' => __('quiz.meta.service_name'),
+                'serviceType' => __('quiz.meta.service_name'),
+                'provider' => ['@id' => $siteUrl . '/#organization'],
+                'offers' => [
+                    '@type' => 'Offer',
+                    'price' => number_format((float) config('quiz.price_usd'), 2, '.', ''),
+                    'priceCurrency' => 'USD',
+                    'url' => locale_url('/style-quiz'),
+                ],
+            ],
+        ];
+    @endphp
+    <script type="application/ld+json">{!! json_encode($quizData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
+@endpush
+
 @section('content')
     <section class="qz-intro" id="qz-intro">
         <div class="qz-intro-inner">

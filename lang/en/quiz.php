@@ -3,8 +3,10 @@
 return [
 
     'meta' => [
-        'title' => 'Decor Style Quiz | Larissa Vasconcellos',
-        'description' => 'Find out in a few minutes which decor style suits you best: Classic, Minimalist, Rustic, Industrial, Scandinavian, Bohemian, or Contemporary.',
+        'title' => 'Decor Style Quiz | Larissa Vasconcellos Architecture',
+        'description' => 'Style Quiz created by architect Larissa Vasconcellos: find out in a few minutes whether your decor style is Classic, Minimalist, Rustic, Industrial, Scandinavian, Bohemian or Contemporary.',
+        // Nome do serviço nos dados estruturados (schema.org) da página do teste.
+        'service_name' => 'Decor Style Quiz',
     ],
 
     'intro' => [

@@ -31,6 +31,22 @@ if (!function_exists('locale_url')) {
     }
 }
 
+if (!function_exists('locale_switch_url')) {
+    /**
+     * Link do seletor de idioma: mesma página em outro idioma. Leva junto o
+     * token do resultado do quiz (?r=...) — sem ele, trocar o idioma na
+     * página de resultado jogava a pessoa de volta para o início do teste.
+     * Os outros parâmetros (session_id, checkout=cancelled) ficam para trás.
+     */
+    function locale_switch_url(string $locale, string $path): string
+    {
+        $url = locale_url_to($locale, $path);
+        $token = request()->query('r');
+
+        return is_string($token) && $token !== '' ? $url . '?r=' . urlencode($token) : $url;
+    }
+}
+
 if (!function_exists('current_path_without_locale')) {
     /**
      * Current request path with any leading locale segment (pt/fr/es/it)

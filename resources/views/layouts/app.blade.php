@@ -157,7 +157,7 @@
                                 <ul class="sub-menu">
                                     @foreach ($localeLabels as $localeCode => $localeLabel)
                                         @continue($localeCode === app()->getLocale())
-                                        <li><a href="{{ locale_url_to($localeCode, $navCurrentPath) }}">{{ $localeLabel }}</a></li>
+                                        <li><a href="{{ locale_switch_url($localeCode, $navCurrentPath) }}">{{ $localeLabel }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -235,7 +235,7 @@
                     <ul class="mobile-drawer-accordion-panel" id="mobile-drawer-lang-panel">
                         @foreach ($localeLabels as $localeCode => $localeLabel)
                             @continue($localeCode === app()->getLocale())
-                            <li><a href="{{ locale_url_to($localeCode, $navCurrentPath) }}">{{ $localeLabel }}</a></li>
+                            <li><a href="{{ locale_switch_url($localeCode, $navCurrentPath) }}">{{ $localeLabel }}</a></li>
                         @endforeach
                     </ul>
                 </li>

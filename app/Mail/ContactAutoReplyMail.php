@@ -31,7 +31,11 @@ class ContactAutoReplyMail extends Mailable
 
     public function envelope(): Envelope
     {
+        // Remetente com nome de pessoa (o texto é escrito em primeira pessoa
+        // pela Larissa): o Gmail tende a mandar nome de empresa para a aba
+        // Promoções e nome de pessoa para a Caixa de entrada principal.
         return new Envelope(
+            from: new Address(config('mail.from.address'), 'Larissa Vasconcellos'),
             subject: __('autoreply.subject'),
             replyTo: [new Address(config('mail.contact_to'), config('mail.from.name'))],
         );

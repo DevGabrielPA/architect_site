@@ -41,6 +41,25 @@
     }
 }
 /* ==========================================================================
+   3b. TELAS MUITO GRANDES (TV / monitor 2K–4K com escala 100%) — o site foi
+       desenhado em px para até ~1920px de largura; acima disso tudo ficava
+       minúsculo. O zoom amplia a página inteira proporcionalmente, como se
+       a tela tivesse ~1920px. O zoom também multiplica vh, então toda altura
+       em vh do site é escrita como calc(Nvh / var(--zoom, 1)).
+   ========================================================================== */
+@media (min-width: 2200px) {
+    html { --zoom: 1.25; zoom: var(--zoom); }
+}
+
+@media (min-width: 2700px) {
+    html { --zoom: 1.5; }
+}
+
+@media (min-width: 3300px) {
+    html { --zoom: 2; }
+}
+
+/* ==========================================================================
    4. BOTÃO DE ENVIO TRAVADO — aplicado por resources/js/form-lock.js enquanto
       o formulário está sendo enviado (evita duplo clique).
    ========================================================================== */

@@ -1,6 +1,8 @@
 // Drawer lateral do menu mobile (hambúrguer) + accordions internos (Portfolio/Idioma) +
 // fallback de clique para os dropdowns do menu desktop em telas touch acima de 1180px.
 export function initMobileMenu() {
+    initHeaderFit();
+
     const toggleBtn = document.querySelector('.mobile-menu-toggle');
     const drawer = document.getElementById('mobile-drawer');
     const backdrop = document.getElementById('mobile-drawer-backdrop');
@@ -51,7 +53,8 @@ export function initMobileMenu() {
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                if (window.innerWidth > 1180 && drawer.classList.contains('is-open')) close();
+                // Hambúrguer sumiu (voltou o menu desktop): fecha o drawer.
+                if (toggleBtn.offsetParent === null && drawer.classList.contains('is-open')) close();
             }, 150);
         });
 
@@ -99,4 +102,36 @@ export function initMobileMenu() {
             });
         }
     });
+}
+
+// Acima de 1180px o CSS mostra o menu desktop, mas a largura que ele precisa
+// depende do idioma e do zoom (ex.: francês numa TV em 1280px). Se não couber
+// ao lado do logo, liga html.header-compact, que troca para o hambúrguer.
+function initHeaderFit() {
+    const root = document.documentElement;
+    const inner = document.querySelector('.header-inner');
+    const logo = document.getElementById('logo');
+    const nav = document.querySelector('.desktop-menu-col');
+    const links = nav ? nav.querySelector('.nav-links') : null;
+
+    if (!inner || !logo || !nav || !links) return;
+
+    function fit() {
+        root.classList.remove('header-compact');
+
+        // Abaixo de 1180px o próprio CSS já esconde o menu desktop.
+        if (getComputedStyle(nav).display === 'none') return;
+
+        const style = getComputedStyle(inner);
+        const available = inner.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+        const logoStyle = getComputedStyle(logo);
+        const needed = logo.offsetWidth + parseFloat(logoStyle.marginRight) + links.scrollWidth;
+
+        root.classList.toggle('header-compact', needed > available);
+    }
+
+    fit();
+    window.addEventListener('resize', fit);
+    // As fontes da Google chegam depois e mudam a largura dos textos.
+    document.fonts?.ready.then(fit);
 }

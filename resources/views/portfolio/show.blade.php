@@ -28,7 +28,7 @@
     @endphp
 
     <!-- HERO DE ENTRADA (IMAGEM CHEIA LOGO ABAIXO DO HEADER + TITULO SOBREPOSTO A ESQUERDA) -->
-    <section class="show-hero-section" style="position: relative; width: 100%; height: 60vh; min-height: 420px; max-height: 680px; overflow: hidden; background-color: #f2f2f2;">
+    <section class="show-hero-section" style="position: relative; width: 100%; height: calc(60vh / var(--zoom, 1)); min-height: 420px; max-height: 680px; overflow: hidden; background-color: #f2f2f2;">
         @if ($imageExists)
             <img src="{{ asset($imagePath) }}" alt="{{ $item['title'] }}" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
         @else

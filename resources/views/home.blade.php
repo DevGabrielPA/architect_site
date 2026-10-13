@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
-    <section class="hero-carousel-wrapper home-hero-section" style="position: relative; height: 85vh; width: 100%; overflow: hidden; background-color: #111;">
+    <section class="hero-carousel-wrapper home-hero-section" style="position: relative; height: calc(85vh / var(--zoom, 1)); width: 100%; overflow: hidden; background-color: #111;">
 
         <!-- SLIDES COM IMAGENS DE FUNDO -->
         <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-1.jpg');"></div>
@@ -60,7 +60,7 @@
             }
             @media (max-width: 768px) {
                 .home-hero-section {
-                    height: 70vh !important;
+                    height: calc(70vh / var(--zoom, 1)) !important;
                     min-height: 420px !important;
                 }
             }
@@ -161,7 +161,7 @@
     </section>
 
     <!-- SECTION IMAGEM CENTRAL COM FRASE CONVIDATIVA -->
-    <section class="home-cta-section" style="position: relative; width: 100%; height: 70vh; min-height: 480px; max-height: 760px; overflow: hidden;">
+    <section class="home-cta-section" style="position: relative; width: 100%; height: calc(70vh / var(--zoom, 1)); min-height: 480px; max-height: 760px; overflow: hidden;">
         <img src="{{ asset('images/img-central.jpg') }}" alt="Signature Interior Design" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
 
         <!-- Overlay escuro para garantir legibilidade do texto -->
@@ -180,7 +180,7 @@
     <style>
         @media (max-width: 768px) {
             .home-cta-section {
-                height: 60vh !important;
+                height: calc(60vh / var(--zoom, 1)) !important;
                 min-height: 420px !important;
                 max-height: 560px !important;
             }

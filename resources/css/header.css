@@ -51,12 +51,23 @@ body {
     filter: none !important; /* Garante que a logo original escura apareça perfeitamente */
 }
 
+.logo-col {
+    flex-shrink: 0;
+    margin-right: 24px;
+}
+
 /* Links de Navegação Escuros */
 .nav-links {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 32px;
+    gap: clamp(18px, 2.2vw, 32px);
+}
+
+/* Nunca quebrar um item em duas linhas: se o menu não couber, o JS
+   (fitHeader em resources/js/mobile-menu.js) troca para o hambúrguer. */
+.nav-links a {
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -187,6 +198,17 @@ body {
     }
 }
 
+/* Acima de 1180px, mas o menu não coube (idioma com nomes longos, TV em
+   1280px, zoom do navegador...): mesmo comportamento do mobile. */
+html.header-compact .desktop-menu-col {
+    display: none;
+}
+
+html.header-compact .mobile-menu-col {
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 480px) {
     .header-inner {
         padding: 0 20px;
@@ -213,20 +235,22 @@ body {
     top: 0;
     right: 0;
     width: min(360px, 86vw);
-    height: 100vh;
-    height: 100dvh;
+    height: calc(100vh / var(--zoom, 1));
+    height: calc(100dvh / var(--zoom, 1));
     background-color: #ffffff;
-    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 10001;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
 
+/* Sombra só com o drawer aberto: fechado, ela vazava como uma faixa cinza
+   na borda direita da tela. */
 .mobile-drawer.is-open {
     transform: translateX(0);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
 }
 
 .mobile-drawer-header {

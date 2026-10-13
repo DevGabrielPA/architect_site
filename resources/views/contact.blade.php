@@ -241,7 +241,7 @@
         .contact-hero {
             position: relative;
             width: 100%;
-            height: clamp(480px, 68vh, 680px);
+            height: clamp(480px, calc(68vh / var(--zoom, 1)), 680px);
             overflow: hidden;
         }
 

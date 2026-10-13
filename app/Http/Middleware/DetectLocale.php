@@ -25,7 +25,11 @@ class DetectLocale
             if ($preferred && $preferred !== 'en') {
                 $path = trim($request->path(), '/');
 
-                return redirect('/' . $preferred . ($path !== '' ? '/' . $path : ''));
+                // Mantém a query string: o link pago do quiz (?r=...) vem por
+                // e-mail e pode ser aberto num navegador em outro idioma.
+                $query = $request->getQueryString();
+
+                return redirect('/' . $preferred . ($path !== '' ? '/' . $path : '') . ($query ? '?' . $query : ''));
             }
         }
 

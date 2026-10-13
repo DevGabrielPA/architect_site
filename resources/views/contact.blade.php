@@ -28,6 +28,12 @@
 
             <form class="contact-form" method="POST" action="{{ locale_url('/contact') }}" data-lock-on-submit>
                 @csrf
+                {{-- Armadilhas anti-robô (ver ContactController::looksLikeSpam): campo invisível que só robô preenche + horário em que a página abriu. --}}
+                <div class="cf-hp" aria-hidden="true">
+                    <label for="cf-website">Website</label>
+                    <input type="text" id="cf-website" name="website" value="" tabindex="-1" autocomplete="off">
+                </div>
+                <input type="hidden" name="form_ts" value="{{ \Illuminate\Support\Facades\Crypt::encryptString((string) time()) }}">
                 <div class="cf-field">
                     <label for="cf-first-name">{{ __('site.contact.first_name') }} <span class="cf-req">*</span></label>
                     <input type="text" id="cf-first-name" name="first_name" value="{{ old('first_name') }}" required>
@@ -81,6 +87,13 @@
 
     <style>
         /* --- Formulário de Contato --- */
+        .cf-hp {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
         .contact-form-section {
             background-color: #f0dfc4;
             padding: 110px 20px;

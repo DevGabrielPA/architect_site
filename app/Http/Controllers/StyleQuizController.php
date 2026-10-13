@@ -48,8 +48,8 @@ class StyleQuizController extends Controller
 
     public function result(Request $request): View|RedirectResponse
     {
-        $token = (string) $request->query('r', '');
-        $payload = $token !== '' ? quiz_decode_token($token) : null;
+        $token = $request->query('r');
+        $payload = is_string($token) && $token !== '' ? quiz_decode_token($token) : null;
 
         if (!$payload) {
             return redirect(locale_url('/style-quiz'))->with('quiz_invalid_token', true);
@@ -92,8 +92,8 @@ class StyleQuizController extends Controller
 
     public function checkout(Request $request): RedirectResponse
     {
-        $token = (string) $request->input('r', '');
-        $payload = $token !== '' ? quiz_decode_token($token) : null;
+        $token = $request->input('r');
+        $payload = is_string($token) && $token !== '' ? quiz_decode_token($token) : null;
 
         if (!$payload) {
             return redirect(locale_url('/style-quiz'))->with('quiz_invalid_token', true);

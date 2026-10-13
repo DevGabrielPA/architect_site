@@ -51,6 +51,25 @@ if (!function_exists('current_path_without_locale')) {
     }
 }
 
+if (!function_exists('client_ip')) {
+    /**
+     * IP real do visitante. Em produção o site fica atrás da Cloudflare (do
+     * Render), que sobrescreve o cabeçalho CF-Connecting-IP com o IP de quem
+     * fez a conexão — o visitante não consegue forjá-lo. Sem esse cabeçalho
+     * (ambiente local), cai no $request->ip() normal.
+     */
+    function client_ip(\Illuminate\Http\Request $request): string
+    {
+        $cfIp = $request->header('CF-Connecting-IP');
+
+        if (is_string($cfIp) && filter_var($cfIp, FILTER_VALIDATE_IP)) {
+            return $cfIp;
+        }
+
+        return (string) $request->ip();
+    }
+}
+
 if (!function_exists('portfolio_translate')) {
     /**
      * Overlays the current locale's translated title/description/etc. (from

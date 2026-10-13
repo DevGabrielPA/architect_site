@@ -31,6 +31,9 @@ class AppServiceProvider extends ServiceProvider
         // Limites de requisições por IP, cada um com seu próprio contador (o
         // throttle:N,M sem nome compartilharia um único contador entre todas
         // as rotas). Excedeu o limite, a pessoa recebe 429 e espera 1 minuto.
+        // O IP vem de client_ip() (app/helpers.php): atrás da Cloudflare do
+        // Render, $request->ip() devolve o IP da Cloudflare, que muda a cada
+        // requisição — e aí o limite nunca era atingido.
         $perMinute = [
             'contact' => 5,          // cada envio dispara um e-mail (cota do Resend)
             'quiz-submit' => 10,
@@ -40,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
         ];
 
         foreach ($perMinute as $name => $limit) {
-            RateLimiter::for($name, fn (Request $request) => Limit::perMinute($limit)->by($request->ip()));
+            RateLimiter::for($name, fn (Request $request) => Limit::perMinute($limit)->by(client_ip($request)));
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactAutoReplyMail;
 use App\Mail\ContactFormMail;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\RedirectResponse;
@@ -46,7 +47,52 @@ class ContactController extends Controller
 
         Mail::to(config('mail.contact_to'))->send(new ContactFormMail($validated));
 
+        $this->sendAutoReply($request, $validated);
+
         return back()->with('contact_success', true);
+    }
+
+    /**
+     * Resposta automática para a pessoa (textos em lang/*\/autoreply.php).
+     * Se falhar — por exemplo, enquanto o domínio não estiver verificado no
+     * Resend, que aí só entrega para o dono da conta —, só registra o erro:
+     * a mensagem para a Larissa já foi enviada e a pessoa vê o sucesso normal.
+     */
+    private function sendAutoReply(Request $request, array $validated): void
+    {
+        $firstName = trim($validated['first_name']);
+        $firstName = mb_strtoupper(mb_substr($firstName, 0, 1)) . mb_substr($firstName, 1);
+
+        try {
+            Mail::to($validated['email'])->send(new ContactAutoReplyMail(
+                firstName: $firstName,
+                greetingKey: $this->greetingKey($request->input('tz')),
+                quizUrl: locale_url('/style-quiz'),
+                locale: app()->getLocale(),
+            ));
+        } catch (\Throwable $e) {
+            report($e);
+        }
+    }
+
+    /**
+     * Bom dia / boa tarde / boa noite pela hora local de quem preencheu: o
+     * formulário manda o fuso do navegador no campo "tz" (preenchido por JS
+     * em contact.blade.php). Sem fuso válido, usa o horário de Brasília.
+     */
+    private function greetingKey(mixed $timezone): string
+    {
+        if (!is_string($timezone) || !in_array($timezone, timezone_identifiers_list(), true)) {
+            $timezone = 'America/Sao_Paulo';
+        }
+
+        $hour = (int) now($timezone)->format('G');
+
+        return match (true) {
+            $hour >= 5 && $hour < 12 => 'greeting_morning',
+            $hour >= 12 && $hour < 18 => 'greeting_afternoon',
+            default => 'greeting_evening',
+        };
     }
 
     /**

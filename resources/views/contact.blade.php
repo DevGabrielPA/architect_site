@@ -34,6 +34,11 @@
                     <input type="text" id="cf-website" name="website" value="" tabindex="-1" autocomplete="off">
                 </div>
                 <input type="hidden" name="form_ts" value="{{ \Illuminate\Support\Facades\Crypt::encryptString((string) time()) }}">
+                {{-- Fuso horário do navegador, para o "bom dia/boa tarde/boa noite" da resposta automática. --}}
+                <input type="hidden" name="tz" id="cf-tz" value="">
+                <script>
+                    try { document.getElementById('cf-tz').value = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+                </script>
                 <div class="cf-field">
                     <label for="cf-first-name">{{ __('site.contact.first_name') }} <span class="cf-req">*</span></label>
                     <input type="text" id="cf-first-name" name="first_name" value="{{ old('first_name') }}" required>

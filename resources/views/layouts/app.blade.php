@@ -99,7 +99,7 @@
                         <a href="{{ locale_url('/') }}" title="Larissa Vasconcellos" rel="home" style="text-decoration: none; display: inline-block;">
                             <span style="
                                 font-family: 'Cormorant Garamond', serif;
-                                font-size: clamp(16px, 4.5vw, 28px);
+                                font-size: clamp(10px, min(4.5vw, calc((100vw - 110px) / 16)), 28px);
                                 font-weight: 400;
                                 color: #111111;
                                 text-transform: uppercase;

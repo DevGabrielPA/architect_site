@@ -164,6 +164,7 @@ body {
 }
 
 .mobile-menu-col {
+    flex-shrink: 0;
     display: none;
 }
 
@@ -209,9 +210,18 @@ html.header-compact .mobile-menu-col {
     align-items: center;
 }
 
+/* Telas estreitas (celular pequeno, janela/painel do VS Code reduzido): a
+   logo é texto sem quebra de linha, então o tamanho dela no layout acompanha
+   a largura da tela (calc((100vw - 110px) / 16) no estilo inline, onde 110px
+   = respiro lateral + margem + hambúrguer + barra de rolagem). Sem isso a logo
+   empurrava o hambúrguer para fora da tela abaixo de ~350px. */
 @media (max-width: 480px) {
     .header-inner {
         padding: 0 20px;
+    }
+
+    .logo-col {
+        margin-right: 12px;
     }
 }
 

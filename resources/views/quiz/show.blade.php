@@ -420,21 +420,100 @@
                 cancelPendingAdvance();
                 current = Math.max(0, Math.min(index, total - 1));
                 showQuestion(current);
+                saveProgress();
                 quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Progresso salvo no sessionStorage (só desta aba, apagado ao fechá-la):
+            // sobrevive ao F5 e à troca de idioma, que é só outra URL no mesmo
+            // domínio. Guarda apenas as letras das respostas e o índice da pergunta
+            // — nada sensível — e tudo que volta de lá é revalidado aqui, além de o
+            // servidor validar tudo de novo no submit. Se o storage estiver
+            // bloqueado (aba anônima, cookies desligados), o quiz funciona como antes.
+            var STORAGE_KEY = 'styleQuizProgress';
+            var validLetters = {!! json_encode(array_map(fn ($index) => chr(65 + $index), array_keys($styles))) !!};
+            var started = false;
+
+            function saveProgress() {
+                var answers = {};
+                questions.forEach(function (fieldset, i) {
+                    var checked = fieldset.querySelector('input:checked');
+                    if (checked) {
+                        answers[i + 1] = checked.value;
+                    }
+                });
+
+                try {
+                    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ started: started, current: current, answers: answers }));
+                } catch (e) {}
+            }
+
+            function clearProgress() {
+                try {
+                    window.sessionStorage.removeItem(STORAGE_KEY);
+                } catch (e) {}
+            }
+
+            function restoreProgress() {
+                var saved;
+
+                try {
+                    saved = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY));
+                } catch (e) {
+                    return;
+                }
+
+                if (!saved || typeof saved !== 'object' || !saved.answers || typeof saved.answers !== 'object') {
+                    return;
+                }
+
+                questions.forEach(function (fieldset, i) {
+                    var letter = saved.answers[i + 1];
+                    if (typeof letter !== 'string' || validLetters.indexOf(letter) === -1) {
+                        return;
+                    }
+
+                    var input = fieldset.querySelector('input[type="radio"][value="' + letter + '"]');
+                    if (input) {
+                        input.checked = true;
+                    }
+                });
+
+                var savedIndex = parseInt(saved.current, 10);
+                if (!isNaN(savedIndex)) {
+                    current = Math.max(0, Math.min(savedIndex, total - 1));
+                }
+
+                started = saved.started === true;
+            }
+
+            function startQuiz() {
+                introSection.classList.add('is-hidden');
+                quizSection.classList.remove('is-hidden');
             }
 
             // Progressive enhancement: sem JS, a intro e o formulário inteiro já
             // ficam visíveis (fallback é uma única página longa com tudo). Com JS,
             // escondemos o formulário até o clique em "Começar o Teste", e dentro
-            // dele mostramos só a pergunta atual.
+            // dele mostramos só a pergunta atual — ou, se havia um teste em
+            // andamento nesta aba (F5, troca de idioma), voltamos direto para a
+            // pergunta onde a pessoa parou, com as respostas já marcadas.
+            restoreProgress();
             showQuestion(current);
             progressWrap.hidden = false;
-            quizSection.classList.add('is-hidden');
+
+            if (started) {
+                startQuiz();
+                quizSection.scrollIntoView({ block: 'start' });
+            } else {
+                quizSection.classList.add('is-hidden');
+            }
 
             startButton.addEventListener('click', function (event) {
                 event.preventDefault();
-                introSection.classList.add('is-hidden');
-                quizSection.classList.remove('is-hidden');
+                started = true;
+                saveProgress();
+                startQuiz();
                 quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
 
@@ -466,6 +545,7 @@
 
                 incompleteMessage.hidden = true;
                 cancelPendingAdvance();
+                saveProgress();
 
                 if (current !== total - 1) {
                     var questionBeingAnswered = current;
@@ -491,7 +571,12 @@
                     event.preventDefault();
                     incompleteMessage.hidden = false;
                     goToQuestion(missingIndex);
+                    return;
                 }
+
+                // As respostas seguem no formulário; daqui em diante o resultado
+                // vive no token ?r= da URL, então o rascunho local pode sair.
+                clearProgress();
             });
         });
     </script>

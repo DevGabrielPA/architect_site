@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -78,26 +79,43 @@ class ContactController extends Controller
         // digitado dentro. Sem estas travas, dava para usar o formulário para
         // mandar golpe ("Maria, seu cadastro foi bloqueado, acesse x.com")
         // em nome da Larissa, ou para encher a caixa de alguém.
+        // Cada desistência fica no log (como erro, porque produção só mostra
+        // LOG_LEVEL=error), com o e-mail mascarado: assim, quando alguém diz
+        // que não recebeu a resposta, os logs do Render dizem o motivo.
+        $skip = function (string $reason) use ($validated, $firstName): void {
+            Log::error('Contact auto-reply not sent: ' . $reason, [
+                'email' => $this->maskEmail($validated['email']),
+                'first_name_length' => mb_strlen($firstName),
+                'locale' => app()->getLocale(),
+            ]);
+        };
+
         if (!preg_match(self::NAME_PATTERN, $firstName)) {
+            $skip('first name has characters other than letters, spaces, apostrophes or hyphens (or is over 40)');
+
             return;
         }
 
         $recipientKey = 'contact_autoreply_to_' . sha1(mb_strtolower($validated['email']));
 
-        if (!Cache::add($recipientKey, true, now()->addDay())) {
-            return; // esse endereço já recebeu a resposta nas últimas 24h
-        }
-
-        $dailyKey = 'contact_autoreply_count_' . now()->format('Y-m-d');
-        Cache::add($dailyKey, 0, now()->addDays(2));
-
-        if (Cache::increment($dailyKey) > self::MAX_AUTOREPLIES_PER_DAY) {
-            return; // preserva a cota do Resend para o e-mail pago do quiz
-        }
-
-        $firstName = mb_strtoupper(mb_substr($firstName, 0, 1)) . mb_substr($firstName, 1);
-
         try {
+            if (!Cache::add($recipientKey, true, now()->addDay())) {
+                $skip('this address already got an auto-reply in the last 24h');
+
+                return;
+            }
+
+            $dailyKey = 'contact_autoreply_count_' . now()->format('Y-m-d');
+            Cache::add($dailyKey, 0, now()->addDays(2));
+
+            if (Cache::increment($dailyKey) > self::MAX_AUTOREPLIES_PER_DAY) {
+                $skip('daily auto-reply limit reached'); // preserva a cota do Resend para o e-mail pago do quiz
+
+                return;
+            }
+
+            $firstName = mb_strtoupper(mb_substr($firstName, 0, 1)) . mb_substr($firstName, 1);
+
             Mail::to($validated['email'])->send(new ContactAutoReplyMail(
                 firstName: $firstName,
                 greetingKey: $this->greetingKey($request->input('tz')),
@@ -105,8 +123,19 @@ class ContactController extends Controller
                 locale: app()->getLocale(),
             ));
         } catch (\Throwable $e) {
+            // Falhou: libera o endereço para uma nova tentativa não ficar presa nas 24h.
+            Cache::forget($recipientKey);
+            $skip('sending failed: ' . $e->getMessage());
             report($e);
         }
+    }
+
+    /** "pedro.silva@gmail.com" → "pe***@gmail.com" (o log não guarda o endereço inteiro). */
+    private function maskEmail(string $email): string
+    {
+        [$user, $domain] = array_pad(explode('@', $email, 2), 2, '');
+
+        return mb_substr($user, 0, 2) . '***@' . $domain;
     }
 
     /**

@@ -3,8 +3,20 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos Arquitetura',
+        'title' => 'Larissa Vasconcellos Arquitetura | Arquiteta e Design de Interiores',
         'description' => 'Estúdio de arquitetura e design de interiores de luxo com Larissa Vasconcellos. Projetos residenciais e comerciais de alto padrão, do conceito à execução.',
+        // Título e descrição de cada página (aba do navegador e resultado do Google).
+        'about_title' => 'Quem Somos | Larissa Vasconcellos Arquiteta',
+        'about_description' => 'Conheça Larissa Vasconcellos, arquiteta e designer de interiores: a história do estúdio, a forma de trabalhar e os parceiros que acompanham cada projeto de arquitetura.',
+        'contact_title' => 'Contato | Larissa Vasconcellos Arquitetura',
+        'contact_description' => 'Fale com a arquiteta Larissa Vasconcellos e conte sobre o seu projeto de arquitetura, reforma ou design de interiores.',
+        'completed_projects_title' => 'Projetos de Arquitetura e Interiores | Larissa Vasconcellos',
+        'completed_projects_description' => 'Projetos concluídos de arquitetura e design de interiores assinados por Larissa Vasconcellos: cozinhas, quartos, salas e residências completas.',
+        'design_insights_title' => 'Design de Peças Autorais | Larissa Vasconcellos',
+        'design_insights_description' => 'Luminárias, lustres e móveis autorais criados pela arquiteta Larissa Vasconcellos para projetos de arquitetura e interiores.',
+        'project_title' => ':title | Larissa Vasconcellos Arquitetura',
+        'project_description' => ':title: projeto de arquitetura e design de interiores assinado por Larissa Vasconcellos.',
+        'piece_description' => ':title: peça de design autoral criada pela arquiteta Larissa Vasconcellos.',
     ],
 
     'nav' => [
@@ -31,7 +43,7 @@ return [
     ],
 
     'home' => [
-        'meta_description' => 'Larissa Vasconcellos Arquitetura: projetos de arquitetura, design de interiores e peças autorais. Atendimento em BH e região.',
+        'meta_description' => 'Larissa Vasconcellos, arquiteta: projetos de arquitetura, design de interiores e peças autorais em BH e região. Descubra seu estilo arquitetônico no nosso teste.',
         'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Arquiteta e Designer',
         'hero_subtitle' => 'Transformando espaços residenciais e comerciais de alto padrão em verdadeiras obras de arte funcionais.',

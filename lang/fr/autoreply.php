@@ -21,7 +21,7 @@ return [
 
     'next_step' => 'Avec ces informations, je pourrai vous répondre pour que nous avancions sur le projet.',
 
-    'quiz_pitch' => 'Enfin, j\'aimerais vous recommander une étape qui rend le projet beaucoup plus juste : notre Test de Style. En quelques minutes, il identifie votre style de décoration, les couleurs, les matériaux et les formes qui vous ressemblent le plus, ainsi que ce qui ne vous correspond pas. Ainsi, nous alignons les attentes dès le départ et développons un projet fidèle à vos goûts, avec plus de précision et sans retouches. Le résultat peut aussi vous aider à voir plus clairement ce que vous souhaitez pour votre espace.',
+    'quiz_pitch' => 'Enfin, j\'aimerais vous recommander une étape qui rend le projet beaucoup plus juste : notre Test de Style. En quelques minutes, il identifie votre style architectural, les couleurs, les matériaux et les formes qui vous ressemblent le plus, ainsi que ce qui ne vous correspond pas. Ainsi, nous alignons les attentes dès le départ et développons un projet fidèle à vos goûts, avec plus de précision et sans retouches. Le résultat peut aussi vous aider à voir plus clairement ce que vous souhaitez pour votre espace.',
 
     'quiz_link_intro' => 'Le test est facultatif et ne coûte que 3 $ US :',
 

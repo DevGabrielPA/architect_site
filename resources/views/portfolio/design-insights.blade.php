@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', __('site.meta.design_insights_title'))
+@section('meta_description', __('site.meta.design_insights_description'))
+
 @section('content')
     <!-- SECTION HERO (TITULO PRINCIPAL CENTRALIZADO + CTA) -->
     <section style="padding: 80px 0 60px; background-color: #ffffff; text-align: center;">
@@ -31,7 +34,7 @@
 
                 <!-- Coluna da Direita: Lustre Saturnos em Destaque -->
                 <a href="{{ locale_url('/portfolio/design-insights/lustre-saturnos') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
-                    <img src="{{ asset('images/design-insights/saturnos.png') }}" alt="Saturnos Chandelier" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
+                    <img src="{{ asset('images/design-insights/thumbs/saturnos.webp') }}" srcset="{{ asset('images/design-insights/thumbs/saturnos.webp') }} 1200w, {{ asset('images/design-insights/saturnos.webp') }} 2560w" sizes="(max-width: 800px) 100vw, 50vw" alt="Saturnos Chandelier" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.lustre-saturnos.title') }}</span>
                 </a>
@@ -76,7 +79,7 @@
 
                 <!-- Coluna da Esquerda: Vinculo Lamp em Destaque -->
                 <a href="{{ locale_url('/portfolio/design-insights/vinculo-lamp') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
-                    <img src="{{ asset('images/design-insights/vinculo.png') }}" alt="Vínculo Lamp" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
+                    <img loading="lazy" src="{{ asset('images/design-insights/thumbs/vinculo.webp') }}" srcset="{{ asset('images/design-insights/thumbs/vinculo.webp') }} 1200w, {{ asset('images/design-insights/vinculo.webp') }} 2560w" sizes="(max-width: 800px) 100vw, 50vw" alt="Vínculo Lamp" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.vinculo-lamp.title') }}</span>
                 </a>
@@ -108,7 +111,7 @@
 
                 <!-- Coluna da Direita: Brisa Side Table em Destaque -->
                 <a href="{{ locale_url('/portfolio/design-insights/brisa-side-table') }}" class="di-feature flex-col-min320" style="flex: 1 1 480px; min-width: 320px; position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; border-radius: 20px; overflow: hidden; text-decoration: none;">
-                    <img src="{{ asset('images/design-insights/brisa.png') }}" alt="Brisa Side Table" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
+                    <img loading="lazy" src="{{ asset('images/design-insights/thumbs/brisa.webp') }}" srcset="{{ asset('images/design-insights/thumbs/brisa.webp') }} 1200w, {{ asset('images/design-insights/brisa.webp') }} 2560w" sizes="(max-width: 800px) 100vw, 50vw" alt="Brisa Side Table" class="di-feature-img" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover;">
                     <div class="di-feature-overlay"></div>
                     <span class="di-feature-title">{{ __('portfolio.design_insights.brisa-side-table.title') }}</span>
                 </a>

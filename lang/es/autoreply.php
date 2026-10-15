@@ -21,7 +21,7 @@ return [
 
     'next_step' => 'Con esta información, ya puedo darte una respuesta para seguir adelante con el proyecto.',
 
-    'quiz_pitch' => 'Por último, me gustaría recomendarte una etapa que hace el proyecto mucho más acertado: nuestro Test de Estilo. En pocos minutos, identifica tu estilo de decoración, los colores, los materiales y las formas con los que más te identificas, y también lo que no va contigo. Así, alineamos las expectativas desde el principio y desarrollamos un proyecto fiel a tu gusto, con más precisión y sin retrabajo. El resultado también puede ayudarte a ver con más claridad lo que quieres para tu espacio.',
+    'quiz_pitch' => 'Por último, me gustaría recomendarte una etapa que hace el proyecto mucho más acertado: nuestro Test de Estilo. En pocos minutos, identifica tu estilo arquitectónico, los colores, los materiales y las formas con los que más te identificas, y también lo que no va contigo. Así, alineamos las expectativas desde el principio y desarrollamos un proyecto fiel a tu gusto, con más precisión y sin retrabajo. El resultado también puede ayudarte a ver con más claridad lo que quieres para tu espacio.',
 
     'quiz_link_intro' => 'El test es opcional y cuesta solo US$ 3:',
 

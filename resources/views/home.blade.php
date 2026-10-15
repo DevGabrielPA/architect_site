@@ -2,13 +2,18 @@
 
 @section('meta_description', __('site.home.meta_description'))
 
+{{-- A foto do topo é background-image (o navegador só a acharia depois do CSS): baixa já --}}
+@push('head')
+    <link rel="preload" as="image" href="{{ asset('images/hero-1.webp') }}" fetchpriority="high">
+@endpush
+
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
     <section class="hero-carousel-wrapper home-hero-section" style="position: relative; height: calc(85vh / var(--zoom, 1)); width: 100%; overflow: hidden; background-color: #111;">
 
         <!-- SLIDES COM IMAGENS DE FUNDO -->
-        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-1.jpg');"></div>
-        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-2.png');"></div>
+        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-1.webp');"></div>
+        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url('/images/hero-2.webp');"></div>
 
         <!-- CONTEÃšDO CENTRAL FIXO -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; text-align: center; z-index: 10; padding: 0 20px;">
@@ -137,7 +142,7 @@
                     <!-- height: 100% preenche o espaÃ§o vertical exato determinado pelo texto ao lado (desktop); em mobile vira aspect-ratio fixo via .who-we-are-image-wrap -->
                     <div class="who-we-are-image-wrap" style="width: 100%; height: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.04); overflow: hidden;">
                         <!-- object-fit: cover faz a foto preencher o retÃ¢ngulo sem distorcer e object-position mantÃ©m o enquadramento focado de cima para baixo -->
-                        <img src="{{ asset('images/larissa.png') }}" alt="{{ __('site.home.hero_image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
+                        <img loading="lazy" src="{{ asset('images/larissa.webp') }}" alt="{{ __('site.home.hero_image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top;">
                     </div>
                 </div>
 
@@ -162,7 +167,7 @@
 
     <!-- SECTION IMAGEM CENTRAL COM FRASE CONVIDATIVA -->
     <section class="home-cta-section" style="position: relative; width: 100%; height: calc(70vh / var(--zoom, 1)); min-height: 480px; max-height: 760px; overflow: hidden;">
-        <img src="{{ asset('images/img-central.jpg') }}" alt="Signature Interior Design" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+        <img loading="lazy" src="{{ asset('images/img-central.webp') }}" alt="Signature Interior Design" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
 
         <!-- Overlay escuro para garantir legibilidade do texto -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.4)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;">
@@ -275,6 +280,7 @@
                 'items' => portfolio_translate_all(config('portfolio.completed_projects'), 'completed_projects'),
                 'urlPrefix' => '/portfolio/completed-projects',
                 'imageFolder' => 'portfolio',
+                'eagerCount' => 0, // na home a grade fica abaixo da dobra
             ])
 
             <div style="text-align: center; margin-top: 40px;">
@@ -302,7 +308,7 @@
 
             <!-- Coluna da Esquerda: Imagem sem moldura, caixa ou sombra, para se fundir ao fundo -->
             <div class="flex-col-min320" style="flex: 1 1 360px; min-width: 280px; display: flex; justify-content: center;">
-                <img src="{{ asset('images/novos-talentos.png') }}" alt="Larissa Vasconcellos - Design de PeÃ§as" style="width: 100%; max-width: 400px; height: auto; display: block;">
+                <img loading="lazy" src="{{ asset('images/novos-talentos.webp') }}" alt="Larissa Vasconcellos - Design de Peças" style="width: 100%; max-width: 400px; height: auto; display: block;">
             </div>
 
             <!-- Coluna da Direita: Texto convidando o cliente a conhecer o design de peÃ§as -->
@@ -360,7 +366,7 @@
                     @endphp
                     <a href="{{ $post['url'] }}" target="_blank" rel="noopener" class="instagram-item">
                         @if ($foundImage)
-                            <img src="{{ asset($foundImage) }}" alt="Instagram post" class="instagram-item-img">
+                            <img loading="lazy" src="{{ asset($foundImage) }}" alt="Instagram post" class="instagram-item-img">
                         @else
                             <div class="instagram-item-placeholder">
                                 <i class="fa-brands fa-instagram"></i>

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', __('site.meta.completed_projects_title'))
+@section('meta_description', __('site.meta.completed_projects_description'))
+
 @section('content')
     <!-- INTRO NO ESTILO "WELCOME" DA PÁGINA DE PORTFÓLIO DA DS MIAMI, ANTES DO GRID MASONRY -->
     <section style="padding: 80px 0 40px; background-color: #ffffff;">

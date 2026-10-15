@@ -22,7 +22,7 @@ return [
 
     'next_step' => 'Com essas informações, já consigo te dar um retorno para seguirmos com o projeto.',
 
-    'quiz_pitch' => 'Por fim, gostaria de te indicar uma etapa que torna o projeto muito mais assertivo: o nosso Teste de Estilo. Em poucos minutos, ele identifica o seu estilo de decoração, as cores, os materiais e as formas com que você mais se identifica e também o que não combina com você. Assim, alinhamos as expectativas desde o início e desenvolvemos um projeto fiel ao seu gosto, com mais precisão e sem retrabalho. O resultado também pode te ajudar a enxergar com mais clareza o que você quer para o seu espaço.',
+    'quiz_pitch' => 'Por fim, gostaria de te indicar uma etapa que torna o projeto muito mais assertivo: o nosso Teste de Estilo. Em poucos minutos, ele identifica o seu estilo arquitetônico, as cores, os materiais e as formas com que você mais se identifica e também o que não combina com você. Assim, alinhamos as expectativas desde o início e desenvolvemos um projeto fiel ao seu gosto, com mais precisão e sem retrabalho. O resultado também pode te ajudar a enxergar com mais clareza o que você quer para o seu espaço.',
 
     'quiz_link_intro' => 'O teste é opcional e custa apenas US$ 3:',
 

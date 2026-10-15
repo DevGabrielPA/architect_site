@@ -21,7 +21,7 @@ return [
 
     'next_step' => 'With this information, I can get back to you so we can move forward with the project.',
 
-    'quiz_pitch' => 'Finally, I\'d like to recommend a step that makes the project much more on point: our Style Quiz. In just a few minutes, it identifies your decoration style, the colors, materials and shapes you relate to the most, and also what doesn\'t suit you. That way, we align expectations from the start and develop a project true to your taste, with more precision and no rework. The result can also help you see more clearly what you want for your space.',
+    'quiz_pitch' => 'Finally, I\'d like to recommend a step that makes the project much more on point: our Style Quiz. In just a few minutes, it identifies your architectural style, the colors, materials and shapes you relate to the most, and also what doesn\'t suit you. That way, we align expectations from the start and develop a project true to your taste, with more precision and no rework. The result can also help you see more clearly what you want for your space.',
 
     'quiz_link_intro' => 'The quiz is optional and costs just $3:',
 

@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title' => 'Test de Style de Décoration | Larissa Vasconcellos Architecture',
-        'description' => 'Test de Style créé par l\'architecte Larissa Vasconcellos : découvrez en quelques minutes si votre style de décoration est Classique, Minimaliste, Rustique, Industriel, Scandinave, Bohème ou Contemporain.',
+        'title' => 'Test de Style Architectural | Larissa Vasconcellos Architecture',
+        'description' => 'Découvrez votre style architectural avec le test de l\'architecte Larissa Vasconcellos : 20 questions en images révèlent le style d\'architecture et de design d\'intérieur qui vous correspond.',
         // Nome do serviço nos dados estruturados (schema.org) da página do teste.
-        'service_name' => 'Test de Style de Décoration',
+        'service_name' => 'Test de Style Architectural',
     ],
 
     'intro' => [
-        'heading' => 'Quel Est Votre Style de Décoration ?',
+        'heading' => 'Découvrez Votre Style Architectural',
         'subheading' => 'Répondez à 20 questions rapides illustrées et découvrez lequel des 7 styles vous correspond le plus — et comment votre goût se répartit entre palette, formes et matériaux.',
         'start_button' => 'Commencer le Test',
     ],
@@ -72,7 +72,7 @@ return [
         'on_this_page' => 'Sur cette page',
         'share' => 'Partager',
         'share_copied' => 'Lien copié !',
-        'share_text' => 'Mon style de décoration est :style. Faites le test et découvrez le vôtre :',
+        'share_text' => 'Mon style architectural est :style. Faites le test et découvrez le vôtre :',
     ],
 
     // Seção "Dimensões do seu estilo": nomes dos polos (esquerdo = 0,
@@ -117,13 +117,13 @@ return [
     ],
 
     'checkout' => [
-        'product_name' => 'Résultat Complet — Test de Style de Décoration',
+        'product_name' => 'Résultat Complet — Test de Style Architectural',
     ],
 
     'mail' => [
         'unlocked_subject' => 'Votre Résultat Complet du Test de Style Est Prêt',
         'unlocked_heading' => 'Votre résultat complet est débloqué !',
-        'unlocked_body' => 'Votre paiement a été confirmé et le résultat complet de votre Test de Style de Décoration est maintenant disponible. Votre style dominant est <strong>:style</strong> — cliquez sur le bouton ci-dessous pour découvrir les dimensions de votre goût, votre style en pratique et bien plus encore.',
+        'unlocked_body' => 'Votre paiement a été confirmé et le résultat complet de votre Test de Style Architectural est maintenant disponible. Votre style dominant est <strong>:style</strong> — cliquez sur le bouton ci-dessous pour découvrir les dimensions de votre goût, votre style en pratique et bien plus encore.',
         'unlocked_cta' => 'Voir Mon Résultat Complet',
     ],
 

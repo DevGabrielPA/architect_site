@@ -64,7 +64,7 @@ $routes = function () {
         ]);
     });
 
-    // Teste de Estilo de Decoração: sem banco de dados, o "estado" do quiz e
+    // Teste de Estilo Arquitetônico: sem banco de dados, o "estado" do quiz e
     // do pagamento vive inteiramente num token criptografado na URL (?r=...),
     // ver app/helpers.php (quiz_mint_unpaid_token/quiz_mint_paid_token/quiz_decode_token).
     Route::get('/style-quiz', [StyleQuizController::class, 'show']);
@@ -85,22 +85,29 @@ foreach (['pt', 'fr', 'es', 'it'] as $locale) {
 // única vez, sem prefixo de idioma, e isento de CSRF (ver bootstrap/app.php).
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])->middleware('throttle:stripe-webhook');
 
-// sitemap.xml e robots.txt são gerados a partir da URL atual (APP_URL), então
-// não precisam de ajuste manual quando o site trocar de domínio.
-Route::get('/sitemap.xml', function () {
+// Itens do portfólio que já têm foto de capa. Os que ainda não têm (só
+// placeholder "Image Coming Soon") ficam fora do sitemap.xml e do llms.txt.
+$portfolioWithImage = function (string $section, string $folder) {
+    return collect(config("portfolio.{$section}"))
+        ->filter(fn (array $item) => file_exists(public_path("images/{$folder}/{$item['image']}")));
+};
+
+// sitemap.xml, robots.txt e llms.txt são gerados a partir da URL atual
+// (APP_URL), então não precisam de ajuste manual quando o site trocar de domínio.
+Route::get('/sitemap.xml', function () use ($portfolioWithImage) {
     $staticPaths = [
         '/',
+        '/style-quiz',
         '/who-we-are',
         '/contact',
         '/portfolio/completed-projects',
         '/portfolio/design-insights',
-        '/style-quiz',
     ];
 
-    $projectPaths = collect(config('portfolio.completed_projects'))
+    $projectPaths = $portfolioWithImage('completed_projects', 'portfolio')
         ->map(fn (array $project) => "/portfolio/completed-projects/{$project['slug']}");
 
-    $insightPaths = collect(config('portfolio.design_insights'))
+    $insightPaths = $portfolioWithImage('design_insights', 'design-insights')
         ->map(fn (array $insight) => "/portfolio/design-insights/{$insight['slug']}");
 
     $paths = collect($staticPaths)->merge($projectPaths)->merge($insightPaths);
@@ -111,6 +118,16 @@ Route::get('/sitemap.xml', function () {
 });
 
 Route::get('/robots.txt', function () {
-    return response("User-agent: *\nAllow: /\n\nSitemap: " . url('/sitemap.xml') . "\n")
+    return response("User-agent: *\nAllow: /\nDisallow: /stripe/\n\nSitemap: " . url('/sitemap.xml') . "\n")
         ->header('Content-Type', 'text/plain');
+});
+
+// Resumo do site para assistentes de IA (formato llmstxt.org).
+Route::get('/llms.txt', function () use ($portfolioWithImage) {
+    return response()
+        ->view('llms', [
+            'projects' => $portfolioWithImage('completed_projects', 'portfolio'),
+            'pieces' => $portfolioWithImage('design_insights', 'design-insights'),
+        ])
+        ->header('Content-Type', 'text/plain; charset=utf-8');
 });

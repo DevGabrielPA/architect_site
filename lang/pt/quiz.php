@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title' => 'Teste de Estilo de Decoração | Larissa Vasconcellos Arquitetura',
-        'description' => 'Teste de Estilo criado pela arquiteta Larissa Vasconcellos: descubra em poucos minutos se o seu estilo de decoração é Clássico, Minimalista, Rústico, Industrial, Escandinavo, Boêmio ou Contemporâneo.',
+        'title' => 'Teste de Estilo Arquitetônico | Larissa Vasconcellos Arquitetura',
+        'description' => 'Descubra seu estilo arquitetônico no teste da arquiteta Larissa Vasconcellos: 20 perguntas com imagens revelam o estilo de arquitetura e design de interiores que combina com você.',
         // Nome do serviço nos dados estruturados (schema.org) da página do teste.
-        'service_name' => 'Teste de Estilo de Decoração',
+        'service_name' => 'Teste de Estilo Arquitetônico',
     ],
 
     'intro' => [
-        'heading' => 'Qual é o seu estilo de decoração?',
+        'heading' => 'Descubra seu estilo arquitetônico',
         'subheading' => 'Responda 20 perguntas rápidas com imagens e descubra qual dos 7 estilos combina mais com você — e como o seu gosto se divide entre paleta, formas e materiais.',
         'start_button' => 'Começar o Teste',
     ],
@@ -72,7 +72,7 @@ return [
         'on_this_page' => 'Nesta página',
         'share' => 'Compartilhar',
         'share_copied' => 'Link copiado!',
-        'share_text' => 'Meu estilo de decoração é :style. Faça o teste e descubra o seu:',
+        'share_text' => 'Meu estilo arquitetônico é :style. Faça o teste e descubra o seu:',
     ],
 
     // Seção "Dimensões do seu estilo": nomes dos polos (esquerdo = 0,
@@ -117,13 +117,13 @@ return [
     ],
 
     'checkout' => [
-        'product_name' => 'Resultado Completo — Teste de Estilo de Decoração',
+        'product_name' => 'Resultado Completo — Teste de Estilo Arquitetônico',
     ],
 
     'mail' => [
         'unlocked_subject' => 'Seu Resultado Completo do Teste de Estilo Já Está Pronto',
         'unlocked_heading' => 'Seu resultado completo está liberado!',
-        'unlocked_body' => 'O pagamento foi confirmado e o resultado completo do seu Teste de Estilo de Decoração já está disponível. Seu estilo predominante é <strong>:style</strong> — clique no botão abaixo para ver as dimensões do seu gosto, como o seu estilo aparece na prática e muito mais.',
+        'unlocked_body' => 'O pagamento foi confirmado e o resultado completo do seu Teste de Estilo Arquitetônico já está disponível. Seu estilo predominante é <strong>:style</strong> — clique no botão abaixo para ver as dimensões do seu gosto, como o seu estilo aparece na prática e muito mais.',
         'unlocked_cta' => 'Ver Meu Resultado Completo',
     ],
 

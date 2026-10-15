@@ -3,8 +3,20 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos Arquitectura',
+        'title' => 'Larissa Vasconcellos Arquitectura | Arquitecta y Diseño de Interiores',
         'description' => 'Estudio de arquitectura y diseño de interiores de lujo dirigido por Larissa Vasconcellos. Proyectos residenciales y comerciales de alta gama, del concepto a la ejecución.',
+        // Título e descrição de cada página (aba do navegador e resultado do Google).
+        'about_title' => 'Quiénes Somos | Larissa Vasconcellos Arquitecta',
+        'about_description' => 'Conoce a Larissa Vasconcellos, arquitecta y diseñadora de interiores: la historia del estudio, la forma de trabajar y los socios que acompañan cada proyecto de arquitectura.',
+        'contact_title' => 'Contacto | Larissa Vasconcellos Arquitectura',
+        'contact_description' => 'Habla con la arquitecta Larissa Vasconcellos y cuéntanos tu proyecto de arquitectura, reforma o diseño de interiores.',
+        'completed_projects_title' => 'Proyectos de Arquitectura e Interiores | Larissa Vasconcellos',
+        'completed_projects_description' => 'Proyectos realizados de arquitectura y diseño de interiores firmados por Larissa Vasconcellos: cocinas, dormitorios, salones y viviendas completas.',
+        'design_insights_title' => 'Diseño de Piezas de Autor | Larissa Vasconcellos',
+        'design_insights_description' => 'Lámparas, candelabros y muebles de autor creados por la arquitecta Larissa Vasconcellos para proyectos de arquitectura e interiores.',
+        'project_title' => ':title | Larissa Vasconcellos Arquitectura',
+        'project_description' => ':title: proyecto de arquitectura y diseño de interiores firmado por Larissa Vasconcellos.',
+        'piece_description' => ':title: pieza de diseño de autor creada por la arquitecta Larissa Vasconcellos.',
     ],
 
     'nav' => [
@@ -31,7 +43,7 @@ return [
     ],
 
     'home' => [
-        'meta_description' => 'Larissa Vasconcellos Arquitectura: arquitectura, diseño de interiores y piezas de autor. Con sede en Belo Horizonte, Brasil.',
+        'meta_description' => 'Larissa Vasconcellos, arquitecta: arquitectura, diseño de interiores y piezas de autor, con sede en Belo Horizonte, Brasil. Descubre tu estilo arquitectónico con nuestro test.',
         'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Arquitecta y Diseñadora',
         'hero_subtitle' => 'Transformando espacios residenciales y comerciales de alta gama en verdaderas obras de arte funcionales.',

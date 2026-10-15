@@ -21,7 +21,7 @@ return [
 
     'next_step' => 'Con queste informazioni, posso già darti un riscontro per andare avanti con il progetto.',
 
-    'quiz_pitch' => 'Infine, vorrei consigliarti una fase che rende il progetto molto più mirato: il nostro Test di Stile. In pochi minuti identifica il tuo stile d\'arredamento, i colori, i materiali e le forme in cui ti riconosci di più, e anche ciò che non fa per te. Così allineiamo le aspettative fin dall\'inizio e sviluppiamo un progetto fedele ai tuoi gusti, con più precisione e senza rifacimenti. Il risultato può anche aiutarti a vedere con più chiarezza cosa desideri per il tuo spazio.',
+    'quiz_pitch' => 'Infine, vorrei consigliarti una fase che rende il progetto molto più mirato: il nostro Test di Stile. In pochi minuti identifica il tuo stile architettonico, i colori, i materiali e le forme in cui ti riconosci di più, e anche ciò che non fa per te. Così allineiamo le aspettative fin dall\'inizio e sviluppiamo un progetto fedele ai tuoi gusti, con più precisione e senza rifacimenti. Il risultato può anche aiutarti a vedere con più chiarezza cosa desideri per il tuo spazio.',
 
     'quiz_link_intro' => 'Il test è facoltativo e costa solo 3 US$:',
 

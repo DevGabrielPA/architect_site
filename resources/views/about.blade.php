@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('meta_title', __('site.meta.about_title'))
+@section('meta_description', __('site.meta.about_description'))
+
 @section('content')
     <!-- SECTION WHO WE ARE (IMAGEM À ESQUERDA, TEXTO CENTRALIZADO VERTICALMENTE À DIREITA) -->
     <section style="padding: 80px 0 70px; background-color: #ffffff;">
@@ -10,7 +13,7 @@
                 <!-- Coluna da Esquerda: Imagem -->
                 <div class="flex-col-min320" style="flex: 1 1 480px; min-width: 320px;">
                     <div style="width: 100%; aspect-ratio: 1 / 1; overflow: hidden;">
-                        <img src="{{ asset('images/who-we-are.png') }}" alt="{{ __('site.about.image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+                        <img src="{{ asset('images/who-we-are.webp') }}" alt="{{ __('site.about.image_alt') }}" style="width: 100%; height: 100%; display: block; object-fit: cover;">
                     </div>
                 </div>
 

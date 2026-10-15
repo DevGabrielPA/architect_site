@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('meta_title', __('site.meta.project_title', ['title' => $item['title']]))
+@section('meta_description', __($imageFolder === 'design-insights' ? 'site.meta.piece_description' : 'site.meta.project_description', ['title' => $item['title']]))
+{{-- Item ainda sem foto (só o placeholder): fora do Google até ganhar conteúdo --}}
+@if (!file_exists(public_path("images/{$imageFolder}/{$item['image']}")))
+    @section('meta_robots', 'noindex, follow')
+@endif
+
 @section('content')
 
     @php
@@ -148,7 +155,7 @@
                         data-lightbox-src="{{ asset('images/' . $galleryImage) }}"
                         data-lightbox-title="{{ $item['title'] }}"
                     >
-                        <img src="{{ asset('images/' . $galleryImage) }}" alt="{{ $item['title'] }}">
+                        <img loading="lazy" src="{{ asset('images/' . $galleryImage) }}" alt="{{ $item['title'] }}">
                         <div class="gallery-thumb-overlay"></div>
                         <span class="gallery-thumb-caption">{{ strtoupper($item['title']) }} {{ $i + 1 }}/{{ count($galleryImages) }}</span>
                     </button>

@@ -3,8 +3,20 @@
 return [
 
     'meta' => [
-        'title' => 'Larissa Vasconcellos Architecture',
+        'title' => 'Larissa Vasconcellos Architecture | Architect & Interior Design',
         'description' => 'Luxury architecture and interior design studio led by Larissa Vasconcellos. High-end residential and commercial projects, from concept to execution.',
+        // Título e descrição de cada página (aba do navegador e resultado do Google).
+        'about_title' => 'Who We Are | Larissa Vasconcellos, Architect',
+        'about_description' => 'Meet Larissa Vasconcellos, architect and interior designer: the studio\'s story, how we work and the partners behind every architecture project.',
+        'contact_title' => 'Contact | Larissa Vasconcellos Architecture',
+        'contact_description' => 'Get in touch with architect Larissa Vasconcellos and tell us about your architecture, renovation or interior design project.',
+        'completed_projects_title' => 'Architecture & Interior Projects | Larissa Vasconcellos',
+        'completed_projects_description' => 'Completed architecture and interior design projects by Larissa Vasconcellos: kitchens, bedrooms, living rooms and full homes.',
+        'design_insights_title' => 'Signature Design Pieces | Larissa Vasconcellos',
+        'design_insights_description' => 'Signature lamps, chandeliers and furniture created by architect Larissa Vasconcellos for architecture and interior projects.',
+        'project_title' => ':title | Larissa Vasconcellos Architecture',
+        'project_description' => ':title: architecture and interior design project by Larissa Vasconcellos.',
+        'piece_description' => ':title: signature design piece created by architect Larissa Vasconcellos.',
     ],
 
     'nav' => [
@@ -31,7 +43,7 @@ return [
     ],
 
     'home' => [
-        'meta_description' => "Larissa Vasconcellos Architecture: architecture, interior design and signature furniture pieces. Based in Belo Horizonte, Brazil.",
+        'meta_description' => 'Larissa Vasconcellos, architect: architecture, interior design and signature furniture pieces, based in Belo Horizonte, Brazil. Discover your architectural style with our quiz.',
         'hero_title' => 'Larissa Vasconcellos',
         'hero_tagline' => 'Architect & Designer',
         'hero_subtitle' => 'Transforming high-end residential and commercial spaces into functional works of art.',

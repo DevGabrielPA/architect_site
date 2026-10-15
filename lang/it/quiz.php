@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title' => 'Test di Stile d\'Arredamento | Larissa Vasconcellos Architettura',
-        'description' => 'Test di Stile creato dall\'architetta Larissa Vasconcellos: scopri in pochi minuti se il tuo stile d\'arredamento è Classico, Minimalista, Rustico, Industriale, Scandinavo, Boho o Contemporaneo.',
+        'title' => 'Test di Stile Architettonico | Larissa Vasconcellos Architettura',
+        'description' => 'Scopri il tuo stile architettonico con il test dell\'architetta Larissa Vasconcellos: 20 domande per immagini rivelano lo stile di architettura e interior design più adatto a te.',
         // Nome do serviço nos dados estruturados (schema.org) da página do teste.
-        'service_name' => 'Test di Stile d\'Arredamento',
+        'service_name' => 'Test di Stile Architettonico',
     ],
 
     'intro' => [
-        'heading' => 'Qual È Il Tuo Stile D\'Arredamento?',
+        'heading' => 'Scopri Il Tuo Stile Architettonico',
         'subheading' => 'Rispondi a 20 domande rapide con immagini e scopri quale dei 7 stili ti rispecchia di più — e come il tuo gusto si divide tra palette, forme e materiali.',
         'start_button' => 'Inizia Il Test',
     ],
@@ -72,7 +72,7 @@ return [
         'on_this_page' => 'In questa pagina',
         'share' => 'Condividi',
         'share_copied' => 'Link copiato!',
-        'share_text' => 'Il mio stile d\'arredamento è :style. Fai il test e scopri il tuo:',
+        'share_text' => 'Il mio stile architettonico è :style. Fai il test e scopri il tuo:',
     ],
 
     // Seção "Dimensões do seu estilo": nomes dos polos (esquerdo = 0,
@@ -117,13 +117,13 @@ return [
     ],
 
     'checkout' => [
-        'product_name' => 'Risultato Completo — Test di Stile d\'Arredamento',
+        'product_name' => 'Risultato Completo — Test di Stile Architettonico',
     ],
 
     'mail' => [
         'unlocked_subject' => 'Il Tuo Risultato Completo del Test di Stile È Pronto',
         'unlocked_heading' => 'Il tuo risultato completo è sbloccato!',
-        'unlocked_body' => 'Il tuo pagamento è stato confermato e il risultato completo del tuo Test di Stile d\'Arredamento è ora disponibile. Il tuo stile predominante è <strong>:style</strong> — clicca sul pulsante qui sotto per scoprire le dimensioni del tuo gusto, come appare il tuo stile nella pratica e molto altro.',
+        'unlocked_body' => 'Il tuo pagamento è stato confermato e il risultato completo del tuo Test di Stile Architettonico è ora disponibile. Il tuo stile predominante è <strong>:style</strong> — clicca sul pulsante qui sotto per scoprire le dimensioni del tuo gusto, come appare il tuo stile nella pratica e molto altro.',
         'unlocked_cta' => 'Vedi Il Mio Risultato Completo',
     ],
 

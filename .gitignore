@@ -24,3 +24,6 @@ Homestead.yaml
 Thumbs.db
 .claude/settings.local.json
 NOTAS-TESTE-ESTILO.md
+
+# Fotos originais (pesadas) — o site usa as versões .webp em public/images
+/imagens-originais

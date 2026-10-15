@@ -3,14 +3,14 @@
 return [
 
     'meta' => [
-        'title' => 'Decor Style Quiz | Larissa Vasconcellos Architecture',
-        'description' => 'Style Quiz created by architect Larissa Vasconcellos: find out in a few minutes whether your decor style is Classic, Minimalist, Rustic, Industrial, Scandinavian, Bohemian or Contemporary.',
+        'title' => 'Architectural Style Quiz | Larissa Vasconcellos Architecture',
+        'description' => 'Discover your architectural style with the quiz by architect Larissa Vasconcellos: 20 image-based questions reveal the architecture and interior design style that suits you.',
         // Nome do serviço nos dados estruturados (schema.org) da página do teste.
-        'service_name' => 'Decor Style Quiz',
+        'service_name' => 'Architectural Style Quiz',
     ],
 
     'intro' => [
-        'heading' => 'What Is Your Decor Style?',
+        'heading' => 'Discover Your Architectural Style',
         'subheading' => 'Answer 20 quick, image-based questions and discover which of the 7 styles suits you the most — and how your taste breaks down across palette, shapes and materials.',
         'start_button' => 'Start the Quiz',
     ],
@@ -72,7 +72,7 @@ return [
         'on_this_page' => 'On this page',
         'share' => 'Share',
         'share_copied' => 'Link copied!',
-        'share_text' => 'My decor style is :style. Take the quiz and discover yours:',
+        'share_text' => 'My architectural style is :style. Take the quiz and discover yours:',
     ],
 
     // Seção "Dimensões do seu estilo": nomes dos polos (esquerdo = 0,
@@ -117,13 +117,13 @@ return [
     ],
 
     'checkout' => [
-        'product_name' => 'Full Result — Decor Style Quiz',
+        'product_name' => 'Full Result — Architectural Style Quiz',
     ],
 
     'mail' => [
         'unlocked_subject' => 'Your Full Style Quiz Result Is Ready',
         'unlocked_heading' => 'Your full result is unlocked!',
-        'unlocked_body' => 'Your payment was confirmed and the full result of your Decor Style Quiz is now available. Your dominant style is <strong>:style</strong> — click the button below to see the dimensions of your taste, how your style looks in practice, and more.',
+        'unlocked_body' => 'Your payment was confirmed and the full result of your Architectural Style Quiz is now available. Your dominant style is <strong>:style</strong> — click the button below to see the dimensions of your taste, how your style looks in practice, and more.',
         'unlocked_cta' => 'See My Full Result',
     ],
 

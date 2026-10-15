@@ -12,10 +12,16 @@
 
     <!-- Open Graph: como o link aparece ao ser compartilhado (Instagram, WhatsApp, etc.) -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ __('site.footer.brand_name') }}">
+    <meta property="og:locale" content="{{ ['en' => 'en_US', 'pt' => 'pt_BR', 'fr' => 'fr_FR', 'es' => 'es_ES', 'it' => 'it_IT'][app()->getLocale()] ?? 'en_US' }}">
     <meta property="og:title" content="@yield('meta_title', __('site.meta.title'))">
     <meta property="og:description" content="@yield('meta_description', __('site.meta.description'))">
     <meta property="og:url" content="{{ locale_url(current_path_without_locale()) }}">
-    <meta property="og:image" content="{{ asset('images/larissa.png') }}">
+    {{-- JPG 1200x630: nem todo app de mensagem mostra prévia de WebP --}}
+    <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +29,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome (Ícones) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {{-- Carrega sem travar a primeira pintura da página (os ícones aparecem logo em seguida) --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    @stack('head')
 
     <!-- Versões traduzidas desta mesma página, para buscadores (SEO multilíngue) -->
     @php
@@ -45,14 +55,24 @@
                     '@type' => 'Organization',
                     '@id' => $siteUrl . '/#organization',
                     'name' => 'Larissa Vasconcellos Arquitetura',
-                    'alternateName' => ['LV Arquitetura', 'LV Architecture', 'Larissa Vasconcellos'],
+                    // Sempre com o nome completo: "LV" sozinho disputa a busca com a Louis Vuitton.
+                    'alternateName' => ['Larissa Vasconcellos Architecture', 'Larissa Vasconcellos Arquiteta', 'LV Arquitetura', 'LV Architecture', 'Larissa Vasconcellos'],
                     'url' => $siteUrl . '/',
-                    'image' => asset('images/larissa.png'),
+                    'image' => asset('images/og-image.jpg'),
                     'description' => __('site.meta.description'),
                     'telephone' => '+55-31-99913-7008',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'addressLocality' => 'Belo Horizonte',
+                        'addressRegion' => 'MG',
+                        'addressCountry' => 'BR',
+                    ],
+                    'knowsAbout' => ['Arquitetura', 'Design de interiores', 'Architecture', 'Interior design', 'Teste de Estilo Arquitetônico', 'Architectural Style Quiz'],
                     'founder' => [
                         '@type' => 'Person',
+                        '@id' => $siteUrl . '/#larissa',
                         'name' => 'Larissa Vasconcellos',
+                        'alternateName' => 'Larissa Vasconcellos Arquiteta',
                         'jobTitle' => 'Architect and Interior Designer',
                     ],
                     'sameAs' => [

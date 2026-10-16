@@ -93,7 +93,7 @@ class StripeWebhookController extends Controller
 
             App::setLocale($locale);
 
-            $resultUrl = locale_url_to($locale, '/style-quiz/result') . '?r=' . urlencode($paidToken);
+            $resultUrl = mail_locale_url($locale, '/style-quiz/result') . '?r=' . urlencode($paidToken);
 
             Mail::to($buyerEmail)->send(new QuizResultUnlockedMail(
                 resultUrl: $resultUrl,

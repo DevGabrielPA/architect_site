@@ -21,6 +21,23 @@ if (!function_exists('locale_url_to')) {
     }
 }
 
+if (!function_exists('mail_locale_url')) {
+    /**
+     * Mesmo que locale_url_to(), mas sempre no domínio do APP_URL, nunca no
+     * host da requisição. Para links que vão dentro de e-mails: a resposta
+     * automática do contato sai do e-mail verdadeiro da Larissa para qualquer
+     * endereço digitado, então o link dela não pode depender de nada que o
+     * visitante controle (um host forjado viraria phishing com o domínio dela).
+     */
+    function mail_locale_url(string $locale, string $path = '/'): string
+    {
+        $path = '/' . ltrim($path, '/');
+        $path = $locale === 'en' ? $path : '/' . $locale . ($path === '/' ? '' : $path);
+
+        return rtrim((string) config('app.url'), '/') . $path;
+    }
+}
+
 if (!function_exists('locale_url')) {
     /**
      * Builds an internal URL that keeps the visitor in the current locale.

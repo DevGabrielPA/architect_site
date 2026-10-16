@@ -119,7 +119,7 @@ class ContactController extends Controller
             Mail::to($validated['email'])->send(new ContactAutoReplyMail(
                 firstName: $firstName,
                 greetingKey: $this->greetingKey($request->input('tz')),
-                quizUrl: locale_url('/style-quiz'),
+                quizUrl: mail_locale_url(app()->getLocale(), '/style-quiz'),
                 locale: app()->getLocale(),
             ));
         } catch (\Throwable $e) {

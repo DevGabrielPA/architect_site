@@ -55,7 +55,7 @@
                 <div class="cf-field">
                     <label for="cf-email">{{ __('site.contact.email') }} <span class="cf-req">*</span></label>
                     <div class="cf-input-icon">
-                        <i class="fa-regular fa-envelope"></i>
+                        <x-icon name="envelope" />
                         <input type="email" id="cf-email" name="email" value="{{ old('email') }}" required>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
             position: relative;
         }
 
-        .cf-input-icon i {
+        .cf-input-icon .icon {
             position: absolute;
             top: 50%;
             left: 14px;

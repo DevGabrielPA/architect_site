@@ -73,11 +73,11 @@
                                         <img class="qz-option-img" src="{{ asset($imagePath) }}" alt="{{ __('quiz.questions.' . $i) }}" loading="lazy">
                                     @else
                                         <span class="qz-option-placeholder">
-                                            <i class="fa-regular fa-image"></i>
+                                            <x-icon name="image" />
                                             <span>{{ __('site.portfolio.image_coming_soon') }}</span>
                                         </span>
                                     @endif
-                                    <span class="qz-option-check"><i class="fa-solid fa-check"></i></span>
+                                    <span class="qz-option-check"><x-icon name="check" /></span>
                                 </span>
                             </label>
                         @endforeach

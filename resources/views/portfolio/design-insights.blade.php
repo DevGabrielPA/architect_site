@@ -26,7 +26,7 @@
 
                 <!-- Coluna da Esquerda: Card com Citacao -->
                 <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
+                    <x-icon name="quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;" />
                     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                          {{ __('site.portfolio.design_insights.quotes.lustre-saturnos') }}
                     </p>
@@ -86,7 +86,7 @@
 
                 <!-- Coluna da Direita: Card com Citacao -->
                 <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
+                    <x-icon name="quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;" />
                     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                        {{ __('site.portfolio.design_insights.quotes.vinculo-lamp') }}
                     </p>
@@ -103,7 +103,7 @@
 
                 <!-- Coluna da Esquerda: Card com Citacao -->
                 <div class="flex-col-min320" style="flex: 1 1 340px; max-width: 380px; min-width: 280px; background-color: #ffffff; border: 1px solid #eee0da; border-radius: 20px; box-shadow: 0 20px 45px rgba(93, 61, 34, 0.08); padding: 50px 42px; display: flex; flex-direction: column; justify-content: center;">
-                    <i class="fa-solid fa-quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;"></i>
+                    <x-icon name="quote-left" style="color: #d8b9a4; font-size: 20px; margin-bottom: 18px;" />
                     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.4vw, 24px); font-weight: 500; color: #6b3527; line-height: 1.5; letter-spacing: 0.01em; margin: 0;">
                         {{ __('site.portfolio.design_insights.quotes.brisa-side-table') }}
                     </p>

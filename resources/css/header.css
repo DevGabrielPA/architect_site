@@ -347,12 +347,12 @@ html.header-compact .mobile-menu-col {
     color: #834333;
 }
 
-.mobile-drawer-accordion-trigger i {
+.mobile-drawer-accordion-trigger .icon {
     font-size: 11px;
     transition: transform 0.3s ease;
 }
 
-.mobile-drawer-item.is-expanded .mobile-drawer-accordion-trigger i {
+.mobile-drawer-item.is-expanded .mobile-drawer-accordion-trigger .icon {
     transform: rotate(180deg);
 }
 

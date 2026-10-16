@@ -9,13 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 class SecurityHeaders
 {
     /**
-     * Cabeçalhos de proteção do navegador em todas as respostas. A CSP é
-     * mínima de propósito: as páginas usam scripts/estilos inline, Google
-     * Fonts e Font Awesome por CDN, então ela não restringe scripts nem
-     * estilos — só fecha o que o site nunca usa (<base> injetado, plugins,
-     * ser embutido por outro site, formulário enviando dados para fora).
-     * form-action inclui a Stripe porque o Chrome aplica a regra também ao
-     * redirecionamento 303 do checkout do quiz.
+     * Cabeçalhos de proteção do navegador em todas as respostas. Sem CSP de
+     * propósito: as páginas usam scripts/estilos inline, Google Fonts e
+     * Font Awesome por CDN, e uma CSP errada quebraria o site.
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -31,10 +27,6 @@ class SecurityHeaders
         // O token pago do quiz vai na URL: nunca mandar a URL completa a outros sites.
         $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->headers->set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-        $response->headers->set(
-            'Content-Security-Policy',
-            "base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://checkout.stripe.com"
-        );
 
         // HSTS só em HTTPS (em produção, via X-Forwarded-Proto do proxy).
         if ($request->isSecure()) {

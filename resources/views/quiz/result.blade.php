@@ -190,14 +190,14 @@
                         </h2>
 
                         <div class="qzr-fit">
-                            @foreach (['works' => 'check', 'watch_outs' => 'exclamation'] as $listKey => $icon)
+                            @foreach (['works' => 'fa-check', 'watch_outs' => 'fa-exclamation'] as $listKey => $icon)
                                 @if (!empty($style[$listKey]))
                                     <div class="qzr-fit-column qzr-fit-column--{{ $listKey }}">
                                         <h3 class="qzr-fit-heading">{{ __('quiz.result.' . $listKey . '_heading') }}</h3>
                                         <ul class="qzr-fit-list">
                                             @foreach ($style[$listKey] as $item)
                                                 <li class="qzr-fit-item">
-                                                    <span class="qzr-fit-icon" aria-hidden="true"><x-icon :name="$icon" /></span>
+                                                    <span class="qzr-fit-icon" aria-hidden="true"><i class="fa-solid {{ $icon }}"></i></span>
                                                     <div>
                                                         <p @class(['qzr-fit-title', 'qzr-pending' => quiz_is_pending($item['title'])])>{{ $item['title'] }}</p>
                                                         @if (!empty($item['text']))
@@ -237,7 +237,7 @@
                                             <img src="{{ asset($imagePath) }}" alt="{{ $project['title'] }}" loading="lazy">
                                         @else
                                             <span class="qzr-project-placeholder">
-                                                <x-icon name="image" />
+                                                <i class="fa-regular fa-image"></i>
                                                 <span>{{ __('site.portfolio.image_coming_soon') }}</span>
                                             </span>
                                         @endif
@@ -261,7 +261,7 @@
                             data-share-url="{{ locale_url('/style-quiz') }}"
                             data-share-text="{{ __('quiz.result.share_text', ['style' => $style['name']]) }}"
                             data-copied-label="{{ __('quiz.result.share_copied') }}">
-                        <x-icon name="share-nodes" />
+                        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
                         <span data-qzr-share-label>{{ __('quiz.result.share') }}</span>
                     </button>
 

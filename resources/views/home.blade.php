@@ -132,7 +132,7 @@
                     <!-- Alinhamento na base do bloco de texto -->
                     <div style="margin-top: auto;">
                         <a href="{{ locale_url('/who-we-are') }}" class="btn-brand" style="padding: 14px 32px;">
-                            {{ __('site.home.learn_more') }} <x-icon name="angle-right" style="font-size: 10px; margin-left: 6px;" />
+                            {{ __('site.home.learn_more') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                         </a>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                     {{ __('site.home.story_heading') }}
                 </h2>
                 <a href="{{ locale_url('/contact') }}" class="btn-brand" style="padding: 14px 32px;">
-                    {{ __('site.home.contact_us') }} <x-icon name="angle-right" style="font-size: 10px; margin-left: 6px;" />
+                    {{ __('site.home.contact_us') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                 </a>
             </div>
         </div>
@@ -322,7 +322,7 @@
                 </p>
 
                 <a href="{{ locale_url('/portfolio/design-insights') }}" class="btn-brand" style="padding: 14px 40px;">
-                    {{ __('site.home.access_now') }} <x-icon name="angle-right" style="font-size: 10px; margin-left: 6px;" />
+                    {{ __('site.home.access_now') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                 </a>
             </div>
 
@@ -347,7 +347,7 @@
 
             <div style="text-align: center; margin-bottom: 40px;">
                 <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px; color: #111111;">
-                    <x-icon name="instagram" style="font-size: 22px;" />
+                    <i class="fa-brands fa-instagram" style="font-size: 22px;"></i>
                     <span style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400;">{{ __('site.home.follow_us') }} <span style="color: #834333;">@larissavasconcellos_studio</span></span>
                 </a>
             </div>
@@ -369,15 +369,15 @@
                             <img loading="lazy" src="{{ asset($foundImage) }}" alt="Instagram post" class="instagram-item-img">
                         @else
                             <div class="instagram-item-placeholder">
-                                <x-icon name="instagram" />
+                                <i class="fa-brands fa-instagram"></i>
                             </div>
                         @endif
 
                         <span class="instagram-item-icon">
                             @if ($post['type'] === 'video')
-                                <x-icon name="play" />
+                                <i class="fa-solid fa-play"></i>
                             @else
-                                <x-icon name="clone" />
+                                <i class="fa-solid fa-clone"></i>
                             @endif
                         </span>
 

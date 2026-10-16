@@ -73,11 +73,11 @@
                                         <img class="qz-option-img" src="{{ asset($imagePath) }}" alt="{{ __('quiz.questions.' . $i) }}" loading="lazy">
                                     @else
                                         <span class="qz-option-placeholder">
-                                            <x-icon name="image" />
+                                            <i class="fa-regular fa-image"></i>
                                             <span>{{ __('site.portfolio.image_coming_soon') }}</span>
                                         </span>
                                     @endif
-                                    <span class="qz-option-check"><x-icon name="check" /></span>
+                                    <span class="qz-option-check"><i class="fa-solid fa-check"></i></span>
                                 </span>
                             </label>
                         @endforeach
@@ -373,7 +373,7 @@
             var total = questions.length;
             var current = 0;
 
-            var progressTemplate = {!! json_encode(__('quiz.ui.question_progress', ['current' => ':current', 'total' => ':total']), JSON_HEX_TAG) !!};
+            var progressTemplate = {!! json_encode(__('quiz.ui.question_progress', ['current' => ':current', 'total' => ':total'])) !!};
 
             function renderProgress() {
                 var percent = Math.round(((current + 1) / total) * 100);

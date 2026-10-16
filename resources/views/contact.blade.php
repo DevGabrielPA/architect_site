@@ -55,7 +55,7 @@
                 <div class="cf-field">
                     <label for="cf-email">{{ __('site.contact.email') }} <span class="cf-req">*</span></label>
                     <div class="cf-input-icon">
-                        <x-icon name="envelope" />
+                        <i class="fa-regular fa-envelope"></i>
                         <input type="email" id="cf-email" name="email" value="{{ old('email') }}" required>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
             position: relative;
         }
 
-        .cf-input-icon .icon {
+        .cf-input-icon i {
             position: absolute;
             top: 50%;
             left: 14px;
@@ -320,7 +320,7 @@
             var textEl = document.getElementById('contact-hero-text');
             var phoneEl = document.getElementById('contact-hero-phone');
 
-            var fullText = {!! json_encode(__('site.contact.hero_intro'), JSON_HEX_TAG) !!};
+            var fullText = {!! json_encode(__('site.contact.hero_intro')) !!};
             var fullPhone = '+55 (31) 9 9913-7008';
 
             var cursor = '<span class="contact-hero-cursor">|</span>';

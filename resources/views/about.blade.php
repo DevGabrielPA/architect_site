@@ -36,7 +36,7 @@
                     </p>
 
                     <a href="{{ locale_url('/contact') }}" class="btn-brand" style="padding: 14px 36px;">
-                        {{ __('site.about.get_in_touch') }} <x-icon name="angle-right" style="font-size: 10px; margin-left: 6px;" />
+                        {{ __('site.about.get_in_touch') }} <i class="fa-solid fa-angle-right" style="font-size: 10px; margin-left: 6px;"></i>
                     </a>
                 </div>
 

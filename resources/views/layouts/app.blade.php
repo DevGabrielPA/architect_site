@@ -28,7 +28,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    {{-- Ícones: SVG embutido pelo componente <x-icon> (sem Font Awesome por CDN) --}}
+    <!-- Font Awesome (Ícones) -->
+    {{-- Carrega sem travar a primeira pintura da página (os ícones aparecem logo em seguida) --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
     @stack('head')
 
@@ -132,7 +135,7 @@
                     <!-- Mobile Menu Trigger -->
                     <div class="mobile-menu-col">
                         <button class="mobile-menu-toggle" aria-label="{{ __('site.nav.open_menu') }}" aria-expanded="false" aria-controls="mobile-drawer">
-                            <x-icon name="bars" />
+                            <i class="fa-solid fa-bars"></i>
                         </button>
                     </div>
 
@@ -143,7 +146,7 @@
                             <!-- Portfolio Dropdown com a Setinha Baseada no Layout -->
                             <li class="has-dropdown">
                                 <a href="{{ locale_url('/portfolio') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio') ? 'active' : '' }}">
-                                    {{ __('site.nav.portfolio') }} <x-icon name="angle-down" class="dropdown-caret" style="font-size: 11px; margin-left: 4px;" />
+                                    {{ __('site.nav.portfolio') }} <i class="fa-solid fa-angle-down dropdown-caret" style="font-size: 11px; margin-left: 4px;"></i>
                                 </a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ locale_url('/portfolio/completed-projects') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio/completed-projects') ? 'active' : '' }}">{{ __('site.nav.completed_projects') }}</a></li>
@@ -160,7 +163,7 @@
                             <!-- Direct Phone Conversion -->
                             <li class="header-phone">
                                 <a href="tel:+5531999137008">
-                                    <x-icon name="phone" /> <span>+55 (31) 9 9913-7008</span>
+                                    <i class="fa-solid fa-phone"></i> <span>+55 (31) 9 9913-7008</span>
                                 </a>
                             </li>
 
@@ -169,7 +172,7 @@
                             <!-- Seletor de Idioma -->
                             <li class="has-dropdown">
                                 <a href="#" onclick="return false;" aria-label="{{ __('site.nav.language') }}">
-                                    {{ $localeLabels[app()->getLocale()] }} <x-icon name="angle-down" class="dropdown-caret" style="font-size: 11px; margin-left: 4px;" />
+                                    {{ $localeLabels[app()->getLocale()] }} <i class="fa-solid fa-angle-down dropdown-caret" style="font-size: 11px; margin-left: 4px;"></i>
                                 </a>
                                 <ul class="sub-menu">
                                     @foreach ($localeLabels as $localeCode => $localeLabel)
@@ -193,7 +196,7 @@
         <div class="mobile-drawer-header">
             <span class="mobile-drawer-brand">Larissa Vasconcellos</span>
             <button type="button" class="mobile-drawer-close" aria-label="{{ __('site.nav.close_menu') }}">
-                <x-icon name="xmark" />
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
 
@@ -205,7 +208,7 @@
                     <div class="mobile-drawer-row">
                         <a href="{{ locale_url('/portfolio') }}" class="{{ str_starts_with($navCurrentPath, 'portfolio') ? 'active' : '' }}">{{ __('site.nav.portfolio') }}</a>
                         <button type="button" class="mobile-drawer-accordion-trigger" aria-expanded="false" aria-controls="mobile-drawer-portfolio-panel" aria-label="{{ __('site.nav.portfolio') }}">
-                            <x-icon name="chevron-down" />
+                            <i class="fa-solid fa-chevron-down"></i>
                         </button>
                     </div>
                     <ul class="mobile-drawer-accordion-panel" id="mobile-drawer-portfolio-panel">
@@ -236,7 +239,7 @@
 
                 <li class="mobile-drawer-item mobile-drawer-phone">
                     <a href="tel:+5531999137008">
-                        <x-icon name="phone" /> <span>+55 (31) 9 9913-7008</span>
+                        <i class="fa-solid fa-phone"></i> <span>+55 (31) 9 9913-7008</span>
                     </a>
                 </li>
 
@@ -246,7 +249,7 @@
                 <li class="mobile-drawer-item has-accordion">
                     <div class="mobile-drawer-row">
                         <button type="button" class="mobile-drawer-accordion-trigger mobile-drawer-lang-trigger" aria-expanded="false" aria-controls="mobile-drawer-lang-panel">
-                            {{ $localeLabels[app()->getLocale()] }} <x-icon name="chevron-down" />
+                            {{ $localeLabels[app()->getLocale()] }} <i class="fa-solid fa-chevron-down"></i>
                         </button>
                     </div>
                     <ul class="mobile-drawer-accordion-panel" id="mobile-drawer-lang-panel">
@@ -293,14 +296,14 @@
                 <div class="footer-col">
                     <h3 class="footer-title">{{ __('site.footer.connect') }}</h3>
                     <p style="margin-bottom: 20px; color: #666666; font-weight: 300;">
-                        <x-icon name="phone" style="margin-right: 8px; color: #111111; font-size: 13px;" /> +55 (31) 9 9913-7008
+                        <i class="fa-solid fa-phone" style="margin-right: 8px; color: #111111; font-size: 13px;"></i> +55 (31) 9 9913-7008
                     </p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" aria-label="Instagram"><x-icon name="instagram" /></a>
-                        <a href="https://www.facebook.com/profile.php?id=100063760440652&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><x-icon name="facebook" /></a>
-                        <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><x-icon name="pinterest" /></a>
-                        <a href="https://www.youtube.com/@larissavasconcellosarquiteta" target="_blank" rel="noopener" aria-label="YouTube"><x-icon name="youtube" /></a>
-                        <a href="https://share.google/DafOSxlFl9Pd9Z1QJ" target="_blank" rel="noopener" aria-label="{{ __('site.footer.google_profile') }}"><x-icon name="google" /></a>
+                        <a href="https://www.instagram.com/larissavasconcellos_studio/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100063760440652&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://pin.it/7tyW73IlQ" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.youtube.com/@larissavasconcellosarquiteta" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://share.google/DafOSxlFl9Pd9Z1QJ" target="_blank" rel="noopener" aria-label="{{ __('site.footer.google_profile') }}"><i class="fa-brands fa-google"></i></a>
                     </div>
                 </div>
 
@@ -316,10 +319,10 @@
     <!-- OVERLAY DO LIGHTBOX DE GALERIA (usado por qualquer elemento com data-lightbox-group) -->
     <div id="lightbox-overlay" class="lightbox-overlay">
         <button type="button" class="lightbox-close" aria-label="Close">
-            <x-icon name="xmark" />
+            <i class="fa-solid fa-xmark"></i>
         </button>
         <button type="button" class="lightbox-prev" aria-label="Previous image">
-            <x-icon name="angle-left" />
+            <i class="fa-solid fa-angle-left"></i>
         </button>
         <div class="lightbox-stage">
             <img class="lightbox-image" src="" alt="">
@@ -329,13 +332,13 @@
             </div>
         </div>
         <button type="button" class="lightbox-next" aria-label="Next image">
-            <x-icon name="angle-right" />
+            <i class="fa-solid fa-angle-right"></i>
         </button>
     </div>
 
     <!-- BOTÃO FLUTUANTE "VOLTAR AO TOPO" -->
     <button type="button" id="back-to-top" class="back-to-top" aria-label="{{ __('site.nav.back_to_top') }}">
-        <x-icon name="arrow-up" />
+        <i class="fa-solid fa-arrow-up"></i>
     </button>
 
 </body>

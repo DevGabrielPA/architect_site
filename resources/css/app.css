@@ -7,20 +7,6 @@
 @import "./back-to-top.css";
 
 /* ==========================================================================
-   ÍCONES (componente <x-icon>, resources/views/components/icon.blade.php)
-   Mesmas medidas do modo SVG oficial do Font Awesome: altura de 1em e leve
-   rebaixamento na linha, para o ícone ficar do tamanho e na altura em que
-   ficava a fonte de ícones. A largura vem do próprio SVG (proporcional).
-   ========================================================================== */
-.icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    box-sizing: content-box;
-    vertical-align: -0.125em;
-}
-
-/* ==========================================================================
    2. BOTÕES DE MARCA (CTA) — cor sólida marrom com hover mais escuro
    ========================================================================== */
 .btn-brand {

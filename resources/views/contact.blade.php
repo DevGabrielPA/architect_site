@@ -320,7 +320,7 @@
             var textEl = document.getElementById('contact-hero-text');
             var phoneEl = document.getElementById('contact-hero-phone');
 
-            var fullText = {!! json_encode(__('site.contact.hero_intro')) !!};
+            var fullText = {!! json_encode(__('site.contact.hero_intro'), JSON_HEX_TAG) !!};
             var fullPhone = '+55 (31) 9 9913-7008';
 
             var cursor = '<span class="contact-hero-cursor">|</span>';

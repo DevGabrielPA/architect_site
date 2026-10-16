@@ -7,6 +7,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +25,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Em produção todo link gerado (url(), locale_url(), asset()) usa o
+        // APP_URL, nunca o host que veio na requisição. Sem isso, um cabeçalho
+        // X-Forwarded-Host forjado trocava o domínio dos links — inclusive o
+        // link do quiz na resposta automática do contato, que sai do e-mail
+        // verdadeiro da Larissa para qualquer endereço digitado (phishing).
+        if ($this->app->isProduction()) {
+            URL::forceRootUrl(config('app.url'));
+            URL::forceScheme('https');
+        }
+
         Mail::extend('resend', function (array $config) {
             return new ResendApiTransport($config['key'] ?? config('services.resend.key'));
         });

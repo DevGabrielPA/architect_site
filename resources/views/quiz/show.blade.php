@@ -373,7 +373,7 @@
             var total = questions.length;
             var current = 0;
 
-            var progressTemplate = {!! json_encode(__('quiz.ui.question_progress', ['current' => ':current', 'total' => ':total'])) !!};
+            var progressTemplate = {!! json_encode(__('quiz.ui.question_progress', ['current' => ':current', 'total' => ':total']), JSON_HEX_TAG) !!};
 
             function renderProgress() {
                 var percent = Math.round(((current + 1) / total) * 100);

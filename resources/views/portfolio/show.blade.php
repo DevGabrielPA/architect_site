@@ -106,7 +106,7 @@
                     <!-- Coluna da Esquerda: Trailer em Video (maior, deslocado para a esquerda) -->
                     <div style="flex: 1.6 1 640px; position: relative; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;">
                         <iframe
-                            src="https://www.youtube.com/embed/{{ $item['video'] }}"
+                            src="https://www.youtube-nocookie.com/embed/{{ $item['video'] }}"
                             title="{{ $item['title'] }}"
                             style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

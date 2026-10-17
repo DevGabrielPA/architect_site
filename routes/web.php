@@ -23,6 +23,10 @@ $routes = function () {
 
     Route::post('/contact', [ContactController::class, 'send'])->middleware('throttle:contact');
 
+    Route::get('/privacy-policy', function () {
+        return view('privacy');
+    });
+
     // O item de menu "Portfolio" leva direto para Completed Projects
     Route::get('/portfolio', function () {
         return redirect(locale_url('/portfolio/completed-projects'));
@@ -102,6 +106,7 @@ Route::get('/sitemap.xml', function () use ($portfolioWithImage) {
         '/contact',
         '/portfolio/completed-projects',
         '/portfolio/design-insights',
+        '/privacy-policy',
     ];
 
     $projectPaths = $portfolioWithImage('completed_projects', 'portfolio')

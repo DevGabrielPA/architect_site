@@ -89,6 +89,8 @@
                 </div>
 
                 <button type="submit" class="cf-submit">{{ __('site.contact.submit') }}</button>
+
+                <p class="cf-privacy-notice">{!! __('privacy.contact_notice', ['link' => '<a href="' . e(locale_url('/privacy-policy')) . '">' . e(__('privacy.link_text')) . '</a>']) !!}</p>
             </form>
         </div>
     </section>
@@ -238,6 +240,19 @@
 
         .cf-submit:hover {
             background-color: #6b3527;
+        }
+
+        .cf-privacy-notice {
+            margin: 4px 0 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #888888;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .cf-privacy-notice a {
+            color: #834333;
         }
 
         @media (max-width: 600px) {

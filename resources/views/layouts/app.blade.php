@@ -312,6 +312,7 @@
             <!-- Bottom Copyright Section -->
             <div class="footer-bottom">
                 <p>&copy; {{ date('Y') }} {{ __('site.footer.brand_name') }}. {{ __('site.footer.rights') }}</p>
+                <p class="footer-legal"><a href="{{ locale_url('/privacy-policy') }}">{{ __('privacy.footer_link') }}</a></p>
             </div>
         </div>
     </footer>

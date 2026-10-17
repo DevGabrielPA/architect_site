@@ -59,6 +59,8 @@
                     <input type="hidden" name="r" value="{{ $token }}">
                     <button type="submit" class="qzr-unlock-button">{{ __('quiz.result.unlock_cta') }}</button>
                 </form>
+
+                <p class="qzr-privacy-notice">{!! __('privacy.checkout_notice', ['link' => '<a href="' . e(locale_url('/privacy-policy')) . '">' . e(__('privacy.link_text')) . '</a>']) !!}</p>
             </div>
         </section>
     @else
@@ -462,6 +464,18 @@
 
         .qzr-unlock-button:hover {
             background-color: #6b3527;
+        }
+
+        .qzr-privacy-notice {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #888888;
+            margin: 18px 0 0;
+        }
+
+        .qzr-privacy-notice a {
+            color: #834333;
         }
 
         /* ---------- Hero do relatório (alinhado à esquerda, faixa inclinada) ---------- */

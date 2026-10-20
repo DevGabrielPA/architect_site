@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Mail\QuizResultUnlockedMail;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Stripe\Exception\SignatureVerificationException;
@@ -57,53 +58,101 @@ class StripeWebhookController extends Controller
             return response('', 200);
         }
 
-        // Best-effort: evita reenviar o e-mail se a Stripe reentregar o mesmo
-        // evento. Não é uma garantia (cache em arquivo, sem banco), só reduz
-        // a chance de duplicidade — aceito como trade-off da arquitetura sem
-        // banco de dados.
-        $dedupeKey = "stripe_webhook_event_{$event->id}";
-
-        if (Cache::has($dedupeKey)) {
-            return response('', 200);
-        }
-
         $originalToken = $session->metadata->quiz_token ?? null;
+        $payload = null;
 
         if (!$originalToken) {
             Log::warning('Stripe checkout.session.completed without quiz_token metadata.', ['session_id' => $session->id]);
+        } else {
+            $payload = quiz_decode_token($originalToken);
 
-            return response('', 200);
-        }
-
-        $payload = quiz_decode_token($originalToken);
-
-        if (!$payload) {
-            Log::warning('Stripe webhook: quiz_token failed to decrypt.', ['session_id' => $session->id]);
-
-            return response('', 200);
+            if (!$payload) {
+                Log::warning('Stripe webhook: quiz_token failed to decrypt.', ['session_id' => $session->id]);
+            }
         }
 
         $buyerEmail = $session->customer_details->email ?? null;
+        $locale = $payload ? ($payload['locale'] ?? config('app.fallback_locale')) : null;
+        $winnerKey = $payload ? quiz_score_answers($payload['answers'])['winner'] : null;
 
-        if ($buyerEmail) {
-            $paidToken = quiz_mint_paid_token($payload, $session->id);
-            $locale = $payload['locale'] ?? config('app.fallback_locale');
+        // O pagamento é gravado mesmo sem quiz_token/e-mail, para ficar
+        // registrado; o e-mail só sai quando os dois existem. Qualquer erro
+        // (banco fora do ar, falha no envio do e-mail) desfaz a transação e
+        // responde 500, para a Stripe tentar de novo mais tarde.
+        try {
+            DB::transaction(function () use ($event, $session, $payload, $buyerEmail, $locale, $winnerKey) {
+                $payment = $this->lockPayment($session->id);
 
-            ['winner' => $winnerKey] = quiz_score_answers($payload['answers']);
+                $payment->fill([
+                    'stripe_event_id' => $event->id,
+                    'stripe_payment_intent_id' => is_string($session->payment_intent ?? null)
+                        ? $session->payment_intent
+                        : ($session->payment_intent->id ?? null),
+                    'status' => $session->payment_status,
+                    'amount' => (int) ($session->amount_total ?? 0),
+                    'currency' => strtolower((string) ($session->currency ?? 'usd')),
+                    'buyer_email' => $buyerEmail,
+                    'locale' => $locale,
+                    'winning_style' => $winnerKey,
+                ]);
+                $payment->paid_at ??= now();
+                $payment->save();
 
-            App::setLocale($locale);
+                // A Stripe reentregou um evento já processado: nada a fazer.
+                if ($payment->result_email_sent_at !== null || !$payload || !$buyerEmail) {
+                    return;
+                }
 
-            $resultUrl = mail_locale_url($locale, '/style-quiz/result') . '?r=' . urlencode($paidToken);
+                $paidToken = quiz_mint_paid_token($payload, $session->id);
 
-            Mail::to($buyerEmail)->send(new QuizResultUnlockedMail(
-                resultUrl: $resultUrl,
-                winningStyleName: __("quiz.styles.{$winnerKey}.name"),
-                locale: $locale,
-            ));
+                App::setLocale($locale);
+
+                $resultUrl = mail_locale_url($locale, '/style-quiz/result') . '?r=' . urlencode($paidToken);
+
+                Mail::to($buyerEmail)->send(new QuizResultUnlockedMail(
+                    resultUrl: $resultUrl,
+                    winningStyleName: __("quiz.styles.{$winnerKey}.name"),
+                    locale: $locale,
+                ));
+
+                $payment->forceFill(['result_email_sent_at' => now()])->save();
+            });
+        } catch (\Throwable $e) {
+            Log::error('Stripe webhook: failed to record payment or send result e-mail.', [
+                'session_id' => $session->id,
+                'event_id' => $event->id,
+                'error' => $e->getMessage(),
+            ]);
+
+            return response('', 500);
         }
 
-        Cache::put($dedupeKey, true, now()->addDay());
-
         return response('', 200);
+    }
+
+    /**
+     * Busca o pagamento desta sessão de checkout, criando a linha se ainda
+     * não existir, e trava a linha até o fim da transação. Se a Stripe
+     * entregar o mesmo evento duas vezes ao mesmo tempo, a segunda entrega
+     * espera aqui e, quando continua, já vê result_email_sent_at preenchido.
+     *
+     * O insertOrIgnore (em vez de firstOrCreate) evita que as duas entregas
+     * tentem inserir juntas e uma delas quebre no índice único.
+     */
+    private function lockPayment(string $checkoutSessionId): Payment
+    {
+        Payment::query()->insertOrIgnore([
+            'stripe_checkout_session_id' => $checkoutSessionId,
+            'status' => 'pending',
+            'amount' => 0,
+            'currency' => 'usd',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return Payment::query()
+            ->where('stripe_checkout_session_id', $checkoutSessionId)
+            ->lockForUpdate()
+            ->firstOrFail();
     }
 }

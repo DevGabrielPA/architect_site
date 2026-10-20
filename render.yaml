@@ -24,6 +24,16 @@ services:
         value: stderr
       - key: LOG_LEVEL
         value: error
+      # Banco Postgres no Neon. DB_URL é a string de conexão do painel do Neon
+      # (com ?sslmode=require) e é preenchida só no painel do Render.
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_SSLMODE
+        value: require
+      - key: DB_URL
+        sync: false
+      # Sessão em cookie e cache em arquivo: visitas comuns não acessam o
+      # banco (regra D9). Não trocar para "database".
       - key: SESSION_DRIVER
         value: cookie
       - key: SESSION_SECURE_COOKIE
